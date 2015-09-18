@@ -1,3 +1,30 @@
 * {
     font-family: 'Open Sans', arial, sans-serif;
 }
+
+.banner {
+  background-color: #f00;
+  height: 100px;
+}
+
+.updates {
+  background-color: #0f0;
+}
+
+.page-content {
+  background-color: #00f;
+  float: left;
+  width: 80%;
+}
+
+aside {
+  background-color: #f00;
+  float: left;
+  width: 20%;
+  height: auto;
+}
+
+footer {
+  background-color: #0f0;
+  clear: both;
+}
