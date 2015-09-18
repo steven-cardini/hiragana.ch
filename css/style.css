@@ -11,6 +11,10 @@
   background-color: #0f0;
 }
 
+.main {
+  display: flex;
+}
+
 .page-content {
   background-color: #00f;
   float: left;
