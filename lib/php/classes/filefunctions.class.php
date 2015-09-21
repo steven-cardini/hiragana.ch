@@ -3,6 +3,10 @@
 class FileFunctions {
 
   static function requirePHPFiles ($dir) {
+    if (!file_exists($dir)) {
+      return false;
+    }
+
     $files = scandir($dir);
     foreach ($files as $file) {
       if (FileFunctions::hasExtension($file, 'php')) {
