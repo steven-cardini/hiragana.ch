@@ -1,0 +1,8 @@
+IndexIgnore * [L]
+ErrorDocument 404 /error
+
+RewriteEngine on # Turn on the rewriting engine
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^([A-Za-z/]*)/?$ index.php?page=$1 [L]
