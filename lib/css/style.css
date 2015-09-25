@@ -1,5 +1,5 @@
 * {
-    font-family: 'Open Sans', arial, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
 }
 
 .banner {
@@ -7,24 +7,35 @@
 }
 
 .updates {
-  background-color: #0f0;
+  margin-bottom: 20px;
+  animation: blink 2s linear infinite;
 }
 
-.main {
-  display: flex;
+@keyframes blink
+{
+  0%   {opacity: 0;}
+  100% {opacity: 1;}
 }
 
 .page-content {
-  background-color: #00f;
   float: left;
-  width: 80%;
+  width: 75%;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
-aside {
-  background-color: #f00;
-  float: left;
+aside.user-info {
+  float: right;
+  position: relative;
   width: 20%;
   height: auto;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+aside.user-info img {
+  width: 120px;
+  height: 120px;
 }
 
 footer {

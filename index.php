@@ -33,6 +33,7 @@
       require_once(TEMPLATE_DIR.'navigation.php');
       require_once(TEMPLATE_DIR.'updates.php');
       require_once(TEMPLATE_DIR.'maincontent.php');
+      require_once(TEMPLATE_DIR.'aside.php');
       require_once(TEMPLATE_DIR.'footer.php');
 
     ?>
