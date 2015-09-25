@@ -3,7 +3,7 @@
 }
 
 .banner {
-  
+  background-color: #069;
 }
 
 .updates {
@@ -28,6 +28,21 @@ aside {
 }
 
 footer {
-  background-color: #0f0;
+  padding: 2px 0 2px 10px;
+  color: #fff;
+  font-size: smaller;
+  background-color: #069;
   clear: both;
+}
+
+footer a, footer a:visited, footer a:active {
+  text-decoration: none!important;
+  font-weight: normal;
+  color: #fff;
+}
+
+footer a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.5);
 }
