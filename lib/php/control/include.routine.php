@@ -31,11 +31,8 @@ if (!isset($_GET['page']) || empty($_GET['page'])) {
 //page does not exist -> error page
 } elseif (!file_exists('pages/'.$_GET['page'].'.php') || $_GET['page']=='error') {
   define("PAGE_SOURCE", "pages/error.php");
-  define("PAGE_AREA", "Info");
 // page exists -> define appropriate page file
 } else {
-  $tmp = explode('/', $_GET['page']);
   define("PAGE_SOURCE", 'pages/'.$_GET['page'].'.php');
-  define("PAGE_AREA", $tmp[0]);
 }
 ?>

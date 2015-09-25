@@ -2,6 +2,8 @@
 
 class FileFunctions {
 
+  private static $logFile = "output.log";
+
   static function requirePHPFiles ($dir) {
     if (!file_exists($dir)) {
       return false;
@@ -59,9 +61,8 @@ class FileFunctions {
   }
 
 
-  static function logToFile ($file, $text) {
-    $text = date("Y-m-d H:i:s").' > '.$text."\r\n";
-    file_put_contents($file, $text, FILE_APPEND);
+  static function log ($text) {
+    FileFunctions::logToFile(FileFunctions::$logFile, $text);
   }
 
   static function getFileName ($file) {
@@ -82,6 +83,11 @@ class FileFunctions {
       return null;
     }
     //return substr($fileName, strrpos($fileName , '.')+1);
+  }
+
+  protected static function logToFile ($file, $text) {
+    $text = date("Y-m-d H:i:s").' > '.$text."\r\n";
+    file_put_contents($file, $text, FILE_APPEND);
   }
 
   protected static function getPathInfo ($file) {

@@ -41,6 +41,7 @@ aside.user-info img {
 footer {
   padding: 2px 0 3px 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 10px solid white;
   color: #fff;
   font-size: smaller;
   background-color: #069;
