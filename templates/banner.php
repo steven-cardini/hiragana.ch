@@ -1,3 +1,3 @@
 <div class="banner">
-  This is the banner
+  <img src="<?php echo ROOT_DIR.IMG_DIR.'banner.jpg'; ?>" class="img-responsive">
 </div>
