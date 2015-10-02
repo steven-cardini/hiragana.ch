@@ -5,4 +5,4 @@ RewriteEngine on # Turn on the rewriting engine
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l
 
-RewriteRule ^([A-Za-z0-9/]*)/?$ index.php?page=$1 [L]
+RewriteRule ^([A-Za-z0-9/-]*)/?$ index.php?page=$1 [L]
