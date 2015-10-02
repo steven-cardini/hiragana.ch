@@ -11,6 +11,7 @@
         </div>
 
         <?php $nav = array(
+          array('id' => 'home', 'name' => 'Home', 'url' => ROOT_DIR.'home'),
           array('id' => 'hiragana', 'name' => 'Hiragana', 'url' => ROOT_DIR.'hiragana'),
           array('id' => 'katakana', 'name' => 'Katakana', 'url' => ROOT_DIR.'katakana'),
           array('id' => 'word-trainer', 'name' => 'Word Trainer', 'url' => ROOT_DIR.'word-trainer'),
