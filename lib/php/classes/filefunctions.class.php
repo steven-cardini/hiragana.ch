@@ -60,6 +60,17 @@ class FileFunctions {
     return $matchingFiles;
   }
 
+  static function getCurrentPage () {
+    $path = $_SERVER['REQUEST_URI'];
+    $slashPos = strripos($path, '/');
+    $currentPage = substr($path, $slashPos+1);
+
+    if (!isset($currentPage) || $currentPage == null || strlen($currentPage)<1) {
+      $currentPage = 'home';
+    }
+
+    return $currentPage;
+  }
 
   static function log ($text) {
     FileFunctions::logToFile(FileFunctions::$logFile, $text);
