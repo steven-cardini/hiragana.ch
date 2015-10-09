@@ -4,10 +4,15 @@ class JavaScriptFunctions {
 
   private static $JS = array(
     'home' => array(),
+    'hiragana' => array(
+      'kanatrainer/hiraganahandler.class.js',
+      'kanatrainer/hiragana.def.js',
+      'kanatrainer/kanaselector.pagecontrol.js',
+    ),
     'kanatrainer' => array(
       'kanatrainer/hiraganahandler.class.js',
-      'kanatrainer/alphabettrainer.class.js',
-      'kanatrainer/alphabettrainer.control.js',
+      'kanatrainer/kanatrainer.class.js',
+      'kanatrainer/kanatrainer.pagecontrol.js',
     ),
   );
 

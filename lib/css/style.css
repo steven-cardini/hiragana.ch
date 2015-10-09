@@ -2,6 +2,10 @@
   font-family: 'Open Sans', Arial, sans-serif;
 }
 
+.navbar {
+  margin-bottom: 0;
+}
+
 .banner {
   background-color: #069;
   border-top: 3px solid #000;
@@ -21,9 +25,15 @@
 
 .page-content {
   float: left;
-  width: 75%;
+   width: 75%;
   margin-right: 20px;
-  margin-bottom: 20px;
+  margin-top: -2px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.page-content > h1 {
+  margin-top: 0;
 }
 
 aside.user-info {
@@ -60,4 +70,85 @@ footer a:hover {
   text-decoration: none;
   font-weight: bold;
   color: rgba(255, 255, 255, 0.5);
+}
+
+.kana-selector-label {
+  border:1px solid #ccc;
+  padding:2px;
+  margin-top:3px;
+  display:block;
+}
+
+.kana-selector-label:hover {
+  background:#eee;
+  cursor:pointer;
+}
+
+.kana-selector-form {
+  display:inline-block;
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+.kana-prompt-wrapper {
+  width: 310px;
+  margin: auto;
+}
+
+.kana-prompt-wrapper > form {
+  display: inline-block;
+}
+
+.kana-box {
+  float:left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid;
+  padding: 5px;
+  height: 210px;
+  width: 145px;
+  text-align: center;
+}
+
+.kana-prompt-box {
+  background: rgba(0, 0, 0, 0.3);
+  margin-right: 10px;
+  border-color: #fff;
+}
+
+.kana-prompt-box .btn {
+  margin-top: 10px;
+}
+
+.kana-prompt-box .row {
+  margin: 0;
+}
+
+.kana-prompt-box .col-sm-6 {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.kana-feedback-box {
+  border-color: #aaa;
+}
+
+.kana-reminder-box {
+  clear: both;
+  padding-top: 5px;
+  height: auto;
+  width: 300px;
+  text-align: left;
+}
+
+.single-kana-font {
+  font-size: 58px;
+  font-weight: bold;
+  line-height: 80%;
+  margin-top: 20px;
+}
+
+.kana-font {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 48px;
 }
