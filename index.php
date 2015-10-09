@@ -1,5 +1,8 @@
 <?php
   require_once('lib/php/control/include.routine.php');
+
+  $currentPage = FileFunctions::getCurrentPage();
+  $CUSTOM_JS = JavaScriptFunctions::getCustomJSFiles($currentPage);
 ?>
 
 <!DOCTYPE html>
@@ -39,5 +42,10 @@
     ?>
 
   </div>
+  <?php
+    foreach ($CUSTOM_JS as $jsFile) {
+      echo '<script src="'.ROOT_DIR.JS_DIR.$jsFile.'"></script>';
+    }
+   ?>
 </body>
 </html>
