@@ -47,10 +47,16 @@ aside {
   padding: 5px;
 }
 
-aside .form-signin {
+aside.wrapper-signin {
   background-color: rgba(0,0,0,0.1);
   padding: 10px;
+  padding-top: 0;
   border: 1px solid rgba(0,0,0,0.2);
+}
+
+aside.wrapper-signin > p {
+  margin-top: 10px;
+  margin-bottom: 0;
 }
 
 aside.user-info img {
