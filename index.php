@@ -1,11 +1,14 @@
 <?php
+  session_start();
+
   require_once('lib/php/control/include.routine.php');
 
   $currentPage = FileFunctions::getCurrentPage();
   $CUSTOM_JS = JavaScriptFunctions::getCustomJSFiles($currentPage);
-  
-  session_start();
-  $_SESSION['lang'] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+
+  if (!isset($_SESSION['lang'])) {
+    $_SESSION['lang'] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+  }
 ?>
 
 <!DOCTYPE html>
