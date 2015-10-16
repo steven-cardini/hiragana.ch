@@ -36,13 +36,21 @@
   margin-top: 0;
 }
 
-aside.user-info {
+aside {
   float: right;
   position: relative;
   width: 20%;
+  min-width: 150px;
+  max-width: 200px;
   height: auto;
   margin-bottom: 20px;
   padding: 5px;
+}
+
+aside .form-signin {
+  background-color: rgba(0,0,0,0.1);
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,0.2);
 }
 
 aside.user-info img {
