@@ -14,6 +14,7 @@ define ("EXT_DIR", LIB_DIR."ext/");
 define ("CONTROL_DIR", PHP_DIR."control/");
 define ("CLASSES_DIR", PHP_DIR."classes/");
 define ("INTERFACES_DIR", PHP_DIR."interfaces/");
+define ("FUNCTIONS_DIR", PHP_DIR."functions/");
 define ("TEMPLATE_DIR", "templates/");
 define ("PAGE_DIR", "pages/");
 define ("IMG_DIR", "img/");
@@ -23,6 +24,7 @@ define ("IMG_DIR", "img/");
 require_once(CLASSES_DIR.'filefunctions.class.php');
 FileFunctions::requirePHPFiles (INTERFACES_DIR);
 FileFunctions::requirePHPFiles (CLASSES_DIR);
+FileFunctions::requirePHPFiles (FUNCTIONS_DIR);
 
 // prepare content file for mainContent
 // default page, loaded upon first site call

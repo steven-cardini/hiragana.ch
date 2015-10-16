@@ -11,10 +11,10 @@
         </div>
 
         <?php $nav = array(
-          array('id' => 'home', 'name' => 'Home', 'url' => ROOT_DIR.'home'),
+          array('id' => 'home', 'name' => I18n::t('navigation.home'), 'url' => ROOT_DIR.'home'),
           array('id' => 'hiragana', 'name' => 'Hiragana', 'url' => ROOT_DIR.'hiragana'),
           array('id' => 'katakana', 'name' => 'Katakana', 'url' => ROOT_DIR.'katakana'),
-          array('id' => 'word-trainer', 'name' => 'Word Trainer', 'url' => ROOT_DIR.'word-trainer'),
+          array('id' => 'word-trainer', 'name' => I18n::t('navigation.word_trainer'), 'url' => ROOT_DIR.'word-trainer'),
           array('id' => 'score', 'name' => 'Score', 'url' => ROOT_DIR.'score')
         ); ?>
 
