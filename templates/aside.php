@@ -2,7 +2,7 @@
   if (!isset($_SESSION['user']) || empty($_SESSION['user'])) { // user is logged in
 ?>
 
-<aside>
+<aside class="wrapper-signin">
   <form class="form-signin">
     <h2 class="form-signin-heading">Login</h2>
     <label for="inputEmail" class="sr-only">E-Mail-Adresse</label>
@@ -16,6 +16,9 @@
     </div>
     <button class="btn btn-default btn-block" type="submit">Sign in</button>
   </form>
+  <p>
+    <a href ="<?php echo ROOT_DIR.'register'; ?>">Registrieren</a>
+  </p>
 </aside>
 
 <?php
