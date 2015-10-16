@@ -14,7 +14,7 @@
                     );
 
     static function t($key) {
-      global $lang;
+      $lang = $_SESSION['lang'];
 
       return isset(I18n::$i18n[$key][$lang]) ? I18n::$i18n[$key][$lang]
                                        : "Missing translation [$key]";

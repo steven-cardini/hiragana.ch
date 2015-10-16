@@ -3,6 +3,9 @@
 
   $currentPage = FileFunctions::getCurrentPage();
   $CUSTOM_JS = JavaScriptFunctions::getCustomJSFiles($currentPage);
+  
+  session_start();
+  $_SESSION['lang'] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 ?>
 
 <!DOCTYPE html>
