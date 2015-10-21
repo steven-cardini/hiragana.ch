@@ -7,3 +7,7 @@
   <input type="submit" class="btn btn-default" value="Start" name="sent">
   <label><input type="checkbox" id="kanaMultipleChoiceCheckbox">Multiple Choice</label>
 </form>
+
+<?php
+
+// additional content is added dynamically by kanatrainer/kanaselector.pagecontrol.js

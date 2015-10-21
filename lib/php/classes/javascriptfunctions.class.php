@@ -9,6 +9,11 @@ class JavaScriptFunctions {
       'kanatrainer/hiragana.def.js',
       'kanatrainer/kanaselector.pagecontrol.js',
     ),
+    'katakana' => array(
+      'kanatrainer/katakanahandler.class.js',
+      'kanatrainer/katakana.def.js',
+      'kanatrainer/kanaselector.pagecontrol.js',
+    ),
     'kanatrainer' => array(
       'kanatrainer/hiraganahandler.class.js',
       'kanatrainer/kanatrainer.class.js',
