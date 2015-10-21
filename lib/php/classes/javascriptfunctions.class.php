@@ -16,6 +16,7 @@ class JavaScriptFunctions {
     ),
     'kanatrainer' => array(
       'kanatrainer/hiraganahandler.class.js',
+      'kanatrainer/katakanahandler.class.js',
       'kanatrainer/kanatrainer.class.js',
       'kanatrainer/kanatrainer.pagecontrol.js',
     ),
