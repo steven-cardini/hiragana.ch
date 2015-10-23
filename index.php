@@ -41,10 +41,8 @@
       require_once(TEMPLATE_DIR.'banner.php');
       require_once(TEMPLATE_DIR.'navigation.php');
       require_once(TEMPLATE_DIR.'updates.php');
-      echo '<div class="content-wrapper">';
       require_once(TEMPLATE_DIR.'maincontent.php');
       require_once(TEMPLATE_DIR.'aside.php');
-      echo '</div>';
       require_once(TEMPLATE_DIR.'footer.php');
 
     ?>

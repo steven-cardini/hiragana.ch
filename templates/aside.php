@@ -3,7 +3,7 @@
 
 ?>
 <aside class="wrapper-signin">
-  <a id="signin-switch" href ="#">Login</a>
+  <a id="switch-signin" href ="#">Login</a>
   <form class="form-signin">
     <h2 class="form-signin-heading">Login</h2>
     <label for="inputEmail" class="sr-only">E-Mail-Adresse</label>
