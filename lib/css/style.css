@@ -74,6 +74,10 @@ footer {
   clear: both;
 }
 
+footer ul li:last-child {
+  float: right;
+}
+
 footer a, footer a:visited, footer a:active {
   text-decoration: none!important;
   font-weight: normal;
