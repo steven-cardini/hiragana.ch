@@ -3,6 +3,9 @@
 
 ?>
 <aside class="wrapper-signin">
+  <div class="remove-signin">
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+  </div>
   <a id="switch-signin" href ="#">Login</a>
   <form class="form-signin">
     <h2 class="form-signin-heading">Login</h2>

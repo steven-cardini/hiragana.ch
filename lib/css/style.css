@@ -63,9 +63,19 @@ aside.user-info img {
   height: 120px;
 }
 
-.form-signin {
+aside .form-signin {
   display: none;
   max-width: 200px;
+}
+
+aside .form-signin-heading {
+  margin-top: 0;
+}
+
+aside .remove-signin {
+  display: none;
+  cursor: pointer;
+  text-align: right;
 }
 
 footer {
