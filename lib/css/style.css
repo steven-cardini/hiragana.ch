@@ -25,7 +25,7 @@
 
 .page-content {
   float: left;
-   width: 75%;
+  width: 75%;
   margin-right: 20px;
   margin-top: -2px;
   padding-top: 20px;
@@ -50,7 +50,6 @@ aside {
 aside.wrapper-signin {
   background-color: rgba(0,0,0,0.1);
   padding: 10px;
-  padding-top: 0;
   border: 1px solid rgba(0,0,0,0.2);
 }
 
@@ -62,6 +61,11 @@ aside.wrapper-signin > p {
 aside.user-info img {
   width: 120px;
   height: 120px;
+}
+
+.form-signin {
+  display: none;
+  max-width: 200px;
 }
 
 footer {

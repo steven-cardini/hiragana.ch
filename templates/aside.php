@@ -1,8 +1,9 @@
 <?php
-  if (!isset($_SESSION['user']) || empty($_SESSION['user'])) { // user is logged in
-?>
+  if (!isset($_SESSION['user']) || empty($_SESSION['user'])) { // user is not logged in
 
+?>
 <aside class="wrapper-signin">
+  <a id="signin-switch" href ="#">Login</a>
   <form class="form-signin">
     <h2 class="form-signin-heading">Login</h2>
     <label for="inputEmail" class="sr-only">E-Mail-Adresse</label>
@@ -22,7 +23,7 @@
 </aside>
 
 <?php
-  } else { // user is not logged in
+  } else { // user is logged in
 ?>
 
 <aside class="user-info">
