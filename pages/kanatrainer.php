@@ -1,18 +1,27 @@
 <div class="kana-prompt-wrapper">
 
-  <!-- PROMPT BOX   -->
-  <div class="kana-box kana-prompt-box" id="kana-prompt-box">
-    <p class="kana-prompt-symbol single-kana-font kana-font" id="kanaQuestionText">
-      &lt;&gt;
-    </p>
-  </div>
+  <div class="kana-boxes-wrapper">
+
+    <!-- PROMPT BOX   -->
+    <div class="kana-box kana-prompt-box" id="kana-prompt-box">
+      <p class="kana-prompt-symbol single-kana-font kana-font" id="kanaQuestionText">
+        &lt;&gt;
+      </p>
+    </div>
 
 
-  <!-- FEEDBACK BOX   -->
-  <div class="kana-box kana-feedback-box">
-    <p id="kanaFeedbackText" class="alert"></p>
-    <p id="kanaFeedbackLastAnswer" class="single-kana-font"></p>
-    <p id="kanaFeedbackLastQuestion" class="h1 kana-font"></p>
+    <!-- FEEDBACK BOX   -->
+    <div class="kana-box kana-feedback-box">
+      <p id="kanaFeedbackText" class="alert"></p>
+      <p id="kanaFeedbackLastAnswer" class="single-kana-font"></p>
+      <p id="kanaFeedbackLastQuestion" class="h1 kana-font"></p>
+    </div>
+
+    <!-- STATISTICS BOX   -->
+    <div class="kana-box kana-statistics-box">
+      <p id="kanaStatisticsTryNr" class="alert"></p>
+    </div>
+
   </div>
 
   <!-- MODE SWITCH BUTTON   -->

@@ -123,11 +123,14 @@ footer a:hover {
 }
 
 .kana-prompt-wrapper {
-  width: 310px;
   margin: auto;
 }
 
 .kana-prompt-wrapper > form {
+  display: inline-block;
+}
+
+.kana-boxes-wrapper {
   display: inline-block;
 }
 
@@ -138,13 +141,12 @@ footer a:hover {
   border: 1px solid;
   padding: 5px;
   height: 210px;
-  width: 145px;
+  width: 130px;
   text-align: center;
 }
 
 .kana-prompt-box {
   background: rgba(0, 0, 0, 0.3);
-  margin-right: 10px;
   border-color: #fff;
 }
 
@@ -161,8 +163,14 @@ footer a:hover {
   padding-right: 2px;
 }
 
-.kana-feedback-box {
+.kana-feedback-box, .kana-statistics-box {
   border-color: #aaa;
+  margin-left: 10px;
+}
+
+
+.kana-box > .alert {
+  padding: 5px!important;
 }
 
 .kana-reminder-box {
