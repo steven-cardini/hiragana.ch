@@ -1,26 +1,5 @@
 <h1>Impressum</h1>
 
-<h2>Kontaktadresse</h2>
-<table>
-  <tr>
-    <td>
-      <p>
-        Steven Cardini<br \>
-        Im Gerbelacker 9<br \>
-        3063 Ittigen
-      </p>
-    </td>
-    <td>
-      <p>
-        Raphael Laubscher<br \>
-        Meine Strasse<br \>
-        3000 Bern
-      </p>
-    </td>
-  </tr>
-</table>
-
-
 <h2>Haftungsausschluss</h2>
 <p>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen.</p>
 <p>Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der  Verbindung oder durch technische Störungen entstanden sind, werden  ausgeschlossen.</p>
