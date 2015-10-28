@@ -11,7 +11,7 @@
     <form action="<?php echo ROOT_DIR; ?>kanaresults">
       <input type="submit" class="btn btn-default btn-xs" value="Results" disabled="disabled">
     </form>
-    
+
   </div>
 
 
@@ -27,9 +27,11 @@
 
     <!-- FEEDBACK BOX   -->
     <div class="kana-box kana-feedback-box">
-      <p id="kanaFeedbackText" class="alert"></p>
-      <p id="kanaFeedbackLastAnswer" class="single-kana-font"></p>
-      <p id="kanaFeedbackLastQuestion" class="h1 kana-font"></p>
+      <p id="kana-feedback-title"></p>
+      <p id="kana-feedback-your-input-title"></p>
+      <p id="kana-feedback-your-input-value" class="single-kana-font"></p>
+      <p id="kana-feedback-last-answer-title"></p>
+      <p id="kana-feedback-last-answer-value" class="single-kana-font"></p>
     </div>
 
 
