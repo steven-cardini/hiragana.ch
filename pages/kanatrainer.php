@@ -1,5 +1,20 @@
 <div class="kana-prompt-wrapper">
 
+  <div class="kana-statistics-wrapper">
+    <p id="kanaStatisticsTryNr" class="alert"></p>
+    <p id="kanaStatisticsTotalNr" class="alert"></p>
+
+    <!-- MODE SWITCH BUTTON   -->
+    <button type="button" id="kanaSwitchModeButton" class="btn btn-default btn-xs">Switch Mode</button>
+
+    <!-- RESULTS BUTTON   -->
+    <form action="<?php echo ROOT_DIR; ?>kanaresults">
+      <input type="submit" class="btn btn-default btn-xs" value="Results" disabled="disabled">
+    </form>
+    
+  </div>
+
+
   <div class="kana-boxes-wrapper">
 
     <!-- PROMPT BOX   -->
@@ -17,24 +32,7 @@
       <p id="kanaFeedbackLastQuestion" class="h1 kana-font"></p>
     </div>
 
-    <!-- STATISTICS BOX   -->
-    <div class="kana-box kana-statistics-box">
-      <p id="kanaStatisticsTryNr" class="alert"></p>
-    </div>
 
   </div>
-
-  <!-- MODE SWITCH BUTTON   -->
-  <button type="button" id="kanaSwitchModeButton" class="btn btn-default btn-xs">Switch Mode</button>
-
-  <!-- RESULTS BUTTON   -->
-  <form action="<?php echo ROOT_DIR; ?>kanaresults">
-    <input type="submit" class="btn btn-default btn-xs" value="Results" disabled="disabled">
-  </form>
-
-  <!-- BACK BUTTON   -->
-  <form action="<?php echo ROOT_DIR; ?>">
-    <input type="submit" class="btn btn-default btn-xs" value="Back" disabled="disabled">
-  </form>
 
 </div>
