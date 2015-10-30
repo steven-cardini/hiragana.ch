@@ -47,33 +47,35 @@ if ($displayForm) {
   }
  ?>
 
-<form class="form-horizontal" role="form" method="post" action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+<script src="lib/js/validate_registration.js" type="text/javascript" charset="utf-8"></script>
 
-  <div class="form-group">
+<form class="form-horizontal js-register-form" role="form" method="post" action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+
+  <div class="form-group nickname">
     <label for="nickname" class="control-label col-sm-2">Nickname</label>
-    <div class="col-sm-10">
-      <input id="nickname" name="nickname"  />
+    <div class="col-sm-6">
+      <input class="form-control" id="nickname" name="nickname" />
     </div>
   </div>
 
-  <div class="form-group">
+  <div class="form-group email">
     <label for="email" class="control-label col-sm-2">E-Mail-Adresse</label>
-    <div class="col-sm-10">
-      <input id ="email" type="email" name="email" required="required" />
+    <div class="col-sm-6">
+      <input class="form-control" id ="email" type="email" name="email" required="required"/>
     </div>
   </div>
 
-  <div class="form-group">
+  <div class="form-group pw">
     <label for="pw" class="control-label col-sm-2">Passwort</label>
-    <div class="col-sm-10">
-      <input id="pw" type="password" name="pw" required="required" />
+    <div class="col-sm-6">
+      <input class="form-control" id="pw" type="password" name="pw" required="required" />
     </div>
   </div>
 
-  <div class="form-group">
+  <div class="form-group pw">
     <label for="pw-repeat" class="control-label col-sm-2">Passwort wiederholen</label>
-    <div class="col-sm-10">
-      <input id="pw-repeat" type="password" name="pw-repeat" required="required" />
+    <div class="col-sm-6">
+      <input class="form-control" id="pw-repeat" type="password" name="pw-repeat" required="required" />
     </div>
   </div>
 
