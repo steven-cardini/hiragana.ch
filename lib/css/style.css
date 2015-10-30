@@ -151,7 +151,7 @@ footer a:hover {
   margin-bottom: 10px;
   border: 1px solid;
   padding: 5px;
-  height: 210px;
+  height: 220px;
   width: 140px;
   text-align: center;
 }
@@ -162,8 +162,7 @@ footer a:hover {
 }
 
 .kana-prompt-box .single-kana-font {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 15px 0;
   font-size: 52px;
 }
 
@@ -172,7 +171,7 @@ footer a:hover {
 }
 
 .kana-prompt-box .btn-default {
-  padding: 10px 0;
+  padding: 5px 0;
 }
 
 .kana-prompt-box .row {
@@ -184,13 +183,51 @@ footer a:hover {
   padding-right: 2px;
 }
 
-.kana-feedback-box {
-
+.kana-prompt-box > table tr td:nth-child(even) {
+  text-align: right;
 }
 
-.kana-feedback-box .single-kana-font {
-  margin-top: 5px;
-  font-size: 36px;
+.kana-prompt-box > table tr td:nth-child(odd) {
+  text-align: left;
+}
+
+.kana-prompt-box hr {
+  margin: 5px 2px;
+  border-color: #888;
+}
+
+#kanaAnswerTextfield {
+  margin-top: 25px;
+}
+
+#kanaMultipleChoiceArea {
+  margin-top: -10px;
+}
+
+.kana-feedback-box {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.kana-feedback-box div {
+  display: none;
+}
+
+.kana-feedback-box div:nth-child(odd) {
+  font-weight: bold;
+}
+
+.kana-feedback-box div:nth-child(even) {
+  padding-top: 2px;
+  border-top: 1px solid #555;
+  margin-top: 7px;
+}
+
+.kana-feedback-box .lead {
+  margin: 0;
+}
+
+#kana-feedback-title {
+  margin: 10px 0;
 }
 
 #kanaFeedbackText {
