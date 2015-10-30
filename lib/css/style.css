@@ -219,15 +219,20 @@ footer a:hover {
 .kana-feedback-box div:nth-child(even) {
   padding-top: 2px;
   border-top: 1px solid #555;
-  margin-top: 7px;
+  margin-top: 3px;
 }
 
 .kana-feedback-box .lead {
   margin: 0;
 }
 
+.kana-feedback-box .kana-feedback-symbol.lead {
+  font-size: 30px;
+}
+
 #kana-feedback-title {
-  margin: 10px 0;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 #kanaFeedbackText {
