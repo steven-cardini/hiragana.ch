@@ -47,8 +47,6 @@ if ($displayForm) {
   }
  ?>
 
-<script src="lib/js/validate_registration.js" type="text/javascript" charset="utf-8"></script>
-
 <form class="form-horizontal js-register-form" role="form" method="post" action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
 
   <div class="form-group nickname">

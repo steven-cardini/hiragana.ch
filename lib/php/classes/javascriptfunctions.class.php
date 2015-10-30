@@ -7,19 +7,22 @@ class JavaScriptFunctions {
     'hiragana' => array(
       'kanatrainer/hiraganahandler.class.js',
       'kanatrainer/hiragana.def.js',
-      'kanatrainer/kanaselector.pagecontrol.js',
+      'kanatrainer/kanaselector.pagecontrol.js'
     ),
     'katakana' => array(
       'kanatrainer/katakanahandler.class.js',
       'kanatrainer/katakana.def.js',
-      'kanatrainer/kanaselector.pagecontrol.js',
+      'kanatrainer/kanaselector.pagecontrol.js'
     ),
     'kanatrainer' => array(
       'kanatrainer/hiraganahandler.class.js',
       'kanatrainer/katakanahandler.class.js',
       'kanatrainer/kanatrainer.class.js',
-      'kanatrainer/kanatrainer.pagecontrol.js',
+      'kanatrainer/kanatrainer.pagecontrol.js'
     ),
+    'register' => array(
+      'validate_registration.js'
+    )
   );
 
   static function getCustomJSFiles ($currentPage) {
