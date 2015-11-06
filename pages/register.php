@@ -52,14 +52,14 @@ if ($displayForm) {
   <div class="form-group nickname">
     <label for="nickname" class="control-label col-sm-2">Nickname</label>
     <div class="col-sm-6">
-      <input class="form-control" id="nickname" name="nickname" />
+      <input class="form-control" id="nickname" name="nickname" aria-describedby="helpNickname"/>
     </div>
   </div>
 
   <div class="form-group email">
     <label for="email" class="control-label col-sm-2">E-Mail-Adresse</label>
     <div class="col-sm-6">
-      <input class="form-control" id ="email" type="email" name="email" required="required"/>
+      <input class="form-control" id ="email" type="email" name="email" required="required" aria-describedby="helpEmail"/>
     </div>
   </div>
 
@@ -73,7 +73,7 @@ if ($displayForm) {
   <div class="form-group pw">
     <label for="pw-repeat" class="control-label col-sm-2">Passwort wiederholen</label>
     <div class="col-sm-6">
-      <input class="form-control" id="pw-repeat" type="password" name="pw-repeat" required="required" />
+      <input class="form-control" id="pw-repeat" type="password" name="pw-repeat" required="required" aria-describedby="helpPW"/>
     </div>
   </div>
 
