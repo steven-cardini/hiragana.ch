@@ -2,6 +2,8 @@
 
   class I18n {
 
+    private static $language;
+
     private static $i18n = array(
                       'navigation.home' => array(
                         'de' => 'Startseite',
@@ -14,10 +16,17 @@
                     );
 
     static function t($key) {
-      $lang = $_COOKIE['lang'];
-
-      return isset(I18n::$i18n[$key][$lang]) ? I18n::$i18n[$key][$lang]
+      return isset(I18n::$i18n[$key][self::$language]) ? I18n::$i18n[$key][self::$language]
                                        : "Missing translation [$key]";
+    }
+
+    static function initialize() {
+      if(!isset($_COOKIE['lang'])) {
+        self::$language = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+        setcookie('lang', self::$language);
+      } else {
+        self::$language = $_COOKIE['lang'];
+      }
     }
   }
 

@@ -1,12 +1,12 @@
 <?php
+  // include all relevant PHP files
   require_once('lib/php/control/include.routine.php');
 
   $currentPage = FileFunctions::getCurrentPage();
-  $CUSTOM_JS = JavaScriptFunctions::getCustomJSFiles($currentPage);
+  $customJS = JavaScriptFunctions::getCustomJSFiles($currentPage);
+  // set content language
+  I18n::initialize();
 
-  if(!isset($_COOKIE['lang'])) {
-    setcookie('lang', substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
-  }
 ?>
 
 <!DOCTYPE html>
@@ -48,8 +48,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
   <script src="<?php echo ROOT_DIR.JS_DIR; ?>application.js" type="text/javascript"></script>
   <?php
-    foreach ($CUSTOM_JS as $jsFile) {
-      echo '<script src="'.ROOT_DIR.JS_DIR.$jsFile.'"></script>';
+    foreach ($customJS as $JSFile) {
+      echo '<script src="'.ROOT_DIR.JS_DIR.$JSFile.'"></script>';
     }
    ?>
 </body>
