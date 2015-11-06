@@ -37,7 +37,7 @@ class User {
   // static functions
 
   public static function getUserByNickname ($nickname) {
-    $sql = "SELECT * FROM user WHERE nickname = $nickname";
+    $sql = "SELECT * FROM user WHERE nickname = '$nickname'";
     $res = DB::doQuery($sql);
 
     if (!$res) return null;
@@ -47,27 +47,38 @@ class User {
   public static function createUser ($nickname, $email, $password) {
 
     // first check if user nickname already exists
-    $sql = "SELECT nickname FROM user WHERE nickname = $nickname";
+    $sql = "SELECT nickname FROM user WHERE nickname = '$nickname'";
     $res = DB::doQuery($sql);
-    if (isset($res) && $res!=null)
+    if (mysqli_num_rows($res)>1) {
+      FileFunctions::log("User already exists in DB");
       return false;
+    }
+
 
     // create new user
     $pwdData = Auth::createLogin($password);
+    $hash=$pwdData['hash'];
+    $salt=$pwdData['salt'];
     $timestamp = date('Y-m-d H:i:s');
+    FileFunctions::log("Nickname=$nickname / Email=$email / Hash=$hash / Salt=$salt / Timestamp=$timestamp");
+
     $sql = sprintf("INSERT INTO user
-                    VALUES %s, %s, %s, %s, %s",
+                    VALUES ('%s', '%s', '%s', '%s', '%s')",
                     $nickname, $email, $pwdData['hash'], $pwdData['salt'], $timestamp);
     $res = DB::doQuery($sql);
-    if (!isset($res) || $res==null)
+    if (!isset($res) || $res==null) {
+      $mysqlError = mysql_error();
+      FileFunctions::log("User could not be created in DB [$mysqlError]");
       return false;
+    }
+
 
     // create user object and return it
     return new User ($nickname, $email);
   }
 
   public static function deleteUser ($nickname) {
-    $sql = "DELETE FROM user WHERE nickname = $nickname";
+    $sql = "DELETE FROM user WHERE nickname = '$nickname'";
     $res = DB::doQuery($sql);
 
     return $res != null;

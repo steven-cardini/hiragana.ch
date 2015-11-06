@@ -17,15 +17,24 @@
       $error = 'Please provide two identical passwords.';
     }
 
-    //TODO: check if nickname and e-mail-address are unique
+    // check if nickname is unique
+    $test = User::getUserByNickname($nickname);
+    if (isset($test)&&$test!=null) {
+      $error = "A user with this nickname already exists.";
+    }
 
     //TODO: check if e-mail-address is valid
 
     // validation is successful
     if (!isset($error)) {
       $displayForm = false;
-      $pw = md5($pw);
-      $message = "Thank you for your registration!<br \> Nickname = $nickname<br \> E-Mail = $email<br \> Password hash = $pw";
+      $user = User::createUser($nickname, $email, $pw);
+
+      if ($user==false)
+        $message = "There was a problem creating the user";
+      else
+        $message = "Thank you for your registration!<br \> Nickname = $nickname<br \> E-Mail = $email";
+
       echo $message;
     }
 

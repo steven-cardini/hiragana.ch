@@ -2,8 +2,8 @@
 
 class DB extends mysqli {
   const HOST    = "localhost";
-  const USER    = "";
-  const PW      = "";
+  const USER    = "hiragana_tech";
+  const PW      = "pVqRQMKSWphPtqSu";
   const DB_NAME = "hiragana";
 
   private static $instance;
@@ -15,8 +15,10 @@ class DB extends mysqli {
   public static function getInstance() {
     if (!self::$instance) {
       @self::$instance = new DB();
-      if(self::$instance->connect_errno > 0)
+      if(self::$instance->connect_errno > 0) {
+        FileFunctions::log("Unable to connect to db");
         die("Unable to connect to database [".self::$instance->connect_error."]");
+      }
     }
     return self::$instance;
   }
