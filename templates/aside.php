@@ -7,12 +7,12 @@
     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
   </div>
   <a id="switch-signin" href ="#">Login</a>
-  <form class="form-signin">
+  <form class="form-signin" action="index.php" method="post">
     <h2 class="form-signin-heading">Login</h2>
     <label for="inputEmail" class="sr-only">E-Mail-Adresse</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="E-Mail-Adresse" required="" autofocus="">
+    <input name="email" type="email" id="inputEmail" class="form-control" placeholder="E-Mail-Adresse" required="" autofocus="">
     <label for="inputPassword" class="sr-only">Passwort</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+    <input name="pw" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
     <div class="checkbox">
       <label>
         <input type="checkbox" value="remember-me"> Remember me
@@ -30,8 +30,9 @@
 ?>
 
 <aside class="user-info">
-  Welcome du User
+  Welcome du User (<?php echo $_SESSION['user']; ?>)
   <img src="https://avatars3.githubusercontent.com/u/22323?v=3&s=460" />
+  <a href="<?php echo ROOT_DIR; ?>api/logout.php">Log out</a>
 </aside>
 
 <?php
