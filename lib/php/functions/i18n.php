@@ -14,12 +14,11 @@
                     );
 
     static function t($key) {
-      $lang = $_SESSION['lang'];
+      $lang = $_COOKIE['lang'];
 
       return isset(I18n::$i18n[$key][$lang]) ? I18n::$i18n[$key][$lang]
                                        : "Missing translation [$key]";
     }
-
   }
 
 ?>
