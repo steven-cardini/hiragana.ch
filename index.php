@@ -6,8 +6,8 @@
   $currentPage = FileFunctions::getCurrentPage();
   $CUSTOM_JS = JavaScriptFunctions::getCustomJSFiles($currentPage);
 
-  if (!isset($_SESSION['lang'])) {
-    $_SESSION['lang'] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+  if(!isset($_COOKIE['lang'])) {
+    setcookie('lang', substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
   }
 ?>
 
