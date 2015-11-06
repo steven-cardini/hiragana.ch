@@ -2,33 +2,34 @@
 
 class User {
 
-  private $nickname;
-  private $email;
-  private $registered;
+  private $email;       // unique
+  private $nickname;    // unique
 
   // private constructor - obejcts can be retrieved via static methods below
-  private function __construct ($nickname, $email) {
-    $this->nickname = $nickname;
-    $this->email = $email;
-  }
-
-  public function getNickname () {
-    return $this->nickname;
+  private function __construct ($email, $nickname) {
+    if (!$this->email) {
+      $this->email = $email;
+    }
+    if (!$this->nickname) {
+      $this->nickname = $nickname;
+    }
   }
 
   public function getEmail () {
     return $this->email;
   }
 
-  public function setEmail ($email) {
-    $this->email = $email;
+  public function getNickname () {
+    return $this->nickname;
   }
 
-  public function save () {
+  public function setNickname ($nickname) {
+    $this->nickname = $nickname;
+
     $sql = sprintf (" UPDATE user
-                      SET email='%s'
-                      WHERE nickname='%s'",
-                      $this->email, $this->nickname);
+                      SET nickname='%s'
+                      WHERE email='%s'",
+                      $this->nickname, $this->email);
     $res = DB::doQuery($sql);
     return $res != null;
   }
@@ -36,24 +37,29 @@ class User {
 
   // static functions
 
-  public static function getUserByNickname ($nickname) {
-    $sql = "SELECT * FROM user WHERE nickname = '$nickname'";
+  public static function getUserByEmail ($email) {
+    $sql = "SELECT email, nickname FROM user WHERE email = '$email'";
     $res = DB::doQuery($sql);
 
-    if (!$res) return null;
-    return $res->fetch_object(get_class());
+    if ($res==null || $res->num_rows == 0) {
+      return null;
+    }
+
+    return $res->fetch_object(get_class(), array('email', 'nickname'));
+  }
+
+  public static function getUserByNickname ($nickname) {
+    $sql = "SELECT email, nickname FROM user WHERE nickname = '$nickname'";
+    $res = DB::doQuery($sql);
+
+    if ($res==null || $res->num_rows == 0) {
+      return null;
+    }
+
+    return $res->fetch_object(get_class(), array('email', 'nickname'));
   }
 
   public static function createUser ($nickname, $email, $password) {
-
-    // first check if user nickname already exists
-    $sql = "SELECT nickname FROM user WHERE nickname = '$nickname'";
-    $res = DB::doQuery($sql);
-    if (mysqli_num_rows($res)>1) {
-      FileFunctions::log("User already exists in DB");
-      return false;
-    }
-
 
     // create new user
     $pwdData = Auth::createLogin($password);
@@ -64,7 +70,7 @@ class User {
 
     $sql = sprintf("INSERT INTO user
                     VALUES ('%s', '%s', '%s', '%s', '%s')",
-                    $nickname, $email, $pwdData['hash'], $pwdData['salt'], $timestamp);
+                    $email, $nickname, $pwdData['hash'], $pwdData['salt'], $timestamp);
     $res = DB::doQuery($sql);
     if (!isset($res) || $res==null) {
       $mysqlError = mysql_error();
@@ -72,18 +78,15 @@ class User {
       return false;
     }
 
-
-    // create user object and return it
-    return new User ($nickname, $email);
+    return true;
   }
 
-  public static function deleteUser ($nickname) {
-    $sql = "DELETE FROM user WHERE nickname = '$nickname'";
+  public static function deleteUser ($email) {
+    $sql = "DELETE FROM user WHERE email = '$email'";
     $res = DB::doQuery($sql);
 
     return $res != null;
   }
-
 
 
 }

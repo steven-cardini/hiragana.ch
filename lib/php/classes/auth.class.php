@@ -3,13 +3,15 @@
 class Auth {
 
   // used by Login page
-  public static function checkLogin ($nickname, $password) {
+  public static function checkLogin ($email, $password) {
 
-    $sql = sprintf("SELECT * FROM user WHERE nickname='%s'",
-                    $nickname);
+    $sql = sprintf("SELECT * FROM user WHERE email='%s'",
+                    $email);
     $res = DB::doQuery($sql);
-    if ($res==null || $res->num_rows == 0)
+    if ($res==null || $res->num_rows == 0) {
+      FileFunctions::log("No user with email $email was found in DB");
       return false;
+    }
 
     $row = $res->fetch_assoc();
     $hash = $row['pwd_hash'];
@@ -18,6 +20,7 @@ class Auth {
     if (self::getHash($password,$salt)===$hash)
       return true;
     else {
+      FileFunctions::log("Password not correct");
       return false;
     }
 

@@ -27,5 +27,9 @@ class DB extends mysqli {
     return self::getInstance()->query($sql);
   }
 
+  public static function escapeString($str) {
+    return self::getInstance()->escape_string($str);
+  }
+
 
 }

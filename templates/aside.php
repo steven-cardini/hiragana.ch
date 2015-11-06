@@ -7,10 +7,10 @@
     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
   </div>
   <a id="switch-signin" href ="#">Login</a>
-  <form class="form-signin" action="index.php" method="post">
+  <form class="form-signin" action="<?php echo ROOT_DIR; ?>api/login.php" method="post">
     <h2 class="form-signin-heading">Login</h2>
     <label for="inputEmail" class="sr-only">E-Mail-Adresse</label>
-    <input name="nickname" type="text" id="inputEmail" class="form-control" placeholder="Nickname" required="" autofocus="">
+    <input name="email" type="email" id="inputEmail" class="form-control" placeholder="E-Mail-Adresse" required="" autofocus="">
     <label for="inputPassword" class="sr-only">Passwort</label>
     <input name="pw" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
     <div class="checkbox">

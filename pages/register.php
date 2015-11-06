@@ -4,30 +4,57 @@
 
   $displayForm = true;
 
+  // FORM WAS SUBMITTED
   if (isset($_POST['submitted'])) {
+
+    // prevent HTML and SQL injection
     $nickname = htmlspecialchars($_POST['nickname']);
     $email = htmlspecialchars($_POST['email']);
-    $pw = htmlspecialchars($_POST['pw']);
-    $pw_repeat = htmlspecialchars($_POST['pw-repeat']);
+    $nickname = DB::escapeString($nickname);
+    $email = DB::escapeString($email);
 
-    // validate user input on server side
-    if (empty($nickname) || empty($email) || empty($pw) || empty($pw_repeat)) { // check if compulsory fields are not empty
-      $error = 'Please fill out all fields.';
-    } elseif ($pw !== $pw_repeat) { // check if passwords match
-      $error = 'Please provide two identical passwords.';
+    $pw = $_POST['pw'];
+    $pw_repeat = $_POST['pw-repeat'];
+
+    // validate user input server-side
+    try {
+
+      // check if user filled out all fields
+      if (empty($nickname) || empty($email) || empty($pw) || empty($pw_repeat)) { // check if compulsory fields are not empty
+        throw new Exception ("Please fill out all fields.");
+      }
+
+      // check if passwords match
+      if ($pw !== $pw_repeat) {
+        throw new Exception ("Please provide two identical passwords.");
+      }
+
+      // check if nickname is unique
+      $test = User::getUserByNickname($nickname);
+      if (isset($test) && $test!=null) {
+        throw new Exception ("A user with this nickname already exists.");
+      }
+
+      // check if e-mail is unique
+      $test = User::getUserByEmail($email);
+      if (isset($test) && $test!=null) {
+        throw new Exception ("Your e-mail address is already registered.");
+      }
+
+      // check if e-mail address is valid
+      if (!preg_match("/^\S+@\S+\.\S+$/", $email)) {
+        throw new Exception ("Please provide a valid e-mail address.");
+      }
+
+    } catch (Exception $e) {
+      $errorMessage = $e->getMessage();
     }
 
-    // check if nickname is unique
-    $test = User::getUserByNickname($nickname);
-    if (isset($test)&&$test!=null) {
-      $error = "A user with this nickname already exists.";
-    }
-
-    //TODO: check if e-mail-address is valid
 
     // validation is successful
-    if (!isset($error)) {
+    if (!isset($errorMessage)) {
       $displayForm = false;
+      // perform the actual user registration (store user to DB)
       $user = User::createUser($nickname, $email, $pw);
 
       if ($user==false)
@@ -40,10 +67,9 @@
 
   }
 
-
+// DISPLAY FORM
 if ($displayForm) {
  ?>
-
 
 <p>
   Bitte füllen Sie die Angaben unten aus, um sich zu registrieren.
@@ -51,8 +77,8 @@ if ($displayForm) {
 
 <?php
 // display server side error if present
-  if (isset($error)) {
-    echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
+  if (isset($errorMessage)) {
+    echo '<div class="alert alert-danger" role="alert">'.$errorMessage.'</div>';
   }
  ?>
 
