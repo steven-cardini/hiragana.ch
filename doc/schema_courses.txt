@@ -1,0 +1,4 @@
+user (NICKNAME, email, pwd, timestamp_registered)
+lesson (COURSE, NR, points, timestamp_added)
+exercise (QUESTION, answer, course, nr)
+user_lesson (NICKNAME, COURSE, NR, timestamp_started, timestamp_completed) 
