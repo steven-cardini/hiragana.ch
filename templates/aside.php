@@ -10,7 +10,7 @@
   <form class="form-signin" action="index.php" method="post">
     <h2 class="form-signin-heading">Login</h2>
     <label for="inputEmail" class="sr-only">E-Mail-Adresse</label>
-    <input name="email" type="email" id="inputEmail" class="form-control" placeholder="E-Mail-Adresse" required="" autofocus="">
+    <input name="nickname" type="text" id="inputEmail" class="form-control" placeholder="Nickname" required="" autofocus="">
     <label for="inputPassword" class="sr-only">Passwort</label>
     <input name="pw" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
     <div class="checkbox">
