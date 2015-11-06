@@ -1,6 +1,4 @@
 <?php
-  session_start();
-
   require_once('lib/php/control/include.routine.php');
 
   $currentPage = FileFunctions::getCurrentPage();
