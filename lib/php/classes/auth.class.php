@@ -9,7 +9,6 @@ class Auth {
                     $email);
     $res = DB::doQuery($sql);
     if ($res==null || $res->num_rows == 0) {
-      FileFunctions::log("No user with email $email was found in DB");
       return false;
     }
 
@@ -17,10 +16,9 @@ class Auth {
     $hash = $row['pwd_hash'];
     $salt = $row['pwd_salt'];
 
-    if (self::getHash($password,$salt)===$hash)
+    if (self::getHash($password,$salt)===$hash) {
       return true;
-    else {
-      FileFunctions::log("Password not correct");
+    } else {
       return false;
     }
 

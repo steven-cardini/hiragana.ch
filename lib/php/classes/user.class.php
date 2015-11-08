@@ -74,15 +74,12 @@ class User {
     $hash=$pwdData['hash'];
     $salt=$pwdData['salt'];
     $timestamp = date('Y-m-d H:i:s');
-    FileFunctions::log("Nickname=$nickname / Email=$email / Hash=$hash / Salt=$salt / Timestamp=$timestamp");
 
     $sql = sprintf("INSERT INTO user
                     VALUES ('%s', '%s', '%s', '%s', '%s')",
                     $email, $nickname, $pwdData['hash'], $pwdData['salt'], $timestamp);
     $res = DB::doQuery($sql);
     if (!isset($res) || $res==null) {
-      $mysqlError = mysql_error();
-      FileFunctions::log("User could not be created in DB [$mysqlError]");
       return false;
     }
 
