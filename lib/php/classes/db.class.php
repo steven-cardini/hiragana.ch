@@ -16,7 +16,6 @@ class DB extends mysqli {
     if (!self::$instance) {
       @self::$instance = new DB();
       if(self::$instance->connect_errno > 0) {
-        FileFunctions::log("Unable to connect to db");
         die("Unable to connect to database [".self::$instance->connect_error."]");
       }
     }
@@ -25,6 +24,10 @@ class DB extends mysqli {
 
   public static function doQuery($sql) {
     return self::getInstance()->query($sql);
+  }
+
+  public static function escapeString($str) {
+    return self::getInstance()->escape_string($str);
   }
 
 

@@ -2,32 +2,63 @@
 
 <?php
 
+  $FIELD_NICKNAME = 'nickname';
+  $FIELD_EMAIL    = 'email';
+  $FIELD_PWD      = 'pwd';
+  $FIELD_PWD2     = 'pwd-repeat';
+
   $displayForm = true;
 
+  // FORM WAS SUBMITTED
   if (isset($_POST['submitted'])) {
-    $nickname = htmlspecialchars($_POST['nickname']);
-    $email = htmlspecialchars($_POST['email']);
-    $pw = htmlspecialchars($_POST['pw']);
-    $pw_repeat = htmlspecialchars($_POST['pw-repeat']);
 
-    // validate user input on server side
-    if (empty($nickname) || empty($email) || empty($pw) || empty($pw_repeat)) { // check if compulsory fields are not empty
-      $error = 'Please fill out all fields.';
-    } elseif ($pw !== $pw_repeat) { // check if passwords match
-      $error = 'Please provide two identical passwords.';
+    // validate user input server-side
+    try {
+
+      // ensure that user filled out all compulsory fields
+      if (empty($_POST[$FIELD_NICKNAME]) || empty($_POST[$FIELD_EMAIL]) || empty($_POST[$FIELD_PWD]) || empty($_POST[$FIELD_PWD2])) {
+        throw new Exception ("Please fill out all fields.");
+      }
+
+      // prevent HTML and SQL injection
+      $nickname = htmlspecialchars($_POST[$FIELD_NICKNAME]);
+      $email = htmlspecialchars($_POST[$FIELD_EMAIL]);
+      $nickname = DB::escapeString($nickname);
+      $email = DB::escapeString($email);
+      $email = strtolower($email);
+
+      $pw = $_POST[$FIELD_PWD];
+      $pw_repeat = $_POST[$FIELD_PWD2];
+
+      // check if passwords match
+      if ($pw !== $pw_repeat) {
+        throw new Exception ("Please provide two identical passwords.");
+      }
+
+      // check if nickname is unique
+      if (User::nicknameIsRegistered($nickname)) {
+        throw new Exception ("A user with this nickname already exists.");
+      }
+
+      // check if e-mail is unique
+      if (User::emailIsRegistered($email)) {
+        throw new Exception ("Your e-mail address is already registered.");
+      }
+
+      // check if e-mail address is valid
+      if (!preg_match("/^\S+@\S+\.\S+$/", $email)) {
+        throw new Exception ("Please provide a valid e-mail address.");
+      }
+
+    } catch (Exception $e) {
+      $errorMessage = $e->getMessage();
     }
 
-    // check if nickname is unique
-    $test = User::getUserByNickname($nickname);
-    if (isset($test)&&$test!=null) {
-      $error = "A user with this nickname already exists.";
-    }
-
-    //TODO: check if e-mail-address is valid
 
     // validation is successful
-    if (!isset($error)) {
+    if (!isset($errorMessage)) {
       $displayForm = false;
+      // perform the actual user registration (store user to DB)
       $user = User::createUser($nickname, $email, $pw);
 
       if ($user==false)
@@ -40,49 +71,53 @@
 
   }
 
-
+// DISPLAY FORM
 if ($displayForm) {
  ?>
-
 
 <p>
   Bitte füllen Sie die Angaben unten aus, um sich zu registrieren.
 </p>
 
 <?php
-// display server side error if present
-  if (isset($error)) {
-    echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
+  // display server side error if present
+  if (isset($errorMessage)) {
+    echo '<div class="alert alert-danger" role="alert">'.$errorMessage.'</div>';
   }
+
+  // pre-fill text fields if possible
+  $nickname = isset($nickname) ? $nickname : "";
+  $email = isset($email) ? $email : "";
+
  ?>
 
 <form class="form-horizontal js-register-form" role="form" method="post" action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
 
   <div class="form-group nickname">
-    <label for="nickname" class="control-label col-sm-2">Nickname</label>
+    <label for="<?php echo $FIELD_NICKNAME; ?>" class="control-label col-sm-2">Nickname</label>
     <div class="col-sm-6">
-      <input class="form-control" id="nickname" name="nickname" aria-describedby="helpNickname"/>
+      <input class="form-control" id="<?php echo $FIELD_NICKNAME; ?>" name="<?php echo $FIELD_NICKNAME; ?>" required="required" value="<?php echo $nickname; ?>" aria-describedby="helpNickname"/>
     </div>
   </div>
 
   <div class="form-group email">
-    <label for="email" class="control-label col-sm-2">E-Mail-Adresse</label>
+    <label for="<?php echo $FIELD_EMAIL; ?>" class="control-label col-sm-2">E-Mail-Adresse</label>
     <div class="col-sm-6">
-      <input class="form-control" id ="email" type="email" name="email" required="required" aria-describedby="helpEmail"/>
+      <input class="form-control" id ="<?php echo $FIELD_EMAIL; ?>" type="email" name="<?php echo $FIELD_EMAIL; ?>" required="required" value="<?php echo $email; ?>" aria-describedby="helpEmail"/>
     </div>
   </div>
 
   <div class="form-group pw">
-    <label for="pw" class="control-label col-sm-2">Passwort</label>
+    <label for="<?php echo $FIELD_PWD; ?>" class="control-label col-sm-2">Passwort</label>
     <div class="col-sm-6">
-      <input class="form-control" id="pw" type="password" name="pw" required="required" />
+      <input class="form-control" id="<?php echo $FIELD_PWD; ?>" type="password" name="<?php echo $FIELD_PWD; ?>" required="required" />
     </div>
   </div>
 
   <div class="form-group pw">
-    <label for="pw-repeat" class="control-label col-sm-2">Passwort wiederholen</label>
+    <label for="<?php echo $FIELD_PWD2; ?>" class="control-label col-sm-2">Passwort wiederholen</label>
     <div class="col-sm-6">
-      <input class="form-control" id="pw-repeat" type="password" name="pw-repeat" required="required" aria-describedby="helpPW"/>
+      <input class="form-control" id="<?php echo $FIELD_PWD2; ?>" type="password" name="<?php echo $FIELD_PWD2; ?>" required="required" aria-describedby="helpPW"/>
     </div>
   </div>
 
