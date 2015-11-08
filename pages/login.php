@@ -21,6 +21,7 @@ if (isset($_POST['submitted'])) {
     // prevent HTML and SQL injection
     $email = htmlspecialchars($_POST[$FIELD_EMAIL]);
     $email = DB::escapeString($email);
+    $email = strtolower($email);
 
     $pw = $_POST[$FIELD_PWD];
 

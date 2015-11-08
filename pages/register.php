@@ -25,6 +25,7 @@
       $email = htmlspecialchars($_POST[$FIELD_EMAIL]);
       $nickname = DB::escapeString($nickname);
       $email = DB::escapeString($email);
+      $email = strtolower($email);
 
       $pw = $_POST[$FIELD_PWD];
       $pw_repeat = $_POST[$FIELD_PWD2];
