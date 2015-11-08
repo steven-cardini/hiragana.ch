@@ -2,6 +2,8 @@
   // include all relevant PHP files
   require_once('lib/php/control/include.routine.php');
 
+  session_start();
+
   $currentPage = FileFunctions::getCurrentPage();
   $customJS = JavaScriptFunctions::getCustomJSFiles($currentPage);
   // set content language

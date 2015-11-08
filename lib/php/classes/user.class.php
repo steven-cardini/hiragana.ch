@@ -59,6 +59,14 @@ class User {
     return $res->fetch_object(get_class(), array('email', 'nickname'));
   }
 
+  public static function emailIsRegistered ($email) {
+    return self::getUserByEmail($email) !== null;
+  }
+
+  public static function nicknameIsRegistered ($nickname) {
+    return self::getUserByNickname($nickname) !== null;
+  }
+
   public static function createUser ($nickname, $email, $password) {
 
     // create new user
