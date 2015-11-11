@@ -24,21 +24,25 @@
               <li id="<?php echo $nav[$i]['id'] ?>"><a href="<?php echo $nav[$i]['url'] ?>"><?php echo $nav[$i]['name'] ?></a></li>
             <?php endfor; ?>
           </ul>
+          <?php if (Auth::isLoggedIn()) { ?>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Login</a></li>
-            <?php if (true): ?>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User-Settings <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </li>
-            <?php endif; ?>
+
+
+            <?php if (Auth::isAdmin()) { // ADMIN MENU ?>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="<?php echo ROOT_DIR; ?>useradmin">Users</a></li>
+                <li><a href="<?php echo ROOT_DIR; ?>courseadmin">Courses</a></li>
+              </ul>
+            </li>
+            <?php } // end if isAdmin ?>
+
+            <li><a href="<?php echo ROOT_DIR; ?>usersettings">User Settings</a></li>
+            <li><a href="<?php echo ROOT_DIR; ?>api/logout.php">Logout</a></li>
           </ul>
+          <?php } // end if isLoggedIn ?>
+
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>

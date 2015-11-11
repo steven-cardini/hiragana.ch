@@ -2,6 +2,14 @@
 
 class Auth {
 
+  public static function isLoggedIn () {
+    return isset($_SESSION['user']) && !empty($_SESSION['user']);
+  }
+
+  public static function isAdmin () {
+    return self::isLoggedIn() && $_SESSION['user']->isAdmin();
+  }
+
   // used by Login page
   public static function checkLogin ($email, $password) {
 

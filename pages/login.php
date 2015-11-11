@@ -45,8 +45,7 @@ if (isset($_POST['submitted'])) {
       $message = "There was a problem with your login. Please try again.";
     } else {
       $_SESSION['user'] = $user;
-      $nickname = $user->getNickname();
-      $message = "Welcome back to hiragana.ch $nickname!";
+      header("location:index.php");
     }
 
     echo $message;

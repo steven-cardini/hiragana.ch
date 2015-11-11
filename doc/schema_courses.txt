@@ -1,4 +1,23 @@
-user (NICKNAME, email, pwd, timestamp_registered)
-lesson (COURSE, NR, points, timestamp_added)
-exercise (QUESTION, answer, course, nr)
-user_lesson (NICKNAME, COURSE, NR, timestamp_started, timestamp_completed) 
+user (EMAIL, nickname, pwd_hash, pwd_salt, t_registered)
+	primary key (EMAIL)
+
+course (COURSE_ID, name)
+	primary key (COURSE_ID)
+
+lesson (COURSE_ID, NR, points, t_added)
+	primary key (COURSE_ID, NR)
+	foreign key (COURSE_ID) references course
+
+exercise (EXERCISE_ID, course_id, nr, question, answer)
+	primary key (EXERCISE_ID)
+	foreign key (course_id, nr) references lesson
+
+user_lesson (EMAIL, COURSE_ID, NR, T_STARTED, t_completed)
+	primary key (EMAIL, COURSE_ID, NR, T_STARTED)
+	foreign key (EMAIL) references user
+	foreign key (COURSE_ID, NR) references lesson
+
+user_exercise (EMAIL, EXERCISE_ID, T_ANSWERED, correct)
+	primary key (EMAIL, EXERCISE_ID, T_ANSWERED)
+	foreign key (EMAIL) references user
+	foreign key (EXERCISE_ID) references exercise
