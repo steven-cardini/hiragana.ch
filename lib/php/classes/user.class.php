@@ -4,15 +4,19 @@ class User {
 
   private $email;       // unique
   private $nickname;    // unique
+  private $adminRights; // int (0 or 1)
+  private $registered;  // String in timestamp format
 
-  // private constructor - obejcts can be retrieved via static methods below
-  private function __construct ($email, $nickname) {
-    if (!$this->email) {
+  // private constructor - obejcts can be exclusively retrieved via static methods below
+  private function __construct ($email, $nickname, $adminRights, $registered) {
+    if (!isset($this->email))
       $this->email = $email;
-    }
-    if (!$this->nickname) {
+    if (!isset($this->nickname))
       $this->nickname = $nickname;
-    }
+    if (!isset($this->adminRights))
+      $this->adminRights = (int) $adminRights;
+    if (!isset($this->registered))
+      $this->registered = $registered;
   }
 
   public function getEmail () {
@@ -34,29 +38,37 @@ class User {
     return $res != null;
   }
 
+  public function isAdmin () {
+    return (bool) $this->adminRights === true;
+  }
+
+  public function timestampRegistered () {
+    return $this->registered;
+  }
+
 
   // static functions
 
   public static function getUserByEmail ($email) {
-    $sql = "SELECT email, nickname FROM user WHERE email = '$email'";
+    $sql = "SELECT email, nickname, admin_rights AS adminRights, t_registered AS registered FROM user WHERE email = '$email'";
     $res = DB::doQuery($sql);
 
     if ($res==null || $res->num_rows == 0) {
       return null;
     }
 
-    return $res->fetch_object(get_class(), array('email', 'nickname'));
+    return $res->fetch_object(get_class(), array('email@address.com', 'nickname', '0', date('Y-m-d H:i:s')));
   }
 
   public static function getUserByNickname ($nickname) {
-    $sql = "SELECT email, nickname FROM user WHERE nickname = '$nickname'";
+    $sql = "SELECT email, nickname, admin_rights AS adminRights, t_registered AS registered FROM user WHERE nickname = '$nickname'";
     $res = DB::doQuery($sql);
 
     if ($res==null || $res->num_rows == 0) {
       return null;
     }
 
-    return $res->fetch_object(get_class(), array('email', 'nickname'));
+    return $res->fetch_object(get_class(), array('email@address.com', 'nickname', '0', date('Y-m-d H:i:s')));
   }
 
   public static function emailIsRegistered ($email) {
@@ -76,14 +88,30 @@ class User {
     $timestamp = date('Y-m-d H:i:s');
 
     $sql = sprintf("INSERT INTO user
-                    VALUES ('%s', '%s', '%s', '%s', '%s')",
-                    $email, $nickname, $pwdData['hash'], $pwdData['salt'], $timestamp);
+                    VALUES ('%s', '%s', '%s', '%s', '%s', '%d')",
+                    $email, $nickname, $pwdData['hash'], $pwdData['salt'], $timestamp, 0);
     $res = DB::doQuery($sql);
     if (!isset($res) || $res==null) {
       return false;
     }
 
     return true;
+  }
+
+  public static function getMultipleUsers ($amount, $offset) {
+    $sql = "SELECT email, nickname, admin_rights AS adminRights, t_registered AS registered FROM user ORDER BY nickname ASC LIMIT $amount OFFSET $offset";
+    $res = DB::doQuery($sql);
+
+    if ($res==null || $res->num_rows == 0) {
+      return null;
+    }
+
+    $list=array();
+    while ($obj = $res->fetch_object(get_class(),array('email@address.com', 'nickname', '0', date('Y-m-d H:i:s')))) {
+      $list[] = $obj;
+    }
+
+    return $list;
   }
 
   public static function deleteUser ($email) {

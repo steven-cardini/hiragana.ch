@@ -1,5 +1,5 @@
 <?php
-  if (!isset($_SESSION['user']) || empty($_SESSION['user'])) { // user is not logged in
+  if (!Auth::isLoggedIn()) { // user is not logged in
 
 ?>
 <aside class="wrapper-signin">
@@ -32,7 +32,6 @@
 <aside class="user-info">
   Welcome <?php echo $_SESSION['user']->getNickname(); ?>
   <img src="https://avatars3.githubusercontent.com/u/22323?v=3&s=460" />
-  <a href="<?php echo ROOT_DIR; ?>api/logout.php">Log out</a>
 </aside>
 
 <?php
