@@ -4,17 +4,17 @@ class User {
 
   private $email;       // unique
   private $nickname;    // unique
-  private $adminRights; // int (0 or 1)
+  private $isAdmin; // int (0 or 1)
   private $registered;  // String in timestamp format
 
   // private constructor - obejcts can be exclusively retrieved via static methods below
-  private function __construct ($email, $nickname, $adminRights, $registered) {
+  private function __construct ($email, $nickname, $isAdmin, $registered) {
     if (!isset($this->email))
       $this->email = $email;
     if (!isset($this->nickname))
       $this->nickname = $nickname;
-    if (!isset($this->adminRights))
-      $this->adminRights = (int) $adminRights;
+    if (!isset($this->isAdmin))
+      $this->isAdmin = (int) $isAdmin;
     if (!isset($this->registered))
       $this->registered = $registered;
   }
@@ -39,7 +39,7 @@ class User {
   }
 
   public function isAdmin () {
-    return (bool) $this->adminRights === true;
+    return (bool) $this->isAdmin === true;
   }
 
   public function timestampRegistered () {
@@ -50,7 +50,7 @@ class User {
   // static functions
 
   public static function getUserByEmail ($email) {
-    $sql = "SELECT email, nickname, admin_rights AS adminRights, t_registered AS registered FROM user WHERE email = '$email'";
+    $sql = "SELECT email, nickname, is_admin AS isAdmin, t_registered AS registered FROM user WHERE email = '$email'";
     $res = DB::doQuery($sql);
 
     if ($res==null || $res->num_rows == 0) {
@@ -61,7 +61,7 @@ class User {
   }
 
   public static function getUserByNickname ($nickname) {
-    $sql = "SELECT email, nickname, admin_rights AS adminRights, t_registered AS registered FROM user WHERE nickname = '$nickname'";
+    $sql = "SELECT email, nickname, is_admin AS isAdmin, t_registered AS registered FROM user WHERE nickname = '$nickname'";
     $res = DB::doQuery($sql);
 
     if ($res==null || $res->num_rows == 0) {
@@ -99,7 +99,7 @@ class User {
   }
 
   public static function getMultipleUsers ($amount, $offset) {
-    $sql = "SELECT email, nickname, admin_rights AS adminRights, t_registered AS registered FROM user ORDER BY nickname ASC LIMIT $amount OFFSET $offset";
+    $sql = "SELECT email, nickname, is_admin AS isAdmin, t_registered AS registered FROM user ORDER BY nickname ASC LIMIT $amount OFFSET $offset";
     $res = DB::doQuery($sql);
 
     if ($res==null || $res->num_rows == 0) {

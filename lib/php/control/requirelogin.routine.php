@@ -1,5 +1,5 @@
 <?php
 if (!Auth::isLoggedIn()) {
-  header("location:index.php");
+  header("location:".ROOT_DIR."login");
   exit;
 }

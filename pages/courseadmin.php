@@ -1,27 +1,40 @@
 <?php
 include CONTROL_DIR.'requireadminrights.routine.php';
 
-$courses = Course::getMultipleCourses(50,0);
+if (!isset($_POST['course_id']) || empty($_POST['course_id'])) {
+  die ("Please first select a course!");
+}
+
+$courseId = htmlspecialchars($_POST['course_id']);
+$courseId = DB::escapeString($courseId);
+
+$course = Course::getCourseById($courseId);
+$lessons = Lesson::getMultipleLessons($courseId,50,0);
 ?>
 
 <h1>Course Administration</h1>
+<h2><?php echo $course->getNameEN(); ?></h2>
 
 <table class="table table-hover">
     <thead>
       <tr>
-        <th>ID</th>
+        <th>Lesson Nr</th>
         <th>Name EN</th>
         <th>Name DE</th>
+        <th>Points</th>
+        <th>Timestamp added</th>
         <th>&nbsp;</th>
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($courses as $course) {
+      <?php foreach ($lessons as $lesson) {
         echo '<tr>
-                <td>'.$course->getId().'</td>
-                <td>'.$course->getNameEN().'</td>
-                <td>'.$course->getNameDE().'</td>
-                <td><form method="post" action="'.ROOT_DIR.'lessonadmin"><input type="hidden" name="course_id" value="'.$course->getId().'" /><input type="submit" value="Edit" /></form></td>
+                <td>'.$lesson->getLessonNr().'</td>
+                <td>'.$lesson->getNameEN().'</td>
+                <td>'.$lesson->getNameDE().'</td>
+                <td>'.$lesson->getPoints().'</td>
+                <td>'.$lesson->timestampAdded().'</td>
+                <td><form method="post" action=""><input type="hidden" name="course_id" value="'.$lesson->getCourseId().'" /><input type="hidden" name="lesson_nr" value="'.$lesson->getLessonNr().'" /><input type="submit" value="Edit" /></form></td>
               </tr>';
       } ?>
     </tbody>
