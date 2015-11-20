@@ -6,9 +6,7 @@
     <button type="button" id="kanaSwitchModeButton" class="btn btn-default btn-xs">Switch Mode</button>
 
     <!-- RESULTS BUTTON   -->
-    <form action="<?php echo ROOT_DIR; ?>kanaresults">
-      <input type="submit" class="btn btn-default btn-xs" value="Results" disabled="disabled">
-    </form>
+    <button type="submit" id="kanaResultsButton"  class="btn btn-default btn-xs">Results</button>
 
   </div>
 

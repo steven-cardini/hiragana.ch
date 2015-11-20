@@ -1,3 +1,3 @@
 <?php
 
-require_once(TEMPLATE_DIR.'kana.selector.php');
+require_once(TEMPLATE_DIR.'kanaselector.php');
