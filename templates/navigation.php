@@ -23,6 +23,8 @@
             <?php for ($i=0; $i < count($nav); $i++): ?>
               <li id="<?php echo $nav[$i]['id'] ?>"><a href="<?php echo $nav[$i]['url'] ?>"><?php echo $nav[$i]['name'] ?></a></li>
             <?php endfor; ?>
+              <li class="visible-xs"><a href="#" style="color: rgba(200,0,0,0.8);">Login</a></li>
+              <li class="visible-xs"><a href="" style="color: rgba(200,200,0,0.8);">Register</a></li>
           </ul>
           <?php if (Auth::isLoggedIn()) { ?>
           <ul class="nav navbar-nav navbar-right">

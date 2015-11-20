@@ -2,7 +2,8 @@
   if (!Auth::isLoggedIn()) { // user is not logged in
 
 ?>
-<aside class="wrapper-signin">
+
+<aside class="wrapper-signin hidden-xs">
   <div class="remove-signin">
     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
   </div>
@@ -29,7 +30,7 @@
   } else { // user is logged in
 ?>
 
-<aside class="user-info">
+<aside class="user-info hidden-xs">
   Welcome <?php echo $_SESSION['user']->getNickname(); ?>
   <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/4/005/051/200/29bb13c.jpg" />
 </aside>
