@@ -31,7 +31,7 @@
 
 <aside class="user-info">
   Welcome <?php echo $_SESSION['user']->getNickname(); ?>
-  <img src="https://avatars3.githubusercontent.com/u/22323?v=3&s=460" />
+  <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/4/005/051/200/29bb13c.jpg" />
 </aside>
 
 <?php
