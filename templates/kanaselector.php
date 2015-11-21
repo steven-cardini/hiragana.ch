@@ -5,7 +5,8 @@
   <button type="button" id="kanaSelectFormSelectAll" class="btn btn-default">Select all</button>
   <button type="button" id="kanaSelectFormDeselectAll" class="btn btn-default">Deselect all</button>
   <input type="submit" class="btn btn-default" value="Start" name="sent">
-  <label><input type="checkbox" id="kanaMultipleChoiceCheckbox">Multiple Choice</label>
+  <label class="kana-selector-label"><input type="checkbox" id="kanaMultipleChoiceCheckbox">Multiple Choice</label>
+  <div id="kanaSelectLevels"></div>
 </form>
 
 <?php
