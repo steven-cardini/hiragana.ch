@@ -7,22 +7,17 @@
   <div class="remove-signin">
     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
   </div>
-  <a id="switch-signin" href ="#">Login</a>
+  <button id="switch-signin" class="btn btn-sm btn-default">Sign in</button>
   <form class="form-signin" action="<?php echo ROOT_DIR; ?>login" method="post">
-    <h2 class="form-signin-heading">Login</h2>
+    <h2 class="form-signin-heading">Sign in</h2>
     <label for="inputEmail" class="sr-only">E-Mail-Adresse</label>
     <input name="email" type="email" id="inputEmail" class="form-control" placeholder="E-Mail-Adresse" required="" autofocus="">
     <label for="inputPassword" class="sr-only">Passwort</label>
     <input name="pwd" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="btn btn-default btn-block" type="submit" name="submitted">Sign in</button>
+    <button class="btn btn-default" type="submit" name="submitted">Sign in</button>
   </form>
-  <p>
-    <a href ="<?php echo ROOT_DIR.'register'; ?>">Registrieren</a>
+  <form class="form-register" action="<?php echo ROOT_DIR.'register'; ?>">
+    <button class="btn btn-sm btn-default">Register</button>
   </p>
 </aside>
 

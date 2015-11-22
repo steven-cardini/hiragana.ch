@@ -39,7 +39,7 @@
 aside {
   float: right;
   position: relative;
-  width: 20%;
+  width: auto;
   min-width: 150px;
   max-width: 200px;
   height: auto;
@@ -47,10 +47,21 @@ aside {
   padding: 5px;
 }
 
+aside > form.form-signin, aside > form.form-register {
+  display: inline;
+  max-width: 200px;
+}
+
+aside button {
+  margin-top: 10px;
+}
+
 aside.wrapper-signin {
+  display: none;
   background-color: rgba(0,100,150,0.2);
   padding: 10px;
   border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 10px;
 }
 
 aside.wrapper-signin > p {
@@ -61,11 +72,6 @@ aside.wrapper-signin > p {
 aside.user-info img {
   width: 120px;
   height: 120px;
-}
-
-aside .form-signin {
-  display: none;
-  max-width: 200px;
 }
 
 aside .form-signin-heading {
