@@ -166,6 +166,7 @@ footer a:hover {
 
 .kana-prompt-wrapper {
   margin: auto;
+  text-align: center;
 }
 
 .kana-prompt-wrapper > form {
