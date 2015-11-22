@@ -120,10 +120,6 @@ footer a:hover {
   width: auto;
 }
 
-#kanaMultipleChoiceCheckbox {
-  margin-right: 10px;
-}
-
 #kanaSelectLevels > label[class="kana-selector-label"] {
   font-size: 150%;
 }
@@ -237,6 +233,10 @@ footer a:hover {
 
 #kanaMultipleChoiceArea {
   margin-top: -10px;
+}
+
+#kanaMultipleChoiceCheckbox {
+  margin-right: 10px;
 }
 
 .kana-feedback-box {
