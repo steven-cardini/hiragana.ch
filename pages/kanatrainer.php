@@ -35,14 +35,11 @@
           </td>
         </tr>
       </table>
-
       <hr>
-
       <p class="kana-prompt-symbol single-kana-font kana-font" id="kanaQuestionText">
         &lt;&gt;
       </p>
     </div>
-
 
     <!-- FEEDBACK BOX   -->
     <div class="kana-box kana-feedback-box">
@@ -53,15 +50,13 @@
       <div class="kana-feedback-user-input lead">sa</div>
       <div class="kana-feedback-correct-input">Correct answer</div>
       <div class="kana-feedback-correct-input lead">ka</div>
-      <!--
-      <p id="kana-feedback-title"></p>
-      <p id="kana-feedback-your-input-title"></p>
-      <p id="kana-feedback-your-input-value" class="single-kana-font"></p>
-      <p id="kana-feedback-last-answer-title"></p>
-      <p id="kana-feedback-last-answer-value" class="single-kana-font"></p>
-    -->
     </div>
 
+    <!-- HINT BOX -->
+    <div class="kana-box kana-hint-box">
+      <div class="kana-hint-title"><strong>Hint</strong></div>
+      <div class="kana-hint-image"></div>
+    </div>
 
   </div>
 

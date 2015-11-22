@@ -5,7 +5,7 @@
   session_start();
 
   $currentPage = FileFunctions::getCurrentPage();
-  $customJS = JavaScriptFunctions::getCustomJSFiles($currentPage);
+  $customJS = JavaScriptIncluder::getCustomJSFiles($currentPage);
   // set content language
   I18n::initialize();
 

@@ -171,14 +171,17 @@ footer a:hover {
 }
 
 .kana-box {
-  float: left;
   margin-top: 10px;
   margin-bottom: 10px;
   border: 1px solid;
   padding: 5px;
+  text-align: center;
+}
+
+.kana-prompt-box, .kana-feedback-box {
+  float: left;
   height: 220px;
   width: 140px;
-  text-align: center;
 }
 
 .kana-prompt-box {
@@ -268,11 +271,20 @@ footer a:hover {
   margin: 0;
 }
 
-.kana-feedback-box, .kana-statistics-box {
+.kana-feedback-box, .kana-hint-box, .kana-statistics-box {
   border-color: #aaa;
   margin-left: 10px;
 }
 
+.kana-hint-box {
+  display: none;
+  clear: both;
+}
+
+.kana-hint-title {
+  font-size: 20px;
+  margin-bottom: 7px;
+}
 
 .kana-box > .alert {
   padding: 5px!important;
