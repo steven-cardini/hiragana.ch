@@ -64,6 +64,7 @@ class FileFunctions {
     $path = $_SERVER['REQUEST_URI'];
     $slashPos = strripos($path, '/');
     $currentPage = substr($path, $slashPos+1);
+    $currentPage = preg_replace('/[^A-Za-z0-9\-]/', '', $currentPage);
 
     if (!isset($currentPage) || $currentPage == null || strlen($currentPage)<1) {
       $currentPage = 'home';

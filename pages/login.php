@@ -76,14 +76,15 @@ if ($displayForm) {
 
   <div class="form-group email">
     <label for="<?php echo $FIELD_EMAIL; ?>" class="control-label col-sm-2">E-Mail-Adresse</label>
-    <div class="col-sm-6">
+    <div class="col-sm-6 input-group">
+      <span class="input-group-addon">@</span>
       <input class="form-control" id ="<?php echo $FIELD_EMAIL; ?>" type="email" name="<?php echo $FIELD_EMAIL; ?>" required="required" value="<?php echo $email; ?>" aria-describedby="helpEmail"/>
     </div>
   </div>
 
   <div class="form-group pw">
     <label for="<?php echo $FIELD_PWD; ?>" class="control-label col-sm-2">Passwort</label>
-    <div class="col-sm-6">
+    <div class="col-sm-6 input-group">
       <input class="form-control" id="<?php echo $FIELD_PWD; ?>" type="password" name="<?php echo $FIELD_PWD; ?>" required="required" />
     </div>
   </div>
