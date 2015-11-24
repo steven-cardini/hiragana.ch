@@ -3,10 +3,13 @@
   <div class="kana-statistics-wrapper">
 
     <!-- MODE SWITCH BUTTON   -->
-    <button type="button" id="kanaSwitchModeButton" class="btn btn-default btn-xs">Switch Mode</button>
+    <button id="kana-switch-mode-button" class="btn btn-default btn-xs">Switch Mode</button>
 
     <!-- RESULTS BUTTON   -->
-    <button type="submit" id="kanaResultsButton"  class="btn btn-default btn-xs">Results</button>
+    <button id="kana-results-button"  class="btn btn-default btn-xs">Results</button>
+
+    <!-- RESET BUTTON -->
+    <button id="kana-reset-button" class="btn btn-danger btn-xs">Reset</button>
 
   </div>
 
