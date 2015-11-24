@@ -12,6 +12,4 @@
   </tbody>
  </table>
 
- <form method="post" action="">
-   <input type="submit" class="btn btn-info" name="back" value="Back" disabled="disabled">
- </form>
+<button id="kana-back-button" class="btn btn-info">Back</button>
