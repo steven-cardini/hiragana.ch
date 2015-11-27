@@ -5,6 +5,7 @@
   session_start();
 
   $currentPage = FileFunctions::getCurrentPage();
+  $externalJS = JavaScriptIncluder::getExternalJSFiles($currentPage);
   $customJS = JavaScriptIncluder::getCustomJSFiles($currentPage);
   // set content language
   I18n::initialize();
@@ -25,6 +26,11 @@
 
   <link rel="stylesheet" href="<?php echo ROOT_DIR.LIB_DIR; ?>ext/bootstrap-3.3.5-dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo ROOT_DIR.CSS_DIR; ?>style.css" media="screen">
+
+  <?php
+  foreach ($externalJS as $JSFile) {
+    echo '<script src="'.$JSFile.'"></script>';
+  } ?>
 
 </head>
 
