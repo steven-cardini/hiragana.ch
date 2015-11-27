@@ -31,13 +31,13 @@ class JavaScriptIncluder {
     'register' => array(
       'validate_registration.js'
     ),
-    'lessontutorial' => array(
-      'lessontutorial.pagecontrol.js'
+    'lessontutorialadmin' => array(
+      'lessontutorialadmin.pagecontrol.js'
     )
   );
 
   private static $externalJS = array(
-    'lessontutorial' => array(
+    'lessontutorialadmin' => array(
       'lib/ext/ckeditor/ckeditor.js'
     )
   );

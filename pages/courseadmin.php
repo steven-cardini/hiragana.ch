@@ -23,7 +23,7 @@ $lessons = Lesson::getMultipleLessons($courseId,50,0);
         <th>Name DE</th>
         <th>Points</th>
         <th>Timestamp added</th>
-        <th>&nbsp;</th>
+        <th colspan="2">Edit</th>
       </tr>
     </thead>
     <tbody>
@@ -34,7 +34,8 @@ $lessons = Lesson::getMultipleLessons($courseId,50,0);
                 <td>'.$lesson->getName('de').'</td>
                 <td>'.$lesson->getPoints().'</td>
                 <td>'.$lesson->timestampAdded().'</td>
-                <td><form method="post" action="'.ROOT_DIR.'lessonadmin"><input type="hidden" name="lesson_id" value="'.$lesson->getId().'" /><input type="hidden" name="lesson_nr" value="'.$lesson->getLessonNr().'" /><input type="submit" value="Edit" /></form></td>
+                <td><form method="post" action="'.ROOT_DIR.'lessontutorialadmin"><input type="hidden" name="lesson_id" value="'.$lesson->getId().'" /><input type="submit" value="Tutorial" /></form></td>
+                <td><form method="post" action="'.ROOT_DIR.'lessonexercisesadmin"><input type="hidden" name="lesson_id" value="'.$lesson->getId().'" /><input type="hidden" name="lesson_nr" value="'.$lesson->getLessonNr().'" /><input type="submit" value="Exercises" /></form></td>
               </tr>';
       } ?>
     </tbody>

@@ -14,7 +14,7 @@
           array('id' => 'home', 'name' => I18n::t('navigation.home'), 'url' => ROOT_DIR.'home'),
           array('id' => 'hiragana', 'name' => 'Hiragana', 'url' => ROOT_DIR.'hiragana'),
           array('id' => 'katakana', 'name' => 'Katakana', 'url' => ROOT_DIR.'katakana'),
-          array('id' => 'word-trainer', 'name' => I18n::t('navigation.word_trainer'), 'url' => ROOT_DIR.'word-trainer'),
+          array('id' => 'japanese', 'name' => I18n::t('navigation.japanese'), 'url' => ROOT_DIR.'japanese'),
           array('id' => 'score', 'name' => 'Score', 'url' => ROOT_DIR.'score')
         ); ?>
 
@@ -26,10 +26,9 @@
               <li class="visible-xs"><a href="#" style="color: rgba(200,0,0,0.8);">Login</a></li>
               <li class="visible-xs"><a href="" style="color: rgba(200,200,0,0.8);">Register</a></li>
           </ul>
-          <?php if (Auth::isLoggedIn()) { ?>
+
+          <?php if (Auth::isLoggedIn()) { // USER MENU ?>
           <ul class="nav navbar-nav navbar-right">
-
-
             <?php if (Auth::isAdmin()) { // ADMIN MENU ?>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
@@ -39,7 +38,6 @@
               </ul>
             </li>
             <?php } // end if isAdmin ?>
-
             <li><a href="<?php echo ROOT_DIR; ?>usersettings">User Settings</a></li>
             <li><a href="<?php echo ROOT_DIR; ?>api/logout.php">Logout</a></li>
           </ul>
