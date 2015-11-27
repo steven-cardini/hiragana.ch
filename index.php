@@ -10,7 +10,6 @@
   I18n::initialize();
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 

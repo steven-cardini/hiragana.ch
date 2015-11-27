@@ -13,7 +13,7 @@ $lessons = Lesson::getMultipleLessons($courseId,50,0);
 ?>
 
 <h1>Course Administration</h1>
-<h2><?php echo $course->getNameEN(); ?></h2>
+<h2><?php echo $course->getName('en'); ?></h2>
 
 <table class="table table-hover">
     <thead>
@@ -30,11 +30,11 @@ $lessons = Lesson::getMultipleLessons($courseId,50,0);
       <?php foreach ($lessons as $lesson) {
         echo '<tr>
                 <td>'.$lesson->getLessonNr().'</td>
-                <td>'.$lesson->getNameEN().'</td>
-                <td>'.$lesson->getNameDE().'</td>
+                <td>'.$lesson->getName('en').'</td>
+                <td>'.$lesson->getName('de').'</td>
                 <td>'.$lesson->getPoints().'</td>
                 <td>'.$lesson->timestampAdded().'</td>
-                <td><form method="post" action=""><input type="hidden" name="course_id" value="'.$lesson->getCourseId().'" /><input type="hidden" name="lesson_nr" value="'.$lesson->getLessonNr().'" /><input type="submit" value="Edit" /></form></td>
+                <td><form method="post" action="'.ROOT_DIR.'lessonadmin"><input type="hidden" name="lesson_id" value="'.$lesson->getId().'" /><input type="hidden" name="lesson_nr" value="'.$lesson->getLessonNr().'" /><input type="submit" value="Edit" /></form></td>
               </tr>';
       } ?>
     </tbody>
