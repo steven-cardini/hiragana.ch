@@ -7,8 +7,6 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
 $lessonId = $_GET['id'];
 echo 'lesson id = '.$lessonId;
 $content_location = PAGE_DIR."lessons/$lessonId.html";
-echo '<br>location = '.$content_location;
-
 
  ?>
 <script>

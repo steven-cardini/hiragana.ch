@@ -61,6 +61,9 @@ class FileFunctions {
   }
 
   static function getCurrentPage () {
+    if (!isset($_SERVER['REDIRECT_QUERY_STRING']) || empty($_SERVER['REDIRECT_QUERY_STRING'])) {
+      return 'home';
+    }
     $queryString = $_SERVER['REDIRECT_QUERY_STRING']; // format page=admin/modifylessontutorial&id=1 or page=admin/modifylessontutorial
     $processed = explode('&', $queryString);
     $processed = explode('=', $processed[0]);
