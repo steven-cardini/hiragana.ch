@@ -21,7 +21,7 @@ $courses = Course::getMultipleCourses(50,0);
                 <td>'.$course->getId().'</td>
                 <td>'.$course->getName('en').'</td>
                 <td>'.$course->getName('de').'</td>
-                <td><form method="post" action="'.ROOT_DIR.'courseadmin"><input type="hidden" name="course_id" value="'.$course->getId().'" /><input type="submit" value="Edit" /></form></td>
+                <td><a class="btn btn-default" href="'.ROOT_DIR.'admin/modifycourse/'.$course->getId().'">Edit</a></td>
               </tr>';
       } ?>
     </tbody>

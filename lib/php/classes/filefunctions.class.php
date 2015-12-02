@@ -61,16 +61,10 @@ class FileFunctions {
   }
 
   static function getCurrentPage () {
-    $path = $_SERVER['REQUEST_URI'];
-    $slashPos = strripos($path, '/');
-    $currentPage = substr($path, $slashPos+1);
-    $currentPage = preg_replace('/[^A-Za-z0-9\-]/', '', $currentPage);
-
-    if (!isset($currentPage) || $currentPage == null || strlen($currentPage)<1) {
-      $currentPage = 'home';
-    }
-
-    return $currentPage;
+    $queryString = $_SERVER['REDIRECT_QUERY_STRING']; // format page=admin/modifylessontutorial&id=1 or page=admin/modifylessontutorial
+    $processed = explode('&', $queryString);
+    $processed = explode('=', $processed[0]);
+    return (isset($processed[1]) && !empty($processed[1])) ? $processed[1] : 'home';
   }
 
   static function log ($text) {

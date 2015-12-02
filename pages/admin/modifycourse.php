@@ -1,11 +1,11 @@
 <?php
 include CONTROL_DIR.'requireadminrights.routine.php';
 
-if (!isset($_POST['course_id']) || empty($_POST['course_id'])) {
+if (!isset($_GET['id']) || empty($_GET['id'])) {
   die ("Please first select a course!");
 }
 
-$courseId = htmlspecialchars($_POST['course_id']);
+$courseId = htmlspecialchars($_GET['id']);
 $courseId = DB::escapeString($courseId);
 
 $course = Course::getCourseById($courseId);
@@ -34,8 +34,8 @@ $lessons = Lesson::getMultipleLessons($courseId,50,0);
                 <td>'.$lesson->getName('de').'</td>
                 <td>'.$lesson->getPoints().'</td>
                 <td>'.$lesson->timestampAdded().'</td>
-                <td><form method="post" action="'.ROOT_DIR.'lessontutorialadmin"><input type="hidden" name="lesson_id" value="'.$lesson->getId().'" /><input type="submit" value="Tutorial" /></form></td>
-                <td><form method="post" action="'.ROOT_DIR.'lessonexercisesadmin"><input type="hidden" name="lesson_id" value="'.$lesson->getId().'" /><input type="hidden" name="lesson_nr" value="'.$lesson->getLessonNr().'" /><input type="submit" value="Exercises" /></form></td>
+                <td><a class="btn btn-default" href="'.ROOT_DIR.'admin/modifylessontutorial/'.$lesson->getId().'">Tutorial</a></td>
+                <td><a class="btn btn-default" href="'.ROOT_DIR.'admin/modifylessonexercises/'.$lesson->getId().'">Exercises</a></td>
               </tr>';
       } ?>
     </tbody>

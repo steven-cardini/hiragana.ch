@@ -1,12 +1,14 @@
 <?php
 
-if (!isset($_POST['lesson_id']) || empty($_POST['lesson_id'])) {
-  //die ("Please first select a lesson!");
-  $_POST['lesson_id']=1;
+if (!isset($_GET['id']) || empty($_GET['id'])) {
+  die ("Please first select a lesson!");
 }
 
-$lessonId = $_POST['lesson_id'];
+$lessonId = $_GET['id'];
+echo 'lesson id = '.$lessonId;
 $content_location = PAGE_DIR."lessons/$lessonId.html";
+echo '<br>location = '.$content_location;
+
 
  ?>
 <script>

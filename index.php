@@ -29,7 +29,7 @@
 
   <?php
   foreach ($externalJS as $JSFile) {
-    echo '<script src="'.$JSFile.'"></script>';
+    echo '<script src="'.ROOT_DIR.$JSFile.'"></script>';
   } ?>
 
 </head>

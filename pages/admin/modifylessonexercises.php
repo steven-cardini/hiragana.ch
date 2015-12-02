@@ -1,14 +1,13 @@
 <?php
 include CONTROL_DIR.'requireadminrights.routine.php';
 
-$FIELD_LESSON_ID = "lesson_id";
 $FIELD_EXERCISE_ID = "exercise_id";
 $FIELD_QUESTION = "question";
 $FIELD_ANSWER_EN = "answer_en";
 $FIELD_ANSWER_DE = "answer_de";
 
 
-if (!isset($_POST[$FIELD_LESSON_ID]) || empty($_POST[$FIELD_LESSON_ID])) {
+if (!isset($_GET['id']) || empty($_GET['id'])) {
   die ("Please first select a lesson!");
 }
 
@@ -27,7 +26,7 @@ if (isset($_POST[$FIELD_EXERCISE_ID])) {
   }
 }
 
-$lessonId = htmlspecialchars($_POST[$FIELD_LESSON_ID]);
+$lessonId = htmlspecialchars($_GET['id']);
 $lessonId = DB::escapeString($lessonId);
 
 $lesson = Lesson::getLesson($lessonId);
@@ -36,8 +35,7 @@ $exercises = Exercise::getMultipleExercises($lessonId, 50, 0);
 <h1>Lesson Administration</h1>
 <h2><?php echo $lesson->getName('en'); ?></h2>
 
-<form method="post" action="">
-<input type="hidden" name="<?php echo $FIELD_LESSON_ID; ?>" value="<?php echo $lesson->getId(); ?>" />
+<form method="post" action="<?php echo ROOT_DIR; ?>admin/modifylessonexercises/<?php echo $lessonId; ?>">
 <table class="table table-hover">
     <thead>
       <tr>

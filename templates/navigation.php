@@ -33,8 +33,8 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="<?php echo ROOT_DIR; ?>useradmin">Users</a></li>
-                <li><a href="<?php echo ROOT_DIR; ?>courseoverview">Courses</a></li>
+                <li><a href="<?php echo ROOT_DIR; ?>admin/useroverview">Users</a></li>
+                <li><a href="<?php echo ROOT_DIR; ?>admin/courseoverview">Courses</a></li>
               </ul>
             </li>
             <?php } // end if isAdmin ?>
