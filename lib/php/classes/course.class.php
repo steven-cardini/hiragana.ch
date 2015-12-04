@@ -6,29 +6,21 @@
    private $nameDE;
 
    // private constructor - obejcts can be exclusively retrieved via static methods below
-   private function __construct ($id, $nameEN, $nameDE) {
-     if (!isset($this->id))
-        $this->id = $id;
-
-     if (!isset($this->nameEN))
-        $this->nameEN = $nameEN;
-
-     if (!isset($this->nameDE))
-        $this->nameDE = $nameDE;
+   private function __construct () {
    }
 
    public function getId () {
      return $this->id;
    }
 
-   public function getNameEN () {
-     return $this->nameEN;
+   public function getname ($lang) {
+     switch ($lang) {
+       case 'de':
+         return $this->nameDE;
+       default:
+         return $this->nameEN;
+     }
    }
-
-   public function getNameDE () {
-     return $this->nameDE;
-   }
-
 
    // static methods
 

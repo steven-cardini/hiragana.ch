@@ -2,7 +2,7 @@
 
 class JavaScriptIncluder {
 
-  private static $JS = array(
+  private static $customJS = array(
     'home' => array(),
     'hiragana' => array(
       'kanatrainer/hiraganahandler.class.js',
@@ -30,11 +30,24 @@ class JavaScriptIncluder {
     ),
     'register' => array(
       'validate_registration.js'
+    ),
+    'admin/modifylessontutorial' => array(
+      'modifylessontutorial.controller.js'
+    )
+  );
+
+  private static $externalJS = array(
+    'admin/modifylessontutorial' => array(
+      'lib/ext/ckeditor/ckeditor.js'
     )
   );
 
   static function getCustomJSFiles ($currentPage) {
-    return array_key_exists($currentPage, JavaScriptIncluder::$JS) ? JavaScriptIncluder::$JS[$currentPage] : array();
+    return array_key_exists($currentPage, JavaScriptIncluder::$customJS) ? JavaScriptIncluder::$customJS[$currentPage] : array();
+  }
+
+  static function getExternalJSFiles ($currentPage) {
+    return array_key_exists($currentPage, JavaScriptIncluder::$externalJS) ? JavaScriptIncluder::$externalJS[$currentPage] : array();
   }
 
 }

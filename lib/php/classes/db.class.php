@@ -10,6 +10,7 @@ class DB extends mysqli {
 
   private function __construct () {
     parent::__construct(self::HOST, self::USER, self::PW, self::DB_NAME);
+    $this->query("SET NAMES 'utf8'");
   }
 
   public static function getInstance() {

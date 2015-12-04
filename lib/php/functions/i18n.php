@@ -9,9 +9,9 @@
                         'de' => 'Startseite',
                         'en' => 'Home'
                       ),
-                      'navigation.word_trainer' => array(
-                        'de' => 'Wörter Trainer',
-                        'en' => 'Word Trainer'
+                      'navigation.japanese' => array(
+                        'de' => 'Japanisch Kurse',
+                        'en' => 'Japanese Courses'
                       )
                     );
 

@@ -1,11 +1,11 @@
 <?php
 include CONTROL_DIR.'requireadminrights.routine.php';
 
-if (!isset($_POST['course_id']) || empty($_POST['course_id'])) {
+if (!isset($_GET['id']) || empty($_GET['id'])) {
   die ("Please first select a course!");
 }
 
-$courseId = htmlspecialchars($_POST['course_id']);
+$courseId = htmlspecialchars($_GET['id']);
 $courseId = DB::escapeString($courseId);
 
 $course = Course::getCourseById($courseId);
@@ -13,7 +13,7 @@ $lessons = Lesson::getMultipleLessons($courseId,50,0);
 ?>
 
 <h1>Course Administration</h1>
-<h2><?php echo $course->getNameEN(); ?></h2>
+<h2><?php echo $course->getName('en'); ?></h2>
 
 <table class="table table-hover">
     <thead>
@@ -23,18 +23,19 @@ $lessons = Lesson::getMultipleLessons($courseId,50,0);
         <th>Name DE</th>
         <th>Points</th>
         <th>Timestamp added</th>
-        <th>&nbsp;</th>
+        <th colspan="2">Edit</th>
       </tr>
     </thead>
     <tbody>
       <?php foreach ($lessons as $lesson) {
         echo '<tr>
                 <td>'.$lesson->getLessonNr().'</td>
-                <td>'.$lesson->getNameEN().'</td>
-                <td>'.$lesson->getNameDE().'</td>
+                <td>'.$lesson->getName('en').'</td>
+                <td>'.$lesson->getName('de').'</td>
                 <td>'.$lesson->getPoints().'</td>
                 <td>'.$lesson->timestampAdded().'</td>
-                <td><form method="post" action=""><input type="hidden" name="course_id" value="'.$lesson->getCourseId().'" /><input type="hidden" name="lesson_nr" value="'.$lesson->getLessonNr().'" /><input type="submit" value="Edit" /></form></td>
+                <td><a class="btn btn-default" href="'.ROOT_DIR.'admin/modifylessontutorial/'.$lesson->getId().'">Tutorial</a></td>
+                <td><a class="btn btn-default" href="'.ROOT_DIR.'admin/modifylessonexercises/'.$lesson->getId().'">Exercises</a></td>
               </tr>';
       } ?>
     </tbody>
