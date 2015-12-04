@@ -1,5 +1,5 @@
 <?php
-include CONTROL_DIR.'requireadminrights.routine.php';
+include AUTH_DIR.'requireadminrights.routine.php';
 
 $users = User::getMultipleUsers(50,0);
 ?>
