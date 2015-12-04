@@ -1,18 +1,19 @@
 <?php
 class FrontController {
 
-  private $controller;
+  private static $controller;
 
-  public function __construct (Controller $controller) {
-    $this->controller = $controller;
+  public static function display (Controller $controller) {
+    self::$controller = $controller;
+    self::doAction();
   }
 
-  public function display () {
+  private static function doAction () {
     if (isset($_POST['action'])) {
       $action = htmlspecialchars($_POST['action']);
-      $this->controller->{$action}();
+      self::$controller->{$action}();
     } else {
-      $this->controller->defaultAction();
+      self::$controller->defaultAction();
     }
   }
 }
