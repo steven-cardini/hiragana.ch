@@ -1,5 +1,5 @@
 <?php
-include CONTROL_DIR.'requireadminrights.routine.php';
+include AUTH_DIR.'requireadminrights.routine.php';
 
 $FIELD_EXERCISE_ID = "exercise_id";
 $FIELD_QUESTION = "question";

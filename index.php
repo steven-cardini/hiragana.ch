@@ -1,6 +1,6 @@
 <?php
-  // include all relevant PHP files
-  require_once('lib/php/control/include.routine.php');
+  // include autoloader
+  require_once('lib/php/autoloader.php');
 
   session_start();
 

@@ -1,5 +1,8 @@
 <?php
-  function get_param($name, $default) {
+
+class Common {
+
+  public static function get_param($name, $default) {
     return isset($_GET[$name]) ? urldecode($_GET[$name]) : $default;
   }
 
@@ -7,4 +10,5 @@
   //   $sep = strpos($url, '?') !== false ? '&' : '?';
   //   return $url . $sep . $name . "=" . urlencode($value);
   // }
-?>
+
+}

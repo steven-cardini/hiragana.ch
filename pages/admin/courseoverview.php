@@ -1,5 +1,5 @@
 <?php
-include CONTROL_DIR.'requireadminrights.routine.php';
+include AUTH_DIR.'requireadminrights.routine.php';
 
 $courses = Course::getMultipleCourses(50,0);
 ?>
