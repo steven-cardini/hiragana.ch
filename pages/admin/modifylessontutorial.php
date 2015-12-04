@@ -1,5 +1,5 @@
 <?php
-include AUTH_DIR.'requireadminrights.routine.php';
+require AUTH_DIR.'requireadminrights.routine.php';
 
 if (!isset($_GET['id']) || empty($_GET['id'])) {
   die ("Please first select a lesson!");
