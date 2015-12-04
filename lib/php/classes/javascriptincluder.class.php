@@ -38,7 +38,7 @@ class JavaScriptIncluder {
 
   private static $externalJS = array(
     'admin/modifylessontutorial' => array(
-      'lib/ext/ckeditor/ckeditor.js'
+      '//cdn.ckeditor.com/4.5.5/standard/ckeditor.js'
     )
   );
 
