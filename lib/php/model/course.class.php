@@ -13,7 +13,7 @@
      return $this->id;
    }
 
-   public function getname ($lang) {
+   public function getName ($lang) {
      switch ($lang) {
        case 'de':
          return $this->nameDE;
@@ -49,6 +49,30 @@
      }
 
      return $list;
+   }
+
+   public static function createCourse ($nameEN, $nameDE) {
+     $sql = sprintf("INSERT INTO course (name_en, name_de)
+                     VALUES ('%s', '%s')",
+                     $nameEN, $nameDE);
+     $res = DB::doQuery($sql);
+     if (!isset($res) || $res==null) {
+       return false;
+     }
+
+     return true;
+   }
+
+   public static function deleteCourse ($id) {
+     $sql = sprintf("DELETE FROM course
+                      WHERE course_id = '%d'",
+                      $id);
+     $res = DB::doQuery($sql);
+     if (!isset($res) || $res==null) {
+       return false;
+     }
+
+     return true;
    }
 
  }
