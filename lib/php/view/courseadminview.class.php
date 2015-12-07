@@ -16,7 +16,7 @@ class CourseAdminView extends View {
       $table .= '<tr>
               <td>'.$course->getName('en').'</td>
               <td>'.$course->getName('de').'</td>
-              <td><a class="btn btn-default" href="'.ROOT_DIR.'admin/modifycourse/'.$course->getId().'">Lessons</a></td>
+              <td><a class="btn btn-default" href="'.ROOT_DIR.'admin/lessonadmin/'.$course->getId().'">Lessons</a></td>
               <td><form method="post">
                 <input type="hidden" name="action" value="deleteCourse" />
                 <input type="hidden" name="courseId" value="'.$course->getId().'" />
