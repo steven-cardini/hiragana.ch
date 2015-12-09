@@ -4,36 +4,6 @@ class FileFunctions {
 
   private static $logFile = "output.log";
 
-  static function requirePHPFiles ($dir) {
-    if (!file_exists($dir)) {
-      return false;
-    }
-
-    $files = scandir($dir);
-    foreach ($files as $file) {
-      if (FileFunctions::hasExtension($file, 'php')) {
-        if (substr($file,0,9)=='noinclude') {
-          continue;
-        } else {
-          require_once($dir.$file);
-        }
-      }
-    }
-  }
-
-  static function requirePHPFilesRecursive ($rootDir) {
-    $files = scandir($rootDir);
-    foreach ($files as $file) {
-        if (is_file($file) && FileFunctions::hasExtension($file, 'php')) {
-          echo pathinfo($file)['extension'].' is a file';
-            require_once $rootDir.$file;
-        }
-        if (is_dir($file)) {
-          FileFunctions::requirePHPFilesRecursive ($file);
-        }
-    }
-  }
-
   // INPUT: parent directory inclusive trailing "/"
   static function getSubFolders ($rootDir) {
     $subFolders = array();
@@ -81,7 +51,6 @@ class FileFunctions {
     } else {
       return null;
     }
-    //return substr($fileName, strrpos($fileName , '.')+1);
   }
 
   static function getExtension ($file) {
@@ -91,7 +60,10 @@ class FileFunctions {
     } else {
       return null;
     }
-    //return substr($fileName, strrpos($fileName , '.')+1);
+  }
+
+  static function createFile ($filePath, $content) {
+    file_put_contents($filePath, $content);
   }
 
   protected static function logToFile ($file, $text) {

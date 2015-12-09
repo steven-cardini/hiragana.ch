@@ -12,7 +12,7 @@ class CourseAdminView extends View {
           </tr>
         </thead>
         <tbody>';
-    foreach (Course::getMultipleCourses(50,0) as $course) {
+    foreach ((array) Course::getMultipleCourses(50,0) as $course) {
       $table .= '<tr>
               <td>'.$course->getName('en').'</td>
               <td>'.$course->getName('de').'</td>
@@ -52,7 +52,7 @@ class CourseAdminView extends View {
 
   public function addDeleteConfirmation() {
     $this->addContentBefore('<form method="post">
-      <a class="btn btn-default" href="'.ROOT_DIR.'admin/courseoverview">Cancel</a>
+      <a class="btn btn-default" href="'.ROOT_DIR.'admin/courseadmin">Cancel</a>
       <input type="hidden" name="action" value="deleteCourse" />
       <input type="hidden" name="confirmed" value="true" />
       <input type="hidden" name="courseId" value="'.$_POST['courseId'].'" />
