@@ -110,6 +110,18 @@ footer a:hover {
   color: rgba(255, 255, 255, 0.5);
 }
 
+ol.breadcrumb {
+  background: none;
+  padding: 0;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+}
+
+ol.breadcrumb > li.active {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.8);
+}
+
 #kanaSelectForm > button, #kanaSelectForm > input[type="submit"] {
   margin-bottom: 10px;
 }
