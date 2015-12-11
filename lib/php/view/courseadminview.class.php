@@ -2,7 +2,10 @@
 class CourseAdminView extends View {
 
   protected function getContent() {
-    $table = '<table class="table table-hover">
+    $content = '<ol class="breadcrumb">
+                  <li class="active">Course Administration</li>
+                </ol>';
+    $content .= '<table class="table table-hover">
         <thead>
           <tr>
             <th>Name EN</th>
@@ -13,7 +16,7 @@ class CourseAdminView extends View {
         </thead>
         <tbody>';
     foreach ((array) Course::getMultipleCourses(50,0) as $course) {
-      $table .= '<tr>
+      $content .= '<tr>
               <td>'.$course->getName('en').'</td>
               <td>'.$course->getName('de').'</td>
               <td><a class="btn btn-default" href="'.ROOT_DIR.'admin/lessonadmin/'.$course->getId().'">Lessons</a></td>
@@ -24,9 +27,9 @@ class CourseAdminView extends View {
               </form></td>
             </tr>';
     }
-    $table .= '</tbody>
+    $content .= '</tbody>
     </table>';
-    return $table;
+    return $content;
   }
 
   public function addAddButton() {

@@ -9,8 +9,11 @@ class LessonAdminView extends View {
   }
 
   protected function getContent () {
-    $content = '<h2>'.$this->course->getName('en').'</h2>
-    <table class="table table-hover">
+    $content = '<ol class="breadcrumb">
+                  <li><a href="'.ROOT_DIR.'admin/courseadmin">Course Administration</a></li>
+                  <li class="active">'.$this->course->getName('en').'</li>
+                </ol>';
+    $content .= '<table class="table table-hover">
         <thead>
           <tr>
             <th>Lesson Nr</th>
