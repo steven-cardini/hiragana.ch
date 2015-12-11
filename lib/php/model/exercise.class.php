@@ -49,6 +49,12 @@
   public static function update ($id, $question, $answerEN, $answerDE) {
     $sql = "UPDATE exercise SET question='".$question."', answer_en='".$answerEN."', answer_de='".$answerDE."' WHERE exercise_id=$id";
     $res = DB::doQuery($sql);
+
+    if (!isset($res) || $res==null) {
+      return false;
+    }
+
+    return true;
   }
 
 }

@@ -33,7 +33,7 @@ class LessonAdminView extends View {
                     <td>'.$lesson->getPoints().'</td>
                     <td>'.$lesson->timestampAdded().'</td>
                     <td><a class="btn btn-default btn-sm" href="'.ROOT_DIR.'admin/modifylessontutorial/'.$lesson->getId().'">Tutorial</a></td>
-                    <td><a class="btn btn-default btn-sm" href="'.ROOT_DIR.'admin/modifylessonexercises/'.$lesson->getId().'">Exercises</a></td>
+                    <td><a class="btn btn-default btn-sm" href="'.ROOT_DIR.'admin/exerciseadmin/'.$lesson->getId().'">Exercises</a></td>
                     <td><form method="post">
                       <input type="hidden" name="action" value="deleteLesson" />
                       <input type="hidden" name="lessonId" value="'.$lesson->getId().'" />
