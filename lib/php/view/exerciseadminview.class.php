@@ -18,7 +18,7 @@ class ExerciseAdminView extends View {
                 </ol>';
 
     $content .= '<form method="post"><input type="hidden" name="action" value="saveExercises" />
-    <table class="table table-hover">
+    <table id="exercise-admin-table" class="table table-hover">
     <thead>
     <tr>
     <th>Question</th>
@@ -39,7 +39,10 @@ class ExerciseAdminView extends View {
 
     $content .= '</tbody>
     </table>
-    <input type="submit" value="Save" />
+    <table width="100%">
+    <tr><td width="50%" align="left"><button id="exercise-add-btn" class="btn btn-default" type="button">Add</button></td>
+    <td width="50%" align="right"><input type="submit" class="btn btn-default" value="Save" /></td></tr>
+    </table>
     </form>';
 
     return $content;

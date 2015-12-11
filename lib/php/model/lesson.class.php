@@ -81,7 +81,6 @@
      if (!isset($res) || $res==null) {
        return false;
      }
-
      return true;
    }
 

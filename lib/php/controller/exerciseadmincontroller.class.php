@@ -22,15 +22,42 @@ class ExerciseAdminController extends Controller {
 
   public function saveExercises() {
     $successful = true;
-    for ($i=0; $i<count($_POST['exercise_id']); $i++) {
+    $updateAmount = (isset($_POST['exercise_id']) && !empty($_POST['exercise_id'])) ? count($_POST['exercise_id']) : 0;
+    $i = 0;
+    // update exercises that were present in DB already
+    while ($i<$updateAmount) {
       $id = $this->secureString($_POST['exercise_id'][$i]);
       $question = $this->secureString($_POST['question'][$i]);
       $answerEN = $this->secureString($_POST['answer_en'][$i]);
       $answerDE = $this->secureString($_POST['answer_de'][$i]);
+      // do not update exercises with empty fields
+      if (empty($id) || empty($question) || empty($answerEN) || empty($answerDE)) {
+        $i++;
+        continue;
+      }
 
       if (!Exercise::update($id, $question, $answerEN, $answerDE)) {
         $successful = false;
       }
+
+      $i++;
+    }
+    // add new exercises to DB
+    while ($i<count($_POST['question'])) {
+      $question = $this->secureString($_POST['question'][$i]);
+      $answerEN = $this->secureString($_POST['answer_en'][$i]);
+      $answerDE = $this->secureString($_POST['answer_de'][$i]);
+      // do not add exercises with empty fields
+      if (empty($question) || empty($answerEN) || empty($answerDE)) {
+        $i++;
+        continue;
+      }
+
+      if (!Exercise::createExercise($this->lesson->getId(), $question, $answerEN, $answerDE)) {
+        $successful = false;
+      }
+
+      $i++;
     }
 
     if ($successful) {

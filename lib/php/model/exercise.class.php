@@ -46,6 +46,17 @@
     return $list;
   }
 
+  public static function createExercise ($lessonId, $question, $answerEN, $answerDE) {
+    $sql = sprintf("INSERT INTO exercise (lesson_id, question, answer_en, answer_de)
+                    VALUES ('%d', '%s', '%s', '%s')",
+                    $lessonId, $question, $answerEN, $answerDE);
+    $res = DB::doQuery($sql);
+    if (!isset($res) || $res==null) {
+      return false;
+    }
+    return true;
+  }
+
   public static function update ($id, $question, $answerEN, $answerDE) {
     $sql = "UPDATE exercise SET question='".$question."', answer_en='".$answerEN."', answer_de='".$answerDE."' WHERE exercise_id=$id";
     $res = DB::doQuery($sql);
