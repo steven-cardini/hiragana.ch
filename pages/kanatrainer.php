@@ -58,6 +58,7 @@
     <!-- HINT BOX -->
     <div class="kana-box kana-hint-box">
       <div class="kana-hint-title"><strong>Hint</strong></div>
+      <div class="kana-hint-text alert alert-warning"></div>
       <div class="kana-hint-image"></div>
     </div>
 

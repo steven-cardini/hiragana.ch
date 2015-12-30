@@ -53,6 +53,32 @@ class FileFunctions {
     }
   }
 
+  // extracts information from a text file; file needs to contain one info per line, preceded by line-title and @-separator, e.g. title1@information1
+  // first line of text file is not considered (can be used for commentaries)
+  static function getFileContent ($file, $lineTitle) {
+    $lineTitle = strtolower($lineTitle);
+    $resource = fopen($file, "r") or die ("Unable to open file!");
+    fgets($resource); // skip first line with PHP Tag or commentary
+    $content = '';
+    $i = 0;
+
+    do {
+      if (feof($resource)) { // end of file reached without result
+        $content = '';
+        break;
+      }
+      $currentLine = fgets($resource);
+      $currentLine = preg_replace('#(\s)*//(\s)*#', '', $currentLine);  // replace PHP commentary symbols if present (necessary for page title retrieval)
+      $separatorPos = strpos($currentLine, '@');
+      $currentTitle = substr($currentLine, 0, $separatorPos);
+      $currentTitle = strtolower($currentTitle);
+      $content = substr($currentLine, $separatorPos+1);
+    } while ($currentTitle != $lineTitle);
+
+    fclose($resource);
+    return $content;
+  }
+
   static function getExtension ($file) {
     $pathInfo = FileFunctions::getPathInfo ($file);
     if (isset($pathInfo['extension'])) {

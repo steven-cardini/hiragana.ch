@@ -305,6 +305,14 @@ ol.breadcrumb > li.active {
   margin-bottom: 7px;
 }
 
+.kana-hint-text {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  padding: 3px;
+}
+
+.kana-hint-text
+
 .kana-box > .alert {
   padding: 5px!important;
 }
