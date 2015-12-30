@@ -31,6 +31,9 @@ class JavaScriptIncluder {
     'register' => array(
       'validate_registration.js'
     ),
+    'admin/exerciseadmin' => array(
+      'exerciseadmin.controller.js'
+    ),
     'admin/modifylessontutorial' => array(
       'modifylessontutorial.controller.js'
     )

@@ -1,5 +1,8 @@
 <?php
 
+define ("ROOT_DIR", "/hiragana.ch/"); // DEV
+//define ("ROOT_DIR", "/"); // PROD
+
 // constants to access subdirectories, important for PHP includes and for HTML includes in combination with ROOT_DIR
 define ("LIB_DIR", "../lib/");
 define ("TEMPLATE_DIR", "../templates/");
