@@ -35,7 +35,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <div ng-app="hiragana" class="container">
 
     <?php
       // include page templates
