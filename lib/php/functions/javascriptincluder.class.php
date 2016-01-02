@@ -36,12 +36,18 @@ class JavaScriptIncluder {
     ),
     'admin/modifylessontutorial' => array(
       'modifylessontutorial.controller.js'
+    ),
+    'usersettings' => array(
+      'angular/color_controller.js'
     )
   );
 
   private static $externalJS = array(
     'admin/modifylessontutorial' => array(
       '//cdn.ckeditor.com/4.5.5/standard/ckeditor.js'
+    ),
+    'usersettings' => array(
+      '//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js'
     )
   );
 
