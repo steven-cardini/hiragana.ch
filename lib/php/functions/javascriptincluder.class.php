@@ -34,7 +34,7 @@ class JavaScriptIncluder {
     'admin/exerciseadmin' => array(
       'exerciseadmin.controller.js'
     ),
-    'admin/modifylessontutorial' => array(
+    'admin/tutorialadmin' => array(
       'modifylessontutorial.controller.js'
     ),
     'usersettings' => array(
@@ -43,7 +43,7 @@ class JavaScriptIncluder {
   );
 
   private static $externalJS = array(
-    'admin/modifylessontutorial' => array(
+    'admin/tutorialadmin' => array(
       '//cdn.ckeditor.com/4.5.5/standard/ckeditor.js'
     ),
     'usersettings' => array(
