@@ -9,9 +9,9 @@
                         'de' => 'Startseite',
                         'en' => 'Home'
                       ),
-                      'navigation.japanese' => array(
-                        'de' => 'Japanisch Kurse',
-                        'en' => 'Japanese Courses'
+                      'navigation.courses' => array(
+                        'de' => 'Kurse',
+                        'en' => 'Courses'
                       )
                     );
 

@@ -311,14 +311,19 @@ ol.breadcrumb > li.active {
   padding: 3px;
 }
 
-.kana-hint-text
-
 .kana-box > .alert {
   padding: 5px!important;
 }
 
-
 .single-kana-font {
   font-weight: bold;
   line-height: 80%;
+}
+
+div.jumbotron.course {
+  padding: 20px 30px;
+  margin-bottom: 15px;
+  background-color: rgba(0, 102, 153, 0.3);
+  font-size: larger;
+  font-weight: bold;
 }

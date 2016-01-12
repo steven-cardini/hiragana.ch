@@ -14,7 +14,7 @@
           array('id' => 'home', 'name' => I18n::t('navigation.home'), 'url' => ROOT_DIR.'home'),
           array('id' => 'hiragana', 'name' => 'Hiragana', 'url' => ROOT_DIR.'hiragana'),
           array('id' => 'katakana', 'name' => 'Katakana', 'url' => ROOT_DIR.'katakana'),
-          array('id' => 'japanese', 'name' => I18n::t('navigation.japanese'), 'url' => ROOT_DIR.'japanese'),
+          array('id' => 'courses', 'name' => I18n::t('navigation.courses'), 'url' => ROOT_DIR.'courses'),
           array('id' => 'score', 'name' => 'Score', 'url' => ROOT_DIR.'score')
         ); ?>
 

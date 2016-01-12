@@ -35,15 +35,4 @@ class TutorialAdminView extends View {
       return $content;
   }
 
-/*
-  public function addDeleteConfirmation() {
-    $this->addContentBefore('<form method="post">
-      <a class="btn btn-default" href="'.ROOT_DIR.'admin/courseadmin">Cancel</a>
-      <input type="hidden" name="action" value="deleteLesson" />
-      <input type="hidden" name="confirmed" value="true" />
-      <input type="hidden" name="lessonId" value="'.$_POST['lessonId'].'" />
-      <input type="submit" class="btn btn-danger" value="Delete" />
-    </form>');
-  } */
-
 }
