@@ -8,7 +8,7 @@
   $courses = Course::getMultipleCourses(20,0);
 
   foreach ($courses as $course) {
-    echo '<a href="'.ROOT_DIR.'lessons/'.$course->getId().'">
+    echo '<a href="'.ROOT_DIR.'course/'.$course->getId().'">
             <div class="jumbotron course">
               '.$course->getName('en').'
             </div>

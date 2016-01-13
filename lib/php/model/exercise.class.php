@@ -30,6 +30,17 @@
 
   // static methods
 
+  public static function getRandomExercise ($lessonId) {
+    $sql = "SELECT exercise_id as id, question, answer_en as answerEN, answer_de AS answerDE FROM exercise WHERE lesson_id = $lessonId ORDER BY RAND() LIMIT 1";
+    $res = DB::doQuery($sql);
+
+    if ($res==null || $res->num_rows == 0) {
+      return null;
+    }
+
+    return $res->fetch_object(get_class());
+  }
+
   public static function getMultipleExercises ($lessonId, $amount, $offset) {
     $sql = "SELECT exercise_id as id, question, answer_en as answerEN, answer_de AS answerDE FROM exercise WHERE lesson_id = $lessonId LIMIT $amount OFFSET $offset";
     $res = DB::doQuery($sql);

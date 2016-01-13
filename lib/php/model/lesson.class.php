@@ -57,7 +57,7 @@
    }
 
    public static function getMultipleLessons ($courseId, $amount, $offset) {
-     $sql = "SELECT lesson_id as id, course_id as courseId, lesson_nr as lessonNr, name_en as nameEN, name_de AS nameDE, points, t_added AS added FROM lesson WHERE course_id = $courseId LIMIT $amount OFFSET $offset";
+     $sql = "SELECT lesson_id as id, course_id as courseId, lesson_nr as lessonNr, name_en as nameEN, name_de AS nameDE, points, t_added AS added FROM lesson WHERE course_id = $courseId ORDER BY lesson_nr LIMIT $amount OFFSET $offset";
      $res = DB::doQuery($sql);
 
        if ($res==null || $res->num_rows == 0) {
