@@ -88,7 +88,7 @@
       $correctNr = $res['amount'];
     }
 
-    return ($correctNr / $totalNr)*100;
+    return round(($correctNr / $totalNr)*100,1);
   }
 
   public static function getMultipleExercises ($lessonId, $amount, $offset) {
