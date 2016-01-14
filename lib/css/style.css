@@ -328,6 +328,12 @@ div.jumbotron.course {
   font-weight: bold;
 }
 
+div.jumbotron.course:hover {
+  background-color: rgba(0, 102, 153, 0.15);
+  border: 2px solid #069;
+  text-decoration: none !important;
+}
+
 div.well.ui {
   position: relative;
   right: 0;
