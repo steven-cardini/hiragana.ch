@@ -33,6 +33,7 @@ class ExerciseController extends Controller {
       $input = $this->secureString($_POST['answer']);
       $correct = $_SESSION['currentExercise']->getAnswer('en');
 
+      // trim whitespaces, remove not relevant characters in order to be more flexible with user input
       $removedChars = '/(\W+)|[0-9]|_/';
       $input = trim($input);
       $input = preg_replace($removedChars, '', $input);

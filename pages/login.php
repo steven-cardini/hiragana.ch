@@ -10,7 +10,7 @@ $displayForm = true;
 // FORM WAS SUBMITTED
 if (isset($_POST['submitted'])) {
 
-  // validate user input server-side
+  // validate user input server-side (use of exceptions in order to be able to add other error checks)
   try {
 
     // ensure that user filled out all compulsory fields
@@ -77,15 +77,14 @@ if ($displayForm) {
   <div class="form-group email">
     <label for="<?php echo $FIELD_EMAIL; ?>" class="control-label col-sm-2">E-Mail-Adresse</label>
     <div class="col-sm-6 input-group">
-      <span class="input-group-addon">@</span>
-      <input class="form-control" id ="<?php echo $FIELD_EMAIL; ?>" type="email" name="<?php echo $FIELD_EMAIL; ?>" required="required" value="<?php echo $email; ?>" aria-describedby="helpEmail"/>
+      <input class="form-control" id ="<?php echo $FIELD_EMAIL; ?>" type="email" name="<?php echo $FIELD_EMAIL; ?>" required="required" value="<?php echo $email; ?>" placeholder="Your e-mail address" aria-describedby="helpEmail"/>
     </div>
   </div>
 
   <div class="form-group pw">
     <label for="<?php echo $FIELD_PWD; ?>" class="control-label col-sm-2">Passwort</label>
     <div class="col-sm-6 input-group">
-      <input class="form-control" id="<?php echo $FIELD_PWD; ?>" type="password" name="<?php echo $FIELD_PWD; ?>" required="required" />
+      <input class="form-control" id="<?php echo $FIELD_PWD; ?>" type="password" name="<?php echo $FIELD_PWD; ?>" required="required" placeholder="Your password" />
     </div>
   </div>
 
