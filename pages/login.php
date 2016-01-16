@@ -15,7 +15,7 @@ if (isset($_POST['submitted'])) {
 
     // ensure that user filled out all compulsory fields
     if (empty($_POST[$FIELD_EMAIL]) || empty($_POST[$FIELD_PWD])) {
-      throw new Exception ("Please fill out all fields.");
+      throw new Exception (I18n::t('login.err.notallfields'));
     }
 
     // prevent HTML and SQL injection
@@ -27,7 +27,7 @@ if (isset($_POST['submitted'])) {
 
     // check if login data is valid and correct
     if (!Auth::checkLogin($email, $pw)) {
-      throw new Exception ("Your login is not valid. Please try again.");
+      throw new Exception (I18n::t('login.err.notcorrect'));
     }
 
   } catch (Exception $e) {
@@ -42,7 +42,7 @@ if (isset($_POST['submitted'])) {
     $user = User::getUserByEmail($email);
 
     if (!$user || is_null($user)) {
-      $message = "There was a problem with your login. Please try again.";
+      $message = I18n::t('login.err.general');
     } else {
       $_SESSION['user'] = $user;
       header("location:index.php");
@@ -59,7 +59,7 @@ if ($displayForm) {
  ?>
 
 <p>
-  Bitte geben Sie unten Ihre Login-Daten ein, um sich einzuloggen.
+  <?php echo I18n::t('login.text'); ?>
 </p>
 
 <?php
@@ -75,20 +75,20 @@ if ($displayForm) {
 <form class="form-horizontal js-register-form" role="form" method="post" action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
 
   <div class="form-group email">
-    <label for="<?php echo $FIELD_EMAIL; ?>" class="control-label col-sm-2">E-Mail-Adresse</label>
+    <label for="<?php echo $FIELD_EMAIL; ?>" class="control-label col-sm-2"><?php echo I18n::t('text.email'); ?></label>
     <div class="col-sm-6 input-group">
       <input class="form-control" id ="<?php echo $FIELD_EMAIL; ?>" type="email" name="<?php echo $FIELD_EMAIL; ?>" required="required" value="<?php echo $email; ?>" placeholder="Your e-mail address" aria-describedby="helpEmail"/>
     </div>
   </div>
 
   <div class="form-group pw">
-    <label for="<?php echo $FIELD_PWD; ?>" class="control-label col-sm-2">Passwort</label>
+    <label for="<?php echo $FIELD_PWD; ?>" class="control-label col-sm-2"><?php echo I18n::t('text.password'); ?></label>
     <div class="col-sm-6 input-group">
       <input class="form-control" id="<?php echo $FIELD_PWD; ?>" type="password" name="<?php echo $FIELD_PWD; ?>" required="required" placeholder="Your password" />
     </div>
   </div>
 
-  <button type="submit" class="btn btn-default" name="submitted">Login</button>
+  <button type="submit" class="btn btn-default" name="submitted"><?php echo I18n::t('text.signin'); ?></button>
 
 </form>
 

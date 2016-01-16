@@ -10,18 +10,18 @@ class LessonAdminView extends View {
 
   protected function getContent () {
     $content = '<ol class="breadcrumb">
-                  <li><a href="'.ROOT_DIR.'admin/courseadmin">Course Administration</a></li>
-                  <li class="active">'.$this->course->getName('en').'</li>
+                  <li><a href="'.ROOT_DIR.'admin/courseadmin">'.I18n::t('courseoverview.title').'</a></li>
+                  <li class="active">'.$this->course->getName(I18n::getLang()).'</li>
                 </ol>';
     $content .= '<table class="table table-hover">
         <thead>
           <tr>
-            <th>Lesson Nr</th>
+            <th>'.I18n::t('admin.lessonadmin.lessonnr').'</th>
             <th>Name EN</th>
             <th>Name DE</th>
-            <th>Points</th>
-            <th>Timestamp added</th>
-            <th colspan="2">Edit</th>
+            <th>'.I18n::t('admin.lessonadmin.points').'</th>
+            <th>'.I18n::t('admin.lessonadmin.added').'</th>
+            <th colspan="2">'.I18n::t('text.edit').'</th>
           </tr>
         </thead>
         <tbody>';
@@ -33,11 +33,11 @@ class LessonAdminView extends View {
                     <td>'.$lesson->getPoints().'</td>
                     <td>'.$lesson->timestampAdded().'</td>
                     <td><a class="btn btn-default btn-sm" href="'.ROOT_DIR.'admin/tutorialadmin/'.$lesson->getId().'">Tutorial</a></td>
-                    <td><a class="btn btn-default btn-sm" href="'.ROOT_DIR.'admin/exerciseadmin/'.$lesson->getId().'">Exercises</a></td>
+                    <td><a class="btn btn-default btn-sm" href="'.ROOT_DIR.'admin/exerciseadmin/'.$lesson->getId().'">'.I18n::t('exercises.title').'</a></td>
                     <td><form method="post">
                       <input type="hidden" name="action" value="deleteLesson" />
                       <input type="hidden" name="lessonId" value="'.$lesson->getId().'" />
-                      <input type="submit" class="btn btn-default btn-sm" value="Delete" />
+                      <input type="submit" class="btn btn-default btn-sm" value="'.I18n::t('button.delete').'" />
                     </form></td>
                   </tr>';
           }
@@ -49,7 +49,7 @@ class LessonAdminView extends View {
   public function addAddButton() {
     $this->addContentAfter('<form method="post">
       <input type="hidden" name="action" value="addLesson" />
-      <input type="submit" class="btn btn-default" value="Add Lesson" />
+      <input type="submit" class="btn btn-default" value="'.I18n::t('admin.lessonadmin.newlesson').'" />
     </form>');
   }
 
@@ -62,8 +62,8 @@ class LessonAdminView extends View {
           <td>'.$newLessonNr.'</td>
           <td><input type="text" name="nameEN" placeholder="Name EN" /></td>
           <td><input type="text" name="nameDE" placeholder="Name DE" /></td>
-          <td><input type="text" name="points" placeholder="Points" /></td>
-          <td><input type="submit" class="btn btn-default" value="Save" /></td>
+          <td><input type="text" name="points" placeholder="'.I18n::t('admin.lessonadmin.points').'" /></td>
+          <td><input type="submit" class="btn btn-default" value="'.I18n::t('button.save').'" /></td>
         </tr>
       </table>
     </form>');
@@ -71,11 +71,11 @@ class LessonAdminView extends View {
 
   public function addDeleteConfirmation() {
     $this->addContentBefore('<form method="post">
-      <a class="btn btn-default" href="'.ROOT_DIR.'admin/courseadmin">Cancel</a>
+      <a class="btn btn-default" href="'.ROOT_DIR.'admin/courseadmin">'.I18n::t('button.cancel').'</a>
       <input type="hidden" name="action" value="deleteLesson" />
       <input type="hidden" name="confirmed" value="true" />
       <input type="hidden" name="lessonId" value="'.$_POST['lessonId'].'" />
-      <input type="submit" class="btn btn-danger" value="Delete" />
+      <input type="submit" class="btn btn-danger" value="'.I18n::t('button.delete').'" />
     </form>');
   }
 

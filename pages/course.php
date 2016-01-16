@@ -14,14 +14,14 @@
 
  ?>
  <ol class="breadcrumb">
-   <li><a href="<?php echo ROOT_DIR; ?>courseoverview">Course Overview</a></li>
-   <li class="active"><?php echo $course->getName('en'); ?></li>
+   <li><a href="<?php echo ROOT_DIR; ?>courseoverview"><?php echo I18n::t('courseoverview.title'); ?></a></li>
+   <li class="active"><?php echo $course->getName(I18n::getLang()); ?></li>
 </ol>
 
-<h1><?php echo $course->getName('en'); ?></h1>
+<h1><?php echo $course->getName(I18n::getLang()); ?></h1>
 
 <p>
-  Below, all lessons of the course are listed. Please select one to get started!
+  <?php echo I18n::t('course.text'); ?>
 </p>
 
 <?php
@@ -32,7 +32,7 @@
     $width = $percentage > 3 ? $percentage : 3;
     echo '<a href="'.ROOT_DIR.'lesson/'.$lesson->getId().'">
             <div class="jumbotron course">
-              '.$lesson->getLessonNr().') '.$lesson->getName('en').'
+              '.$lesson->getLessonNr().') '.$lesson->getName(I18n::getLang()).'
               <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="'.$percentage.'" aria-valuemin="0" aria-valuemax="100" style="width: '.$width.'%;">
                   '.$percentage.'%

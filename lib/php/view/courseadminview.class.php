@@ -3,7 +3,7 @@ class CourseAdminView extends View {
 
   protected function getContent() {
     $content = '<ol class="breadcrumb">
-                  <li class="active">Course Administration</li>
+                  <li class="active">'.I18n::t('courseoverview.title').'</li>
                 </ol>';
     $content .= '<table class="table table-hover">
         <thead>
@@ -19,11 +19,11 @@ class CourseAdminView extends View {
       $content .= '<tr>
               <td>'.$course->getName('en').'</td>
               <td>'.$course->getName('de').'</td>
-              <td><a class="btn btn-default" href="'.ROOT_DIR.'admin/lessonadmin/'.$course->getId().'">Lessons</a></td>
+              <td><a class="btn btn-default" href="'.ROOT_DIR.'admin/lessonadmin/'.$course->getId().'">'.I18n::t('admin.courseadmin.lessons').'</a></td>
               <td><form method="post">
                 <input type="hidden" name="action" value="deleteCourse" />
                 <input type="hidden" name="courseId" value="'.$course->getId().'" />
-                <input type="submit" class="btn btn-default" value="Delete" />
+                <input type="submit" class="btn btn-default" value="'.I18n::t('button.delete').'" />
               </form></td>
             </tr>';
     }
@@ -35,7 +35,7 @@ class CourseAdminView extends View {
   public function addAddButton() {
     $this->addContentAfter('<form method="post">
       <input type="hidden" name="action" value="addCourse" />
-      <input type="submit" class="btn btn-default" value="Add Course" />
+      <input type="submit" class="btn btn-default" value="'.I18n::t('admin.courseadmin.newcourse').'" />
     </form>');
   }
 
@@ -44,10 +44,10 @@ class CourseAdminView extends View {
       <input type="hidden" name="action" value="saveNewCourse" />
       <table class="table">
         <tr>
-          <td>New</td>
+          <td>'.I18n::t('text.new').'</td>
           <td><input type="text" name="nameEN" placeholder="Name EN" /></td>
           <td><input type="text" name="nameDE" placeholder="Name DE" /></td>
-          <td><input type="submit" class="btn btn-default" value="Save" /></td>
+          <td><input type="submit" class="btn btn-default" value="'.I18n::t('button.save').'" /></td>
         </tr>
       </table>
     </form>');

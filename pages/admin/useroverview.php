@@ -4,15 +4,15 @@ require AUTH_DIR.'requireadminrights.routine.php';
 $users = User::getMultipleUsers(50,0);
 ?>
 
-<h1>User Administration</h1>
+<h1><?php echo I18n::t('admin.useroverview.title') ?></h1>
 
 <table class="table table-hover">
     <thead>
       <tr>
         <th>Nickname</th>
-        <th>E-mail</th>
-        <th>Admin Rights</th>
-        <th>Timestamp registered</th>
+        <th><?php echo I18n::t('text.email') ?></th>
+        <th><?php echo I18n::t('admin.useroverview.admin'); ?></th>
+        <th><?php echo I18n::t('register.title'); ?></th>
       </tr>
     </thead>
     <tbody>

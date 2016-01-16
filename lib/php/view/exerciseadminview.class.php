@@ -12,18 +12,18 @@ class ExerciseAdminView extends View {
 
   protected function getContent () {
     $content = '<ol class="breadcrumb">
-                  <li><a href="'.ROOT_DIR.'admin/courseadmin">Course Administration</a></li>
-                  <li><a href="'.ROOT_DIR.'admin/lessonadmin/'.$this->course->getId().'">'.$this->course->getName('en').'</a></li>
-                  <li class="active">'.$this->lesson->getName('en').'</li>
+                  <li><a href="'.ROOT_DIR.'admin/courseadmin">'.I18n::t('courseoverview.title').'</a></li>
+                  <li><a href="'.ROOT_DIR.'admin/lessonadmin/'.$this->course->getId().'">'.$this->course->getName(I18n::getLang()).'</a></li>
+                  <li class="active">'.$this->lesson->getName(I18n::getLang()).'</li>
                 </ol>';
 
     $content .= '<form method="post"><input type="hidden" name="action" value="saveExercises" />
     <table id="exercise-admin-table" class="table table-hover">
     <thead>
     <tr>
-    <th>Question</th>
-    <th>Answer (EN)</th>
-    <th>Answer (DE)</th>
+    <th>'.I18n::t('admin.exerciseadmin.question').'</th>
+    <th>'.I18n::t('admin.exerciseadmin.answer').' (EN)</th>
+    <th>'.I18n::t('admin.exerciseadmin.answer').' (DE)</th>
     <th>&nbsp;</th>
     </tr>
     </thead>
@@ -40,8 +40,8 @@ class ExerciseAdminView extends View {
     $content .= '</tbody>
     </table>
     <table width="100%">
-    <tr><td width="50%" align="left"><button id="exercise-add-btn" class="btn btn-default" type="button">Add</button></td>
-    <td width="50%" align="right"><input type="submit" class="btn btn-default" value="Save" /></td></tr>
+    <tr><td width="50%" align="left"><button id="exercise-add-btn" class="btn btn-default" type="button">'.I18n::t('button.add').'</button></td>
+    <td width="50%" align="right"><input type="submit" class="btn btn-default" value="'.I18n::t('button.save').'" /></td></tr>
     </table>
     </form>';
 
