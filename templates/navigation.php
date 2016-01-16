@@ -32,13 +32,13 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="<?php echo ROOT_DIR; ?>admin/useroverview">Users</a></li>
-                <li><a href="<?php echo ROOT_DIR; ?>admin/courseadmin">Courses</a></li>
+                <li><a href="<?php echo ROOT_DIR; ?>admin/useroverview"><?php echo I18n::t('navigation.admin.users'); ?></a></li>
+                <li><a href="<?php echo ROOT_DIR; ?>admin/courseadmin"><?php echo I18n::t('navigation.admin.courses'); ?></a></li>
               </ul>
             </li>
             <?php } // end if isAdmin ?>
-            <li><a href="<?php echo ROOT_DIR; ?>usersettings">User Settings</a></li>
-            <li><a href="<?php echo ROOT_DIR; ?>api/logout.php">Logout</a></li>
+            <li><a href="<?php echo ROOT_DIR; ?>usersettings"><?php echo I18n::t('navigation.usersettings'); ?></a></li>
+            <li><a href="<?php echo ROOT_DIR; ?>api/logout.php"><?php echo I18n::t('text.signout'); ?></a></li>
           </ul>
           <?php } // end if isLoggedIn ?>
 

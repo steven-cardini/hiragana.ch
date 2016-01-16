@@ -104,6 +104,14 @@
                         'de' => 'Benutzereinstellungen',
                         'en' => 'User Settings'
                       ),
+                      'navigation.admin.users' => array(
+                        'de' => 'Benutzer',
+                        'en' => 'Users'
+                      ),
+                      'navigation.admin.courses' => array(
+                        'de' => 'Kurse',
+                        'en' => 'Courses'
+                      ),
                       'home.content' => array(
                         'de' => '<p>
                           Auf dieser Seite kannst du deine Hiragana- und Katakana-Kenntnisse testen und trainieren. Navigiere einfach im Menü oben auf Hiragana oder Katakana.
