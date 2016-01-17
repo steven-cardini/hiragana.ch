@@ -51,6 +51,7 @@
 
   </div>
 
+  <script>var ROOT_DIR = <?php echo json_encode(ROOT_DIR); ?></script>
   <script src="<?php echo ROOT_DIR.LIB_DIR; ?>ext/jquery-1.11.3.min.js"></script>
   <script src="<?php echo ROOT_DIR.LIB_DIR; ?>ext/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
   <script src="<?php echo ROOT_DIR.JS_DIR; ?>application.js" type="text/javascript"></script>
