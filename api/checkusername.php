@@ -1,9 +1,6 @@
 <?php
 
-$path = '../lib/php/classes/';
-
-require_once($path.'db.class.php');
-require_once($path.'user.class.php');
+require_once('config.php');
 
 $nickname = htmlspecialchars($_POST['nickname']);
 $nickname = DB::escapeString($nickname);

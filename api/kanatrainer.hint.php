@@ -1,5 +1,5 @@
 <?php
-  require_once('autoloader.php');
+  require_once('config.php');
 
   $area = htmlspecialchars($_POST['area']);
   $name = htmlspecialchars($_POST['name']);

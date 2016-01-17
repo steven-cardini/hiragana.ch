@@ -4,7 +4,7 @@
 //      define ("DB_USER", "my_user");
 //      define ("DB_PW", "password");
 //      define ("DB_NAME", "my_db");
-require_once FUNCTIONS_DIR.'db.const.php';
+require_once FUNCTIONS_DIR.'db.config.php';
 
 class DB extends mysqli {
   private static $instance;

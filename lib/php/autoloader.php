@@ -1,15 +1,28 @@
 <?php
-// this file defines constants for global access to directories, loads php classes and interfaces and sets content file for mainContent
 
+// PATH CONSTANTS
 // constants to access root directory, only use with HTML includes, not with PHP require_once!
-// define ("ROOT_DIR", "/");      // PROD
+// define ("ROOT_DIR", "/");              // PROD
+// define ("ROOT_DIR", "/beta/")          // PRE-PROD
 define ("ROOT_DIR", "/hiragana.ch/");    // DEV
 
 // constants to access subdirectories, important for PHP includes and for HTML includes in combination with ROOT_DIR
-define ("LIB_DIR", "lib/");
-define ("TEMPLATE_DIR", "templates/");
-define ("PAGE_DIR", "pages/");
-define ("IMG_DIR", "img/");
+// differentiate between API call and normal page calls
+$lib_dir = "lib/";
+$template_dir = "templates/";
+$page_dir = "pages/";
+$img_dir = "img/";
+if (isset($api_call)) {
+  define ("LIB_DIR", "../$lib_dir");
+  define ("TEMPLATE_DIR", "../$template_dir");
+  define ("PAGE_DIR", "../$page_dir");
+  define ("IMG_DIR", "../$img_dir");
+} else {
+  define ("LIB_DIR", "$lib_dir");
+  define ("TEMPLATE_DIR", "$template_dir");
+  define ("PAGE_DIR", "$page_dir");
+  define ("IMG_DIR", "$img_dir");
+}
 
 // LIB subfolders
 define ("CSS_DIR", LIB_DIR."css/");
@@ -24,8 +37,24 @@ define ("CONTROLLER_DIR", PHP_DIR."controller/");
 define ("MODEL_DIR", PHP_DIR."model/");
 define ("VIEW_DIR", PHP_DIR."view/");
 
+
+// PAGE_SOURCE in order to prepare content file for mainContent
+// default page, loaded upon first site call
+if (!isset($_GET['page']) || empty($_GET['page'])) {
+  define("PAGE_SOURCE", "pages/home.php");
+//page does not exist -> error page
+} elseif (!file_exists('pages/'.$_GET['page'].'.php') || $_GET['page']=='error') {
+  define("PAGE_SOURCE", "pages/error.php");
+// page exists -> define appropriate page file
+} else {
+  define("PAGE_SOURCE", 'pages/'.$_GET['page'].'.php');
+}
+
+
 // function to automatically load PHP classes
 function __autoload ($className) {
+  $className = strtolower($className);
+
   $dirs = [
     AUTH_DIR,
     FUNCTIONS_DIR,
@@ -43,16 +72,3 @@ function __autoload ($className) {
     }
   }
 }
-
-// prepare content file for mainContent
-// default page, loaded upon first site call
-if (!isset($_GET['page']) || empty($_GET['page'])) {
-  define("PAGE_SOURCE", "pages/home.php");
-//page does not exist -> error page
-} elseif (!file_exists('pages/'.$_GET['page'].'.php') || $_GET['page']=='error') {
-  define("PAGE_SOURCE", "pages/error.php");
-// page exists -> define appropriate page file
-} else {
-  define("PAGE_SOURCE", 'pages/'.$_GET['page'].'.php');
-}
-?>

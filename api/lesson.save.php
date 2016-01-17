@@ -1,5 +1,5 @@
 <?php
-require_once('autoloader.php');
+require_once('config.php');
 //TODO: secure access to this resource
 //include AUTH_DIR.'requireadminrights.routine.php';
 
