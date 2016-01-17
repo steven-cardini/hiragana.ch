@@ -140,9 +140,25 @@
                         which we were pursuing in the course of our fifth semester.
                         </p>'
                       ),
+                      'login.title' => array(
+                        'de' => 'Anmeldung',
+                        'en' => 'Sign in'
+                      ),
                       'login.text' => array(
                         'de' => 'Bitte geben Sie unten Ihre Logindaten ein, um sich einzuloggen.',
                         'en' => 'Please enter your personal data below in order to sign in.'
+                      ),
+                      'login.pleaselogin' => array(
+                        'de' => 'Sie müssen sich anmelden, bevor Sie auf die gewünschte Seite navigieren können.',
+                        'en' => 'You have to sign in before you can access the desired page.'
+                      ),
+                      'login.youremail' => array(
+                        'de' => 'Ihre E-Mail-Adresse',
+                        'en' => 'Your e-mail address'
+                      ),
+                      'login.yourpwd' => array(
+                        'de' => 'Ihr Passwort',
+                        'en' => 'Your password'
                       ),
                       'login.err.notcorrect' => array(
                         'de' => 'Ihre Eingabe ist nicht korrekt. Bitte versuchen Sie es erneut.',

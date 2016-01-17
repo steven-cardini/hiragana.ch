@@ -1,4 +1,4 @@
-<h1>Login</h1>
+<h1><?php echo I18n::t('login.title'); ?></h1>
 
 <?php
 
@@ -44,8 +44,17 @@ if (isset($_POST['submitted'])) {
     if (!$user || is_null($user)) {
       $message = I18n::t('login.err.general');
     } else {
+      // save user object to session
       $_SESSION['user'] = $user;
-      header("location:index.php");
+      // determine where to redirect user to
+      if (isset($_SESSION['REQUEST_URI']) && !empty($_SESSION['REQUEST_URI'])) {
+        $redirectTo = $_SESSION['REQUEST_URI'];
+        unset($_SESSION['REQUEST_URI']);
+      } else {
+        $redirectTo = 'index.php';
+      }
+      FileFunctions::log("redirecting to $redirectTo ..");
+      header("location:$redirectTo");
     }
 
     echo $message;
@@ -66,6 +75,8 @@ if ($displayForm) {
   // display server side error if present
   if (isset($errorMessage)) {
     echo '<div class="alert alert-danger" role="alert">'.$errorMessage.'</div>';
+  } elseif (isset($_SESSION['REQUEST_URI'])) {
+    echo '<div class="alert alert-warning" role="alert">'.I18n::t('login.pleaselogin').'</div>';
   }
 
   // pre-fill text fields if possible
@@ -77,14 +88,14 @@ if ($displayForm) {
   <div class="form-group email">
     <label for="<?php echo $FIELD_EMAIL; ?>" class="control-label col-sm-2"><?php echo I18n::t('text.email'); ?></label>
     <div class="col-sm-6 input-group">
-      <input class="form-control" id ="<?php echo $FIELD_EMAIL; ?>" type="email" name="<?php echo $FIELD_EMAIL; ?>" required="required" value="<?php echo $email; ?>" placeholder="Your e-mail address" aria-describedby="helpEmail"/>
+      <input class="form-control" id ="<?php echo $FIELD_EMAIL; ?>" type="email" name="<?php echo $FIELD_EMAIL; ?>" required="required" value="<?php echo $email; ?>" placeholder="<?php echo I18n::t('login.youremail'); ?>" aria-describedby="helpEmail"/>
     </div>
   </div>
 
   <div class="form-group pw">
     <label for="<?php echo $FIELD_PWD; ?>" class="control-label col-sm-2"><?php echo I18n::t('text.password'); ?></label>
     <div class="col-sm-6 input-group">
-      <input class="form-control" id="<?php echo $FIELD_PWD; ?>" type="password" name="<?php echo $FIELD_PWD; ?>" required="required" placeholder="Your password" />
+      <input class="form-control" id="<?php echo $FIELD_PWD; ?>" type="password" name="<?php echo $FIELD_PWD; ?>" required="required" placeholder="<?php echo I18n::t('login.yourpwd'); ?>" />
     </div>
   </div>
 

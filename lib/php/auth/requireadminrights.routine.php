@@ -1,5 +1,5 @@
 <?php
 if (!Auth::isAdmin()) {
-  header("location:".ROOT_DIR."login");
+  header("location:".ROOT_DIR."home");
   exit;
 }

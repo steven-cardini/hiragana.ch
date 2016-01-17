@@ -27,7 +27,7 @@
 
 <aside class="user-info hidden-xs">
   <?php echo I18n::t('text.welcome').' '.$_SESSION['user']->getNickname(); ?>
-  <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/4/005/051/200/29bb13c.jpg" />
+  <img src="<?php echo ROOT_DIR.IMG_DIR.'user_icon.jpg'; ?>" />
 </aside>
 
 <?php

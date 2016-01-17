@@ -1,11 +1,5 @@
 <h1><?php echo I18n::t('courseoverview.title'); ?></h1>
 
-<?php
-  if (!Auth::isLoggedIn()) {
-    echo '<div class="alert alert-danger" role="alert">'.I18n::t('courseoverview.err.nologin').'</div>';
-  }
- ?>
-
 <p>
   <?php echo I18n::t('courseoverview.text'); ?>
 </p>
