@@ -4,4 +4,8 @@ vendor/*
 tmp/*
 *.log
 *.psd
+*.docx
 db.config.php
+/doc/
+/readme.pdf
+
