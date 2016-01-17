@@ -87,9 +87,9 @@ class User {
     $salt=$pwdData['salt'];
     $timestamp = date('Y-m-d H:i:s');
 
-    $sql = sprintf("INSERT INTO user
-                    VALUES ('%s', '%s', '%s', '%s', '%s', '%d')",
-                    $email, $nickname, $pwdData['hash'], $pwdData['salt'], $timestamp, 0);
+    $sql = sprintf("INSERT INTO user (email, nickname, pwd_hash, pwd_salt)
+                    VALUES ('%s', '%s', '%s', '%s')",
+                    $email, $nickname, $pwdData['hash'], $pwdData['salt']);
     $res = DB::doQuery($sql);
     if (!isset($res) || $res==null) {
       return false;

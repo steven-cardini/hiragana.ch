@@ -64,7 +64,7 @@
       if ($user==false)
         $message = I18n::t('register.err.notcreated');
       else
-        $message = I18n::t('register.err.success');
+        $message = I18n::t('register.success');
 
       echo $message;
     }

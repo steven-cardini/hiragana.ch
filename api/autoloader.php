@@ -1,6 +1,7 @@
 <?php
 
-define ("ROOT_DIR", "/hiragana.ch/"); // DEV
+//define ("ROOT_DIR", "/hiragana.ch/"); // DEV
+define ("ROOT_DIR", "/beta/");  // BETA
 //define ("ROOT_DIR", "/"); // PROD
 
 // constants to access subdirectories, important for PHP includes and for HTML includes in combination with ROOT_DIR
@@ -24,6 +25,8 @@ define ("VIEW_DIR", PHP_DIR."view/");
 
 // function to automatically load PHP classes
 function __autoload ($className) {
+  $className = strtolower($className);
+
   $dirs = [
     AUTH_DIR,
     FUNCTIONS_DIR,

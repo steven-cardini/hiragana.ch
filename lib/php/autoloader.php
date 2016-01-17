@@ -3,7 +3,8 @@
 
 // constants to access root directory, only use with HTML includes, not with PHP require_once!
 // define ("ROOT_DIR", "/");      // PROD
-define ("ROOT_DIR", "/hiragana.ch/");    // DEV
+define ("ROOT_DIR", '/beta/');  // BETA
+//define ("ROOT_DIR", "/hiragana.ch/");    // DEV
 
 // constants to access subdirectories, important for PHP includes and for HTML includes in combination with ROOT_DIR
 define ("LIB_DIR", "lib/");
@@ -26,6 +27,8 @@ define ("VIEW_DIR", PHP_DIR."view/");
 
 // function to automatically load PHP classes
 function __autoload ($className) {
+  $className = strtolower($className);
+
   $dirs = [
     AUTH_DIR,
     FUNCTIONS_DIR,
