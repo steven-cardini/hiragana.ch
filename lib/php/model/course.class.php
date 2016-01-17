@@ -32,7 +32,7 @@
        return null;
      }
 
-     return $res->fetch_object(get_class(), array(0, 'name_en', 'name_de'));
+     return $res->fetch_object(get_class());
    }
 
    public static function getMultipleCourses ($amount, $offset) {
@@ -44,7 +44,7 @@
      }
 
      $list=array();
-     while ($obj = $res->fetch_object(get_class(),array(0, 'name_en', 'name_de'))) {
+     while ($obj = $res->fetch_object(get_class())) {
        $list[] = $obj;
      }
 

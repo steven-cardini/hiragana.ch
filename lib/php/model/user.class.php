@@ -57,7 +57,7 @@ class User {
       return null;
     }
 
-    return $res->fetch_object(get_class(), array('email@address.com', 'nickname', '0', date('Y-m-d H:i:s')));
+    return $res->fetch_object(get_class());
   }
 
   public static function getUserByNickname ($nickname) {
@@ -68,7 +68,7 @@ class User {
       return null;
     }
 
-    return $res->fetch_object(get_class(), array('email@address.com', 'nickname', '0', date('Y-m-d H:i:s')));
+    return $res->fetch_object(get_class());
   }
 
   public static function emailIsRegistered ($email) {
@@ -86,7 +86,7 @@ class User {
     $hash=$pwdData['hash'];
     $salt=$pwdData['salt'];
 
-    $sql = sprintf("INSERT INTO user
+    $sql = sprintf("INSERT INTO user (email, nickname, pwd_hash, pwd_salt)
                     VALUES ('%s', '%s', '%s', '%s')",
                     $email, $nickname, $pwdData['hash'], $pwdData['salt']);
     $res = DB::doQuery($sql);
@@ -106,7 +106,7 @@ class User {
     }
 
     $list=array();
-    while ($obj = $res->fetch_object(get_class(),array('email@address.com', 'nickname', '0', date('Y-m-d H:i:s')))) {
+    while ($obj = $res->fetch_object(get_class())) {
       $list[] = $obj;
     }
 
