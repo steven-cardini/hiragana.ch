@@ -54,7 +54,6 @@
       $errorMessage = $e->getMessage();
     }
 
-
     // validation is successful
     if (!isset($errorMessage)) {
       $displayForm = false;
