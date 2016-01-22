@@ -5,7 +5,8 @@ tmp/*
 *.log
 *.psd
 *.docx
+*.zip
+*.pdf
 db.config.php
 /doc/
-/readme.pdf
 

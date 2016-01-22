@@ -1,6 +1,5 @@
 <?php
 require_once('config.php');
-require AUTH_DIR.'requireadminrights.routine.php';
 
 $courseId = htmlspecialchars($_POST['course_id']);
 $lessonId = htmlspecialchars($_POST['lesson_id']);
