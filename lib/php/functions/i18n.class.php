@@ -176,13 +176,25 @@
                         'de' => 'Passwort wiederholen',
                         'en' => 'Repeat password'
                       ),
-                      'register.err.twopasswords' => array(
+                      'register.err.passwordmatch' => array(
                         'de' => 'Die Passwörter stimmen nicht überein.',
                         'en' => 'Please provide two identical passwords.'
+                      ),
+                      'register.err.passwordcomplexity' => array(
+                        'de' => 'Passwort-Komplexität nicht erfüllt.',
+                        'en' => 'Your password is not complex enough.'
                       ),
                       'register.err.nicknameexists' => array(
                         'de' => 'Dieser Nickname ist bereits vergeben.',
                         'en' => 'A user with this nickname already exists.'
+                      ),
+                      'register.err.nicknamenotvalid' => array(
+                        'de' => 'Beim Nickname sind nur Buchstaben oder Zahlen erlaubt.',
+                        'en' => 'The nickname may contain only letters or numbers.'
+                      ),
+                      'register.err.nicknamelength' => array(
+                        'de' => 'Der Nickname muss 3 bis 20 Zeichen lang sein.',
+                        'en' => 'Your nickname needs to contain 3 to 20 characters.'
                       ),
                       'register.err.emailexists' => array(
                         'de' => 'Diese E-Mail-Adresse ist bereits registriert.',
@@ -190,7 +202,7 @@
                       ),
                       'register.err.emailnotvalid' => array(
                         'de' => 'Bitte überprüfen Sie Ihre E-Mail-Adresse.',
-                        'en' => '"Please provide a valid e-mail address."'
+                        'en' => 'Please provide a valid e-mail address.'
                       ),
                       'register.err.notcreated' => array(
                         'de' => 'Es gab ein Problem beim Erstellen Ihres Kontos. Bitte versuchen Sie es nochmals.',

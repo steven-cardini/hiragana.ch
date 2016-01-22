@@ -32,7 +32,22 @@
 
       // check if passwords match
       if ($pw !== $pw_repeat) {
-        throw new Exception (I18n::t('register.err.twopasswords'));
+        throw new Exception (I18n::t('register.err.passwordmatch'));
+      }
+
+      // check if password complexity is ok
+      if (! (preg_match('/^[\S]{6,}$/', $pw) && preg_match('/[a-z]+/', $pw) && preg_match('/[A-Z]+/', $pw) && preg_match('/\W+/', $pw) )) {
+        throw new Exception (I18n::t('register.err.passwordcomplexity'));
+      }
+
+      // check if nickname is valid
+      if (!preg_match('/^\w+$/', $nickname)) {
+        throw new Exception (I18n::t('register.err.nicknamenotvalid'));
+      }
+
+      // check if nickname length is ok
+      if (!preg_match('/^\w{3,20}$/', $nickname)) {
+        throw new Exception (I18n::t('register.err.nicknamelength'));
       }
 
       // check if nickname is unique
@@ -40,14 +55,14 @@
         throw new Exception (I18n::t('register.err.nicknameexists'));
       }
 
-      // check if e-mail is unique
-      if (User::emailIsRegistered($email)) {
-        throw new Exception (I18n::t('register.err.emailexists'));
-      }
-
       // check if e-mail address is valid
       if (!preg_match("/^\S+@\S+\.\S+$/", $email)) {
         throw new Exception (I18n::t('register.err.emailnotvalid'));
+      }
+
+      // check if e-mail is unique
+      if (User::emailIsRegistered($email)) {
+        throw new Exception (I18n::t('register.err.emailexists'));
       }
 
     } catch (Exception $e) {
@@ -128,3 +143,13 @@ if ($displayForm) {
 <?php
 
 } // end if display form
+
+echo '<script>';
+echo 'var err_passwordmatch = '.json_encode(I18n::t('register.err.passwordmatch')).';';
+echo 'var err_passwordcomplexity = '.json_encode(I18n::t('register.err.passwordcomplexity')).';';
+echo 'var err_nicknameexists = '.json_encode(I18n::t('register.err.nicknameexists')).';';
+echo 'var err_nicknamenotvalid = '.json_encode(I18n::t('register.err.nicknamenotvalid')).';';
+echo 'var err_nicknamelength = '.json_encode(I18n::t('register.err.nicknamelength')).';';
+echo 'var err_emailexists = '.json_encode(I18n::t('register.err.emailexists')).';';
+echo 'var err_emailnotvalid = '.json_encode(I18n::t('register.err.emailnotvalid')).';';
+echo '</script>';

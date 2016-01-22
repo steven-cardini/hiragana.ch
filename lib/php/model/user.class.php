@@ -8,15 +8,7 @@ class User {
   private $registered;  // String in timestamp format
 
   // private constructor - obejcts can be exclusively retrieved via static methods below
-  private function __construct ($email, $nickname, $isAdmin, $registered) {
-    if (!isset($this->email))
-      $this->email = $email;
-    if (!isset($this->nickname))
-      $this->nickname = $nickname;
-    if (!isset($this->isAdmin))
-      $this->isAdmin = (int) $isAdmin;
-    if (!isset($this->registered))
-      $this->registered = $registered;
+  private function __construct () {
   }
 
   public function getEmail () {
