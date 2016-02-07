@@ -8,6 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          <a class="navbar-brand" href="#"><img src="<?php echo ROOT_DIR.'img/logo_full.png' ?>" height="70px" alt="hiragana.ch"></a>
         </div>
 
         <?php $nav = array(

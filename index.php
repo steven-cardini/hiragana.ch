@@ -40,7 +40,6 @@
     <?php
       // include page templates
 
-      require_once(TEMPLATE_DIR.'banner.php');
       require_once(TEMPLATE_DIR.'navigation.php');
       require_once(TEMPLATE_DIR.'updates.php');
       require_once(TEMPLATE_DIR.'maincontent.php');
