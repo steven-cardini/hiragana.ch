@@ -25,7 +25,7 @@
   } else { // user is logged in
 ?>
 
-<aside class="user-info hidden-xs">
+<aside class="user-info hidden-xs hidden-sm">
   <?php echo I18n::t('text.welcome').' '.$_SESSION['user']->getNickname(); ?>
   <img src="<?php echo ROOT_DIR.IMG_DIR.'user_icon.jpg'; ?>" />
 </aside>

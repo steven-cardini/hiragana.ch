@@ -5,6 +5,7 @@
 /* navbar styling */
 
 .navbar {
+  margin-top: 5px;
   margin-bottom: 0;
 }
 
@@ -14,10 +15,16 @@
 
 .navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-nav>li>a:visited, .navbar-inverse .navbar-nav>li>a:active {
   color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .navbar-inverse .navbar-nav>li>a:hover {
   color: rgba(255, 255, 255, 0.5);
+}
+
+div.navbar-collapse.collapse.in {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .navbar-nav li a {
@@ -26,17 +33,38 @@
 }
 
 .navbar-nav, .navbar-nav li, .navbar-nav li a {
-  height: 70px;
-  line-height: 70px;
+
+}
+
+.navbar-collapse>ul.nav.navbar-nav {
+  margin-top: 30px;
 }
 
 .navbar-toggle {
-   margin: 18px 0;
+  margin-bottom: 0;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  background-color: rgba(0,0,0,0.3);
+}
+
+.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-nav>li>a:visited, .navbar-inverse .navbar-nav>li>a:active {
+
+}
+
+.navbar-toggle {
+   margin: 13px 0;
    margin-right: 10px;
+}
+
+.navbar-toggle:hover {
+  background-color: #fff;
 }
 
 .navbar-brand {
   height: auto;
+  max-width: calc(100% - 70px);
   padding: 0;
 }
 
@@ -60,12 +88,8 @@
 }
 
 .page-content {
-  float: left;
-  width: 75%;
-  margin-right: 20px;
-  margin-top: -2px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  margin-top: 0px;
+  padding: 20px 10px;
 }
 
 .page-content > h1 {
@@ -80,6 +104,7 @@ aside {
   min-width: 150px;
   max-width: 210px;
   height: auto;
+  margin-top: 10px;
   margin-bottom: 20px;
   padding: 5px;
 }
@@ -233,7 +258,7 @@ ol.breadcrumb > li.active {
 .kana-prompt-box, .kana-feedback-box {
   float: left;
   height: 220px;
-  width: 140px;
+  width: 130px;
 }
 
 .kana-prompt-box {
