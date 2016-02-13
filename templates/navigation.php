@@ -17,6 +17,7 @@
           array('id' => 'hiragana', 'name' => 'Hiragana', 'url' => ROOT_DIR.'hiragana'),
           array('id' => 'katakana', 'name' => 'Katakana', 'url' => ROOT_DIR.'katakana'),
           //array('id' => 'courses', 'name' => I18n::t('navigation.courses'), 'url' => ROOT_DIR.'courseoverview'),
+          array('id' => 'feedback', 'name' => 'Feedback', 'url' => ROOT_DIR.'feedback'),
         ); ?>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

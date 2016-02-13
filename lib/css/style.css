@@ -288,7 +288,7 @@ ol.breadcrumb > li.active {
   margin: 0;
 }
 
-.kana-prompt-box .col-sm-6 {
+.kana-prompt-box .col-xs-6 {
   padding-left: 2px;
   padding-right: 2px;
 }
@@ -365,6 +365,7 @@ ol.breadcrumb > li.active {
 .kana-hint-box {
   display: none;
   clear: both;
+  min-height: 270px;
 }
 
 .kana-hint-title {

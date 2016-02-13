@@ -28,6 +28,9 @@ class JavaScriptIncluder {
       'kanatrainer/kanatrainer.class.js',
       'kanatrainer/kanaresults.controller.js'
     ),
+    'feedback' => array(
+      'form-validation/feedback.validation.js'
+    ),
     'register' => array(
       'validate_registration.js'
     ),

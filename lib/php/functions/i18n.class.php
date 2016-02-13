@@ -140,6 +140,26 @@
                         which we were pursuing in the course of our fifth semester.
                         </p>'
                       ),
+                      'feedback.title' => array(
+                        'de' => 'Feedback',
+                        'en' => 'Feedback'
+                      ),
+                      'feedback.text' => array(
+                        'de' => 'Wir freuen uns über dein Feedback und auch über Vorschläge zur künftigen Erweiterung der Website.',
+                        'en' => 'We are happy to receive your feedback and also ideas for the further development of the website.'
+                      ),
+                      'feedback.success' => array(
+                        'de' => 'Deine Mitteilung wurde erfolgreich gesendet. Vielen Dank!',
+                        'en' => 'Your message was successfully sent. Thank you!'
+                      ),
+                      'feedback.err.namelength' => array(
+                        'de' => 'Der eingetippte Name ist zu kurz oder zu lang!',
+                        'en' => 'The input name is too short or too long!'
+                      ),
+                      'feedback.err.textlength' => array(
+                        'de' => 'Die eingetippte Nachricht ist zu kurz!',
+                        'en' => 'The input message is too short!'
+                      ),
                       'login.title' => array(
                         'de' => 'Anmeldung',
                         'en' => 'Sign in'
