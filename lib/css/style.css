@@ -189,6 +189,61 @@ ol.breadcrumb > li.active {
   color: rgba(0, 0, 0, 0.8);
 }
 
+
+.kana-learn-table, .kana-learn-overview {
+  width: 100%;
+}
+
+.kana-learn-overview {
+  border: 1px solid black;
+}
+
+.kana-learn-table td {
+  width: 50%;
+  text-align: center;
+}
+
+.kana-learn-overview td {
+  width: 20%;
+  text-align: center;
+}
+
+.kana-learn-text {
+  color: #222;
+  font-weight: 900;
+  line-height:100%;
+  vertical-align: middle;
+}
+
+.kana-learn-overview .kana-learn-text.visible-xs {
+  font-size: 48px;
+}
+
+.kana-learn-overview .kana-learn-text.hidden-xs {
+  font-size: 120px;
+}
+
+.kana-learn-table .kana-learn-text.visible-xs {
+  font-size: 140px;
+}
+
+.kana-learn-table .kana-learn-text.hidden-xs {
+  font-size: 200px;
+}
+
+.kana-learn-table .kana-learn-image {
+  vertical-align: middle;
+}
+
+.kana-learn-table .kana-learn-image.visible-xs {
+  width: 140px;
+}
+
+.kana-learn-image.hidden-xs {
+  width: 200px;
+}
+
+
 #kanaSelectForm > button, #kanaSelectForm > input[type="submit"] {
   margin-bottom: 10px;
 }

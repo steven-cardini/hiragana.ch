@@ -14,6 +14,10 @@ class JavaScriptIncluder {
       'kanatrainer/katakana.def.js',
       'kanatrainer/kanaselector.controller.js'
     ),
+    'learn-hiragana' => array(
+      'kanatrainer/hiraganahandler.class.js',
+      'kanatrainer/hiraganalearn.controller.js'
+    ),
     'kanatrainer' => array(
       'kanatrainer/hiraganahandler.class.js',
       'kanatrainer/katakanahandler.class.js',
