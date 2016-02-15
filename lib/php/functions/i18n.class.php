@@ -148,6 +148,10 @@
                         'de' => 'Wir freuen uns über dein Feedback und auch über Vorschläge zur künftigen Erweiterung der Website.',
                         'en' => 'We are happy to receive your feedback and also ideas for the further development of the website.'
                       ),
+                      'feedback.message' => array(
+                        'de' => 'Mitteilung',
+                        'en' => 'Message'
+                      ),
                       'feedback.success' => array(
                         'de' => 'Deine Mitteilung wurde erfolgreich gesendet. Vielen Dank!',
                         'en' => 'Your message was successfully sent. Thank you!'

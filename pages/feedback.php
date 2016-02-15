@@ -115,7 +115,7 @@
     </div>
 
     <div class="form-group text">
-      <label for="<?php echo $FIELD_TEXT; ?>" class="control-label col-sm-2"><?php echo I18n::t('feedback.title'); ?></label>
+      <label for="<?php echo $FIELD_TEXT; ?>" class="control-label col-sm-2"><?php echo I18n::t('feedback.message'); ?></label>
       <div class="col-sm-6">
         <textarea class="form-control" id="<?php echo $FIELD_TEXT; ?>" name="<?php echo $FIELD_TEXT; ?>" rows="6" required="required" aria-describedby="helpText"><?php echo $text; ?></textarea>
       </div>

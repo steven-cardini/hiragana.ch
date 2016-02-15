@@ -1,3 +1,5 @@
+<h1>Katakana Trainer</h1>
+
 <?php
 
 require_once(TEMPLATE_DIR.'kanaselector.php');

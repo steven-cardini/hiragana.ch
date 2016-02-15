@@ -1,6 +1,6 @@
 <footer>
   <ul class='list-inline'>
-    <li><a href="<?php echo ROOT_DIR.'about'; ?>"><?php echo I18n::t('about.title'); ?></a></li>
+    <li>© 2015 - 2016</li>
     <li>|</li>
     <li><a href="<?php echo ROOT_DIR.'impressum'; ?>">Impressum</a></li>
 
