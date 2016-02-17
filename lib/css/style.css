@@ -244,18 +244,22 @@ ol.breadcrumb > li.active {
 }
 
 
-#kanaSelectForm > button, #kanaSelectForm > input[type="submit"] {
+#kana-select-form > button, #kana-select-form > input[type="submit"] {
   margin-bottom: 10px;
 }
 
-#kanaSelectForm > label[class="kana-selector-label"] {
+#kana-select-form > label[class="kana-selector-label"] {
   margin-left: 15px;
   padding-right: 15px;
   width: auto;
 }
 
-#kanaSelectLevels > label[class="kana-selector-label"] {
+#kana-select-levels > label[class="kana-selector-label"], #kana-select-levels > a > label[class="kana-selector-label"] {
   font-size: 150%;
+}
+
+#kana-select-levels > a, #kana-select-levels > a:hover, #kana-select-levels > a:visited, #kana-select-levels > a:active {
+  color: inherit;
 }
 
 .kana-selector-label {

@@ -18,14 +18,15 @@
   <meta charset="utf-8">
   <title>hiragana.ch</title>
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="description" content="PHP Webshop">
-  <meta name="keywords" content="hiragana katakana japanese PHP">
-  <meta name="author" content="Steven Cardini, Raphael Laubscher">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Learn Hiragana and Katakana" />
+  <meta name="keywords" content="hiragana katakana kana trainer japanese japanisch PHP" />
+  <meta name="author" content="Steven Cardini, Raphael Laubscher" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  <link rel="stylesheet" href="<?php echo ROOT_DIR.LIB_DIR; ?>ext/bootstrap-3.3.5-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo ROOT_DIR.CSS_DIR; ?>style.css" media="screen">
+  <link rel="icon" type="image/png" href="<?php echo ROOT_DIR; ?>/img/favicon.png" />
+  <link rel="stylesheet" href="<?php echo ROOT_DIR.LIB_DIR; ?>ext/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="<?php echo ROOT_DIR.CSS_DIR; ?>style.css" media="screen" />
 
   <?php
   foreach ($externalJS as $JSFile) {
