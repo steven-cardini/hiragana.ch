@@ -272,6 +272,17 @@
                         'de' => 'Bitte wähle die zu trainierenden Levels aus!',
                         'en' => 'Please choose the levels to be trained!'
                       ),
+
+                      'hiragana.learn.title' => array(
+                        'de' => 'Hiragana lernen',
+                        'en' => 'Learn hiragana'
+                      ),
+                      'hiragana.learn.a.lead' => array(
+                        'de' => 'finde das "a" im Symbol!',
+                        'en' => 'find the "a" within the symbol!'
+                      ),
+
+
                       'courseoverview.title' => array(
                         'de' => 'Kurse',
                         'en' => 'Courses'
@@ -361,6 +372,11 @@
 
     static function t($key) {
       return isset(I18n::$i18n[$key][self::$language]) ? I18n::$i18n[$key][self::$language]
+                                       : "Missing translation [$key]";
+    }
+
+    static function tl($key, $language) {
+      return isset(I18n::$i18n[$key][$language]) ? I18n::$i18n[$key][$language]
                                        : "Missing translation [$key]";
     }
 
