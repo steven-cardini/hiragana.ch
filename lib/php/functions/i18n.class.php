@@ -282,6 +282,160 @@
                         'en' => 'find the "a" within the symbol!'
                       ),
 
+                      'hiragana.learn.i.lead' => array(
+                        'de' => 'igitt, zwei glitschige Aale!',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.u.lead' => array(
+                        'de' => 'finde das "u" im Symbol!',
+                        'en' => 'find the "u" within the symbol!'
+                      ),
+
+                      'hiragana.learn.e.lead' => array(
+                        'de' => 'Eddy der Pelikan',
+                        'en' => 'Eddy the pelican'
+                      ),
+
+                      'hiragana.learn.o.lead' => array(
+                        'de' => 'finde die beiden "o" im Symbol!',
+                        'en' => 'find both "o" within the symbol!'
+                      ),
+
+                      'hiragana.learn.ka.lead' => array(
+                        'de' => 'Carmen, die kanarische Tänzerin',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.ki.lead' => array(
+                        'de' => 'key, engl. für Schlüssel',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.ku.lead' => array(
+                        'de' => 'Kuckuck, ich wär gern ein Kuckuck!',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.ke.lead' => array(
+                        'de' => 'das Weinfass im Keller',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.ko.lead' => array(
+                        'de' => 'ko-evolvierende Würmer',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.sa.lead' => array(
+                        'de' => 'sag mal, wo gehts hier nach San Francisco?',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.shi.lead' => array(
+                        'de' => 'schick, das gibt Sushi!',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.su.lead' => array(
+                        'de' => 'die Super-Schaukel',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.se.lead' => array(
+                        'de' => 'schau, mein sexy Zahn!',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.so.lead' => array(
+                        'de' => 'Sophie, so ein Songbird!',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.ta.lead' => array(
+                        'de' => 'tada! Finde das "ta" im Symbol!',
+                        'en' => ''
+                      ),
+
+
+                      'hiragana.learn.na.lead' => array(
+                        'de' => 'Nala, die namhafte Priesterin',
+                        'en' => ''
+                      ),
+
+
+                      'hiragana.learn.nu.lead' => array(
+                        'de' => 'die Nummer-eins-Nudel!',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.ne.lead' => array(
+                        'de' => 'Nelly, die nervige Katze',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.no.lead' => array(
+                        'de' => 'No way! Hier kommst du nicht rein!',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.ha.lead' => array(
+                        'de' => 'haha! Finde das "ha" im Symbol!',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.hi.lead' => array(
+                        'de' => 'Hicks! Das hat jemand zu viel gesoffen!',
+                        'en' => ''
+                      ),
+
+
+                      'hiragana.learn.he.lead' => array(
+                        'de' => 'der heldenhafte Mt. Saints Helens',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.ho.lead' => array(
+                        'de' => 'ho-ho-ho, heuer spiel ich den Weihnachtsmann!',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.ma.lead' => array(
+                        'de' => 'Mama, ich hab plötzlich vier Arme..!',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.mi.lead' => array(
+                        'de' => '21. Jahrhundert, ein neues Millennium!',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.mu.lead' => array(
+                        'de' => 'Muuuhh macht die Kuh',
+                        'en' => ''
+                      ),
+
+
+                      'hiragana.learn.ya.lead' => array(
+                        'de' => 'Yannik, der Yak',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.yu.lead' => array(
+                        'de' => 'Yuri, der junge Fisch',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.yo.lead' => array(
+                        'de' => 'Yo, nimm mich mit Alter!',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.ra.lead' => array(
+                        'de' => 'Ralph, der Rapper',
+                        'en' => ''
+                      ),
+
 
                       'courseoverview.title' => array(
                         'de' => 'Kurse',
