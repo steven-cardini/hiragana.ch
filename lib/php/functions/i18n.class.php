@@ -278,161 +278,161 @@
                         'en' => 'Learn hiragana'
                       ),
                       'hiragana.learn.a.lead' => array(
-                        'de' => 'finde das "a" im Symbol!',
-                        'en' => 'find the "a" within the symbol!'
+                        'de' => 'finde das "<em>a</em>" im Symbol!',
+                        'en' => 'find the "<em>a</em>" within the symbol!'
                       ),
 
                       'hiragana.learn.i.lead' => array(
-                        'de' => 'igitt, zwei glitschige Aale!',
+                        'de' => '<em>i</em>gitt, zwei gl<em>i</em>tsch<em>i</em>ge Aale!',
                         'en' => ''
                       ),
 
                       'hiragana.learn.u.lead' => array(
-                        'de' => 'finde das "u" im Symbol!',
-                        'en' => 'find the "u" within the symbol!'
+                        'de' => 'finde das "<em>u</em>" im Symbol!',
+                        'en' => 'find the "<em>u</em>" within the symbol!'
                       ),
 
                       'hiragana.learn.e.lead' => array(
-                        'de' => 'Eddy der Pelikan',
-                        'en' => 'Eddy the pelican'
+                        'de' => '<em>E</em>ddy der P<em>e</em>likan',
+                        'en' => '<em>E</em>ddy the p<em>e</em>lican'
                       ),
 
                       'hiragana.learn.o.lead' => array(
-                        'de' => 'finde die beiden "o" im Symbol!',
-                        'en' => 'find both "o" within the symbol!'
+                        'de' => 'finde die beiden "<em>o</em>" im Symbol!',
+                        'en' => 'find both "<em>o</em>" within the symbol!'
                       ),
 
                       'hiragana.learn.ka.lead' => array(
-                        'de' => 'Carmen, die kanarische Tänzerin',
+                        'de' => '<em>Ca</em>rmen, die <em>ka</em>narische Tänzerin',
                         'en' => ''
                       ),
 
                       'hiragana.learn.ki.lead' => array(
-                        'de' => 'key, engl. für Schlüssel',
+                        'de' => '<em>key</em>, engl. für Schlüssel',
                         'en' => ''
                       ),
 
                       'hiragana.learn.ku.lead' => array(
-                        'de' => 'Kuckuck, ich wär gern ein Kuckuck!',
+                        'de' => '<em>Ku</em>c<em>ku</em>ck, ich wär gern ein <em>Ku</em>c<em>ku</em>ck!',
                         'en' => ''
                       ),
 
                       'hiragana.learn.ke.lead' => array(
-                        'de' => 'das Weinfass im Keller',
+                        'de' => 'das Weinfass im <em>Ke</em>ller',
                         'en' => ''
                       ),
 
                       'hiragana.learn.ko.lead' => array(
-                        'de' => 'ko-evolvierende Würmer',
+                        'de' => '<em>ko</em>-evolvierende Würmer',
                         'en' => ''
                       ),
 
                       'hiragana.learn.sa.lead' => array(
-                        'de' => 'sag mal, wo gehts hier nach San Francisco?',
+                        'de' => '<em>sa</em>g mal, wo gehts hier nach <em>Sa</em>n Francisco?',
                         'en' => ''
                       ),
 
                       'hiragana.learn.shi.lead' => array(
-                        'de' => 'schick, das gibt Sushi!',
+                        'de' => '<em>schi</em>ck, das gibt Su<em>shi</em>!',
                         'en' => ''
                       ),
 
                       'hiragana.learn.su.lead' => array(
-                        'de' => 'die Super-Schaukel',
+                        'de' => 'die <em>Su</em>per-Schaukel',
                         'en' => ''
                       ),
 
                       'hiragana.learn.se.lead' => array(
-                        'de' => 'schau, mein sexy Zahn!',
+                        'de' => 'schau, mein <em>se</em>xy Zahn!',
                         'en' => ''
                       ),
 
                       'hiragana.learn.so.lead' => array(
-                        'de' => 'Sophie, so ein Songbird!',
+                        'de' => '<em>So</em>phie, <em>so</em> ein <em>So</em>ngbird!',
                         'en' => ''
                       ),
 
                       'hiragana.learn.ta.lead' => array(
-                        'de' => 'tada! Finde das "ta" im Symbol!',
+                        'de' => '<em>ta</em>da! Finde das "<em>ta</em>" im Symbol!',
                         'en' => ''
                       ),
 
 
                       'hiragana.learn.na.lead' => array(
-                        'de' => 'Nala, die namhafte Priesterin',
+                        'de' => '<em>Na</em>la, die <em>na</em>ive Priesterin',
                         'en' => ''
                       ),
 
 
                       'hiragana.learn.nu.lead' => array(
-                        'de' => 'die Nummer-eins-Nudel!',
+                        'de' => 'die k<em>nu</em>sprige <em>Nu</em>del!',
                         'en' => ''
                       ),
 
                       'hiragana.learn.ne.lead' => array(
-                        'de' => 'Nelly, die nervige Katze',
+                        'de' => '<em>Ne</em>lly, die <em>ne</em>rvige Katze',
                         'en' => ''
                       ),
 
                       'hiragana.learn.no.lead' => array(
-                        'de' => 'No way! Hier kommst du nicht rein!',
+                        'de' => '<em>No</em> way! Hier kommst du nicht rein!',
                         'en' => ''
                       ),
 
                       'hiragana.learn.ha.lead' => array(
-                        'de' => 'haha! Finde das "ha" im Symbol!',
+                        'de' => '<em>haha</em>! Finde das "<em>ha</em>" im Symbol!',
                         'en' => ''
                       ),
 
                       'hiragana.learn.hi.lead' => array(
-                        'de' => 'Hicks! Das hat jemand zu viel gesoffen!',
+                        'de' => '<em>Hi</em>cks! Das hat jemand zu viel gesoffen!',
                         'en' => ''
                       ),
 
 
                       'hiragana.learn.he.lead' => array(
-                        'de' => 'der heldenhafte Mt. Saints Helens',
+                        'de' => 'der <em>he</em>ldenhafte Mt. Saints <em>He</em>lens',
                         'en' => ''
                       ),
 
                       'hiragana.learn.ho.lead' => array(
-                        'de' => 'ho-ho-ho, heuer spiel ich den Weihnachtsmann!',
+                        'de' => '<em>ho</em>-<em>ho</em>-<em>ho</em>, heuer spiel ich den Weihnachtsmann!',
                         'en' => ''
                       ),
 
                       'hiragana.learn.ma.lead' => array(
-                        'de' => 'Mama, ich hab plötzlich vier Arme..!',
+                        'de' => '<em>Mama</em>, ich hab plötzlich vier Arme..!',
                         'en' => ''
                       ),
 
                       'hiragana.learn.mi.lead' => array(
-                        'de' => '21. Jahrhundert, ein neues Millennium!',
+                        'de' => '21. Jahrhundert, ein neues <em>Mi</em>llennium!',
                         'en' => ''
                       ),
 
                       'hiragana.learn.mu.lead' => array(
-                        'de' => 'Muuuhh macht die Kuh',
+                        'de' => '<em>Mu</em>uuh macht die Kuh',
                         'en' => ''
                       ),
 
 
                       'hiragana.learn.ya.lead' => array(
-                        'de' => 'Yannik, der Yak',
+                        'de' => '<em>Ya</em>nnik, der <em>Ya</em>k',
                         'en' => ''
                       ),
 
                       'hiragana.learn.yu.lead' => array(
-                        'de' => 'Yuri, der junge Fisch',
+                        'de' => '<em>Yu</em>ri, der <em>ju</em>nge Fisch',
                         'en' => ''
                       ),
 
                       'hiragana.learn.yo.lead' => array(
-                        'de' => 'Yo, nimm mich mit Alter!',
+                        'de' => '<em>Yo</em>, nimm mich mit Alter!',
                         'en' => ''
                       ),
 
                       'hiragana.learn.ra.lead' => array(
-                        'de' => 'Ralph, der Rapper',
+                        'de' => '<em>Ra</em>lph, der <em>Ra</em>pper',
                         'en' => ''
                       ),
 

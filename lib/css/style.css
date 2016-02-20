@@ -190,6 +190,9 @@ ol.breadcrumb > li.active {
 }
 
 
+
+/* KANA LEARN PAGES */
+
 .kana-learn-table, .kana-learn-overview {
   width: 100%;
 }
@@ -206,6 +209,15 @@ ol.breadcrumb > li.active {
 .kana-learn-overview td {
   width: 20%;
   text-align: center;
+}
+
+.kana-learn-lead {
+  font-size: 1.4em;
+  margin-top: 75px;
+}
+
+.kana-learn-emph {
+  color: red;
 }
 
 .kana-learn-text {
@@ -243,6 +255,9 @@ ol.breadcrumb > li.active {
   width: 200px;
 }
 
+
+
+/* KANA TRAINER PAGES */
 
 #kana-select-form > button, #kana-select-form > input[type="submit"] {
   margin-bottom: 10px;
