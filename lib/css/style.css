@@ -2,11 +2,16 @@
   font-family: 'Open Sans', Arial, sans-serif;
 }
 
+html {
+  position: relative;
+  min-height: calc(100% - 0px);
+}
+
 /* navbar styling */
 
 .navbar {
-  margin-top: 5px;
   margin-bottom: 0;
+  padding: 0 20px;
 }
 
 .navbar-inverse {
@@ -32,12 +37,9 @@ div.navbar-collapse.collapse.in {
   padding-bottom:0;
 }
 
-.navbar-nav, .navbar-nav li, .navbar-nav li a {
-
-}
-
 .navbar-collapse>ul.nav.navbar-nav {
   margin-top: 30px;
+  margin-left: 25px;
 }
 
 .navbar-toggle {
@@ -47,10 +49,6 @@ div.navbar-collapse.collapse.in {
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
   background-color: rgba(0,0,0,0.3);
-}
-
-.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-nav>li>a:visited, .navbar-inverse .navbar-nav>li>a:active {
-
 }
 
 .navbar-toggle {
@@ -148,13 +146,16 @@ aside .remove-signin {
 }
 
 footer {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
   padding: 2px 0 3px 10px;
   border: 1px solid rgba(0, 0, 0, 0.8);
   border-bottom: 3px solid #000;
   color: #fff;
   font-size: smaller;
   background-color: #069;
-  clear: both;
 }
 
 footer .list-inline>li {

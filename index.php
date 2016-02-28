@@ -1,18 +1,21 @@
 <?php
-  // include autoloader
-  require_once('lib/php/autoloader.php');
-
   session_start();
-
+  // include constants
+  require_once('lib/php/constants.php');
+  // include classloader and register it to autoloading
+  require_once('lib/php/classloader.php');
+  spl_autoload_register('loadClass');
+  // start session and save client
+  require_once('lib/php/functions/client.register.php');
+  // set content language
+  I18n::initialize();
+  // load current page content and required JS files
   $currentPage = FileFunctions::getCurrentPage();
   $externalJS = JavaScriptIncluder::getExternalJSFiles($currentPage);
   $customJS = JavaScriptIncluder::getCustomJSFiles($currentPage);
-  // set content language
-  I18n::initialize();
-
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo I18n::getLang(); ?>">
 
 <head>
   <meta charset="utf-8">
@@ -36,18 +39,12 @@
 </head>
 
 <body>
+
+  <?php require_once(TEMPLATE_DIR.'navigation.php'); // include navigation ?>
   <div class="container">
-
-    <?php
-      // include page templates
-
-      require_once(TEMPLATE_DIR.'navigation.php');
-      require_once(TEMPLATE_DIR.'maincontent.php');
-      require_once(TEMPLATE_DIR.'footer.php');
-
-    ?>
-
+    <?php require_once(TEMPLATE_DIR.'maincontent.php'); // include main content ?>
   </div>
+  <?php  require_once(TEMPLATE_DIR.'footer.php'); // include footer ?>
 
   <script>var ROOT_DIR = <?php echo json_encode(ROOT_DIR); ?></script>
   <script>var LANGUAGE = <?php echo json_encode(I18n::getLang()); ?></script>

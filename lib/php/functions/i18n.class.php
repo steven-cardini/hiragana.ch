@@ -357,6 +357,26 @@
                         'en' => ''
                       ),
 
+                      'hiragana.learn.chi.lead' => array(
+                        'de' => 'Hoppla, das war zu viel <em>Chi</em>li!',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.tsu.lead' => array(
+                        'de' => 'Das Fischen ist leicht nach einem <em>Tsu</em>nami..',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.te.lead' => array(
+                        'de' => '<em>Te</em>n, engl. für zehn',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.to.lead' => array(
+                        'de' => '<em>To</em>tal schmerzhaft..!',
+                        'en' => ''
+                      ),
+
 
                       'hiragana.learn.na.lead' => array(
                         'de' => '<em>Na</em>la, die <em>na</em>ive Priesterin',
@@ -389,9 +409,13 @@
                         'en' => ''
                       ),
 
+                      'hiragana.learn.fu.lead' => array(
+                        'de' => 'Die <em>Hu</em>la-Tänzerin aus <em>Fu</em>erteventura',
+                        'en' => ''
+                      ),
 
                       'hiragana.learn.he.lead' => array(
-                        'de' => 'der <em>he</em>ldenhafte Mt. Saints <em>He</em>lens',
+                        'de' => 'komm <em>he</em>runter vom Mt. Saints <em>He</em>lens!',
                         'en' => ''
                       ),
 
@@ -415,6 +439,15 @@
                         'en' => ''
                       ),
 
+                      'hiragana.learn.me.lead' => array(
+                        'de' => '<em>Me</em>ga Ani<em>me</em> Auge',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.mo.lead' => array(
+                        'de' => '<em>Mo</em>e, der Eski<em>mo</em>',
+                        'en' => ''
+                      ),
 
                       'hiragana.learn.ya.lead' => array(
                         'de' => '<em>Ya</em>nnik, der <em>Ya</em>k',
@@ -433,6 +466,22 @@
 
                       'hiragana.learn.ra.lead' => array(
                         'de' => '<em>Ra</em>lph, der <em>Ra</em>pper',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.ri.lead' => array(
+                        'de' => 'Hörst du das Getreide <em>ri</em>eseln?',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.ru.lead' => array(
+                        'de' => 'Verrückte <em>Rou</em>te..',
+                        'en' => ''
+                      ),
+
+
+                      'hiragana.learn.n.lead' => array(
+                        'de' => 'Finde das "<em>n</em>" im Symbol',
                         'en' => ''
                       ),
 
