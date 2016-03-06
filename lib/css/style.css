@@ -2,9 +2,8 @@
   font-family: 'Open Sans', Arial, sans-serif;
 }
 
-html {
-  position: relative;
-  min-height: calc(100% - 0px);
+body {
+  padding-bottom: 33px;
 }
 
 /* navbar styling */
@@ -145,24 +144,29 @@ aside .remove-signin {
   text-align: right;
 }
 
-footer {
-  display: block;
-  position: absolute;
-  bottom: 0px;
+footer.navbar.navbar-fixed-bottom {
   width: 100%;
-  padding: 2px 0 3px 10px;
+  min-height: 30px;
+  padding: 3px 10px;
   border: 1px solid rgba(0, 0, 0, 0.8);
-  border-bottom: 3px solid #000;
   color: #fff;
   font-size: smaller;
   background-color: #069;
 }
 
-footer .list-inline>li {
-  padding: 2px;
+footer .list-inline {
+  margin: 0;
 }
 
-footer ul li:last-child {
+footer .list-inline>li {
+  padding: 0;
+}
+
+footer ul.impressum {
+  float: left;
+}
+
+footer ul.language {
   float: right;
 }
 
