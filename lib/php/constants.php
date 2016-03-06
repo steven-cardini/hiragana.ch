@@ -3,7 +3,7 @@
 // PATH CONSTANTS
 // constants to access root directory, only use with HTML includes, not with PHP require_once!
 // define ("ROOT_DIR", "/");              // PROD
-// define ("ROOT_DIR", "/beta/")          // PRE-PROD
+// define ("ROOT_DIR", "/beta/");          // PRE-PROD
 define ("ROOT_DIR", "/hiragana.ch/");    // DEV
 
 // constants to access subdirectories, important for PHP includes and for HTML includes in combination with ROOT_DIR
