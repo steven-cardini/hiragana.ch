@@ -472,6 +472,10 @@ ol.breadcrumb > li.active {
   line-height: 80%;
 }
 
+.jumbotron {
+  background-color: #e6f6ff;
+}
+
 div.jumbotron.course {
   padding: 20px 30px;
   margin-bottom: 15px;

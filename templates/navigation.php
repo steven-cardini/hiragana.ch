@@ -14,8 +14,8 @@
 
         <?php $nav = array(
           array('id' => 'home', 'name' => I18n::t('navigation.home'), 'url' => ROOT_DIR.'home'),
-          array('id' => 'hiragana', 'name' => 'Hiragana', 'url' => ROOT_DIR.'hiragana'),
-          array('id' => 'katakana', 'name' => 'Katakana', 'url' => ROOT_DIR.'katakana'),
+          array('id' => 'hiragana', 'name' => 'Hiragana', 'url' => ROOT_DIR.'kana/hiragana'),
+          array('id' => 'katakana', 'name' => 'Katakana', 'url' => ROOT_DIR.'kana/katakana'),
           //array('id' => 'courses', 'name' => I18n::t('navigation.courses'), 'url' => ROOT_DIR.'courseoverview'),
           array('id' => 'feedback', 'name' => 'Feedback', 'url' => ROOT_DIR.'feedback'),
         ); ?>
