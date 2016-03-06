@@ -462,6 +462,11 @@ ol.breadcrumb > li.active {
   padding: 5px!important;
 }
 
+.kana-font {
+  font-weight: 500;
+  font-style: oblique;
+}
+
 .single-kana-font {
   font-weight: bold;
   line-height: 80%;
