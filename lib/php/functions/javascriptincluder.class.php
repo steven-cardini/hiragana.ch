@@ -4,33 +4,48 @@ class JavaScriptIncluder {
 
   private static $customJS = array(
     'home' => array(),
-    'hiragana' => array(
-      'kanatrainer/hiraganahandler.class.js',
-      'kanatrainer/hiragana.def.js',
-      'kanatrainer/kanaselector.controller.js'
+    'kana/hiragana/learn' => array(
+      'kana/area.def.js',
+      'kana/hiraganahandler.class.js',
+      'kana/hiraganalearn.controller.js'
     ),
-    'katakana' => array(
-      'kanatrainer/katakanahandler.class.js',
-      'kanatrainer/katakana.def.js',
-      'kanatrainer/kanaselector.controller.js'
+    'kana/hiragana/select' => array(
+      'kana/area.def.js',
+      'kana/hiraganahandler.class.js',
+      'kana/kanaselector.controller.js'
     ),
-    'learn-hiragana' => array(
-      'kanatrainer/hiraganahandler.class.js',
-      'kanatrainer/hiraganalearn.controller.js'
+    'kana/katakana/select' => array(
+      'kana/area.def.js',
+      'kana/katakanahandler.class.js',
+      'kana/kanaselector.controller.js'
     ),
-    'kanatrainer' => array(
-      'kanatrainer/hiraganahandler.class.js',
-      'kanatrainer/katakanahandler.class.js',
-      'kanatrainer/evaluationstatistics.class.js',
-      'kanatrainer/kanatrainer.class.js',
-      'kanatrainer/kanatrainer.controller.js'
+    'kana/hiragana/trainer' => array(
+      'kana/area.def.js',
+      'kana/hiraganahandler.class.js',
+      'kana/evaluationstatistics.class.js',
+      'kana/kanatrainer.class.js',
+      'kana/kanatrainer.controller.js'
     ),
-    'kanaresults' => array(
-      'kanatrainer/hiraganahandler.class.js',
-      'kanatrainer/katakanahandler.class.js',
-      'kanatrainer/evaluationstatistics.class.js',
-      'kanatrainer/kanatrainer.class.js',
-      'kanatrainer/kanaresults.controller.js'
+    'kana/katakana/trainer' => array(
+      'kana/area.def.js',
+      'kana/katakanahandler.class.js',
+      'kana/evaluationstatistics.class.js',
+      'kana/kanatrainer.class.js',
+      'kana/kanatrainer.controller.js'
+    ),
+    'kana/hiragana/results' => array(
+      'kana/area.def.js',
+      'kana/hiraganahandler.class.js',
+      'kana/evaluationstatistics.class.js',
+      'kana/kanatrainer.class.js',
+      'kana/kanaresults.controller.js'
+    ),
+    'kana/katakana/results' => array(
+      'kana/area.def.js',
+      'kana/katakanahandler.class.js',
+      'kana/evaluationstatistics.class.js',
+      'kana/kanatrainer.class.js',
+      'kana/kanaresults.controller.js'
     ),
     'feedback' => array(
       'form-validation/feedback.validation.js'

@@ -37,6 +37,11 @@ define ("CONTROLLER_DIR", PHP_DIR."controller/");
 define ("MODEL_DIR", PHP_DIR."model/");
 define ("VIEW_DIR", PHP_DIR."view/");
 
+// kana subfolders
+define ("KANA_DIR", PAGE_DIR."kana/");
+define ("HIRAGANA_DIR", KANA_DIR.'hiragana/');
+define ("KATAKANA_DIR", KANA_DIR.'katakana/');
+
 
 // PAGE_SOURCE in order to prepare content file for mainContent
 // default page, loaded upon first site call

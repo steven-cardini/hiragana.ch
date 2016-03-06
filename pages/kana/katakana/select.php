@@ -2,7 +2,7 @@
 
 <?php
 
-require_once(TEMPLATE_DIR.'kanaselector.php');
+require_once(KANA_DIR.'kanaselector.php');
 
 echo '<!-- set localized variables for kanaselector.controller.js -->
 <script>
