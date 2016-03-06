@@ -1,4 +1,4 @@
-<h1>Hiragana lernen</h1>
+<h1>Katakana lernen</h1>
 
 <p>
   Teasdjfklsdjfklsdjfklsdjfksj
