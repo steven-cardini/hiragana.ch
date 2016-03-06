@@ -7,7 +7,12 @@ class JavaScriptIncluder {
     'kana/hiragana/learn' => array(
       'kana/area.def.js',
       'kana/hiraganahandler.class.js',
-      'kana/hiraganalearn.controller.js'
+      'kana/kanalearn.controller.js'
+    ),
+    'kana/katakana/learn' => array(
+      'kana/area.def.js',
+      'kana/katakanahandler.class.js',
+      'kana/kanalearn.controller.js'
     ),
     'kana/hiragana/select' => array(
       'kana/area.def.js',
