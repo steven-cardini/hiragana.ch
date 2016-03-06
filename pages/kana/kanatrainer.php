@@ -39,7 +39,7 @@
         </tr>
       </table>
       <hr>
-      <p class="kana-prompt-symbol single-kana-font kana-font" id="kanaQuestionText">
+      <p class="kana-prompt-symbol single-kana-font" id="kanaQuestionText">
         &lt;&gt;
       </p>
     </div>

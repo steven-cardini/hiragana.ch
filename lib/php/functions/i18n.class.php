@@ -358,7 +358,7 @@
                       ),
 
                       'hiragana.learn.chi.lead' => array(
-                        'de' => 'Hoppla, das war zu viel <em>Chi</em>li!',
+                        'de' => 'Hat<em>chi</em>, das war zu viel <em>Chi</em>li!',
                         'en' => ''
                       ),
 
@@ -383,6 +383,10 @@
                         'en' => ''
                       ),
 
+                      'hiragana.learn.ni.lead' => array(
+                        'de' => 'Nähe <em>ni</em>e ohne Faden!',
+                        'en' => ''
+                      ),
 
                       'hiragana.learn.nu.lead' => array(
                         'de' => 'die k<em>nu</em>sprige <em>Nu</em>del!',
@@ -476,6 +480,26 @@
 
                       'hiragana.learn.ru.lead' => array(
                         'de' => 'Verrückte <em>Rou</em>te..',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.re.lead' => array(
+                        'de' => '<em>Re</em>nnt, er mutiert zu einem Zombie!',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.ro.lead' => array(
+                        'de' => '<em>Ro</em>boter <em>ro</em>deln heut!',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.wa.lead' => array(
+                        'de' => '<em>Wa</em>be voller Wespen (engl. <em>wa</em>sp)',
+                        'en' => ''
+                      ),
+
+                      'hiragana.learn.wo.lead' => array(
+                        'de' => '<em>Wo</em> ist nur das Klo?!',
                         'en' => ''
                       ),
 
