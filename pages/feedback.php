@@ -38,7 +38,7 @@
       }
 
       // check if text is at least 3 chars long
-      if (!preg_match('/^.{3,}$/', $text)) {
+      if (!preg_match('/.{3,}/', $text)) {
         throw new Exception (I18n::t('feedback.err.textlength'));
       }
 
@@ -49,19 +49,18 @@
     // validation is successful
     if (!isset($errorMessage)) {
       $displayForm = false;
-      $MESSAGE_HEADERS = 'From: '.$email."\r\n";
-      $MESSAGE_HEADERS .= 'MIME-Version: 1.0'."\r\n";
-      $MESSAGE_HEADERS .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-      $MESSAGE_TEXT = '
-      <html>
-        <head>
-          <title>'.$MESSAGE_SUBJECT.'</title>
-        </head>
-        <body>
-          <p>Nachricht von '.$name.'</p>
-          <p>'.$text.'</p>
-        </body>
-      </html>';
+      $MESSAGE_HEADERS = 'MIME-Version: 1.0'."\r\n";
+      $MESSAGE_HEADERS .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+      $MESSAGE_HEADERS .= 'From: '.$email."\r\n";
+      $MESSAGE_TEXT = '<html>';
+      $MESSAGE_TEXT .= '<head>';
+      $MESSAGE_TEXT .= '<title>'.$MESSAGE_SUBJECT.'</title>';
+      $MESSAGE_TEXT .= '</head>';
+      $MESSAGE_TEXT .= '<body>';
+      $MESSAGE_TEXT .= '<p>Nachricht von '.$name.'</p>';
+      $MESSAGE_TEXT .= '<p>'.$text.'</p>';
+      $MESSAGE_TEXT .= '</body>';
+      $MESSAGE_TEXT .= '</html>';
 
       // send message
       if (mail($MESSAGE_TO, $MESSAGE_SUBJECT, $MESSAGE_TEXT, $MESSAGE_HEADERS)) {
