@@ -1,3 +1,8 @@
+<?php
+require_once('lib/ext/vendor/autoload.php');
+require_once(FUNCTIONS_DIR.'recaptcha.config.php');
+ ?>
+
 <h1><?php echo I18n::t('feedback.title'); ?></h1>
 
 <?php
@@ -5,6 +10,7 @@
   $FIELD_NAME = 'name';
   $FIELD_EMAIL = 'email';
   $FIELD_TEXT = 'text';
+  $FIELD_RECAPTCHA = 'g-recaptcha-response';
 
   $MESSAGE_TO = "contact@hiragana.ch";
   $MESSAGE_SUBJECT = 'Neue Nachricht über hiragana.ch';
@@ -17,15 +23,19 @@
     // validate user input server-side
     try {
 
+      // prevent HTML injection
+      $name = isset($_POST[$FIELD_NAME]) ? htmlspecialchars($_POST[$FIELD_NAME]) : '';
+      $email = isset($_POST[$FIELD_EMAIL]) ? htmlspecialchars($_POST[$FIELD_EMAIL]) : '';
+      $text = isset($_POST[$FIELD_TEXT]) ? htmlspecialchars($_POST[$FIELD_TEXT]) : '';
+
       // ensure that user filled out all compulsory fields
       if (empty($_POST[$FIELD_NAME]) || empty($_POST[$FIELD_EMAIL]) || empty($_POST[$FIELD_TEXT])) {
         throw new Exception (I18n::t('form.err.notallfields'));
       }
 
-      // prevent HTML injection
-      $name = htmlspecialchars($_POST[$FIELD_NAME]);
-      $email = htmlspecialchars($_POST[$FIELD_EMAIL]);
-      $text = htmlspecialchars($_POST[$FIELD_TEXT]);
+      if (empty($_POST[$FIELD_RECAPTCHA])) {
+        throw new Exception (I18n::t('form.err.recaptcha-missing'));
+      }
 
       // check if name length is ok
       if (!preg_match('/^\w{3,40}$/', $name)) {
@@ -40,6 +50,13 @@
       // check if text is at least 3 chars long
       if (!preg_match('/.{3,}/', $text)) {
         throw new Exception (I18n::t('feedback.err.textlength'));
+      }
+
+      // check if user passed recaptcha
+      $recaptcha = new \ReCaptcha\ReCaptcha(recaptcha_secret);
+      $captchaResponse = $recaptcha->verify($_POST[$FIELD_RECAPTCHA], $_SERVER["REMOTE_ADDR"]);
+      if (!$captchaResponse->isSuccess()) {
+        throw new Exception (I18n::t('form.err.recaptcha-invalid'));
       }
 
     } catch (Exception $e) {
@@ -120,7 +137,15 @@
       </div>
     </div>
 
-    <button type="submit" class="btn btn-default" name="submitted"><?php echo I18n::t('button.submit'); ?></button>
+    <div class="form-group">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-6 g-recaptcha" data-sitekey="6Le2ZyATAAAAAD-Hf4GucRw5y61DErk8kVH1ZOoV"></div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-2"></div>
+      <button type="submit" class="btn btn-default" name="submitted"><?php echo I18n::t('button.submit'); ?></button>
+    </div>
 
   </form>
 

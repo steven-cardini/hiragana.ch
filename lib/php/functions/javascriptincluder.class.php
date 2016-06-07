@@ -70,6 +70,9 @@ class JavaScriptIncluder {
   );
 
   private static $externalJS = array(
+    'feedback' => array(
+      '//www.google.com/recaptcha/api.js'
+    ),
     'admin/tutorialadmin' => array(
       '//cdn.ckeditor.com/4.5.5/standard/ckeditor.js'
     ),

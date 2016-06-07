@@ -1,6 +1,5 @@
 <?php
-$location = 'lib/ext/device-detector/';
-require_once($location.'vendor/autoload.php');
+require_once('lib/ext/vendor/autoload.php');
 
 use DeviceDetector\DeviceDetector;
 use DeviceDetector\Parser\Device\DeviceParserAbstract;

@@ -90,6 +90,14 @@
                         'de' => 'Es gab ein Problem mit der Formularübertragung. Bitte versuchen Sie es erneut.',
                         'en' => 'There was a problem with submitting the form. Please try again.'
                       ),
+                      'form.err.recaptcha-missing' => array(
+                        'de' => 'Bitte bestätigen Sie, dass Sie ein Mensch sind!',
+                        'en' => 'Please confirm that you are a human!'
+                      ),
+                      'form.err.recaptcha-invalid' => array(
+                        'de' => 'Es gab ein Problem mit dem ReCaptcha. Bitte versuchen Sie es erneut.',
+                        'en' => 'There was a problem with the ReCaptcha. Please try again.'
+                      ),
 
                       // page-specific text
                       'navigation.home' => array(
