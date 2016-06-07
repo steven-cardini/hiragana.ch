@@ -1,12 +1,12 @@
 <?php
-require_once('lib/ext/vendor/autoload.php');
 require_once(FUNCTIONS_DIR.'recaptcha.config.php');
+require_once('lib/ext/vendor/autoload.php');
+use \ReCaptcha\ReCaptcha;
  ?>
 
 <h1><?php echo I18n::t('feedback.title'); ?></h1>
 
 <?php
-
   $FIELD_NAME = 'name';
   $FIELD_EMAIL = 'email';
   $FIELD_TEXT = 'text';
@@ -53,7 +53,7 @@ require_once(FUNCTIONS_DIR.'recaptcha.config.php');
       }
 
       // check if user passed recaptcha
-      $recaptcha = new \ReCaptcha\ReCaptcha(recaptcha_secret);
+      $recaptcha = new ReCaptcha(recaptcha_secret);
       $captchaResponse = $recaptcha->verify($_POST[$FIELD_RECAPTCHA], $_SERVER["REMOTE_ADDR"]);
       if (!$captchaResponse->isSuccess()) {
         throw new Exception (I18n::t('form.err.recaptcha-invalid'));
