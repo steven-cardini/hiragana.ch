@@ -6,29 +6,30 @@
 //      define ("DB_NAME", "my_db");
 require_once FUNCTIONS_DIR.'db.config.php';
 
-class DB extends mysqli {
+class DB {
   private static $instance;
+  private $mysqli;
 
   private function __construct () {
-    parent::__construct(DB_HOST, DB_USER, DB_PW, DB_NAME);
-    $this->query("SET NAMES 'utf8'");
+    $this->mysqli = new mysqli(DB_HOST, DB_USER, DB_PW, DB_NAME);
+    $this->mysqli->query("SET NAMES 'utf8'");
   }
 
   public static function getInstance() {
     if (!self::$instance) {
       @self::$instance = new DB();
-      if(self::$instance->connect_errno > 0) {
-        die("Unable to connect to database [".self::$instance->connect_error."]");
+      if(self::$instance->mysqli->connect_errno > 0) {
+        die("Unable to connect to database [".self::$instance->mysqli->connect_error."]");
       }
     }
     return self::$instance;
   }
 
   public static function doQuery($sql) {
-    return self::getInstance()->query($sql);
+    return self::getInstance()->mysqli->query($sql);
   }
 
   public static function escapeString($str) {
-    return self::getInstance()->escape_string($str);
+    return self::getInstance()->mysqli->escape_string($str);
   }
 }
