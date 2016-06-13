@@ -38,7 +38,7 @@ use \ReCaptcha\ReCaptcha;
       }
 
       // check if name length is ok
-      if (!preg_match('/^\w{3,40}$/', $name)) {
+      if (!preg_match('/.{3,40}/', $name)) {
         throw new Exception (I18n::t('feedback.err.namelength'));
       }
 
