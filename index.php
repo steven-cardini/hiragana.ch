@@ -1,12 +1,12 @@
 <?php
-  session_start();
   // include constants
   require_once('lib/php/constants.php');
   // include classloader and register it to autoloading
   require_once('lib/php/classloader.php');
   spl_autoload_register('loadClass');
   // start session and save client
-  require_once('lib/php/functions/client.register.php');
+  session_start();
+  // require_once('lib/php/functions/client.register.php');
   // set content language
   I18n::initialize();
   // load current page content and required JS files
